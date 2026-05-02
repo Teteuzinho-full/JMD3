@@ -5,11 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JMD3 – Tecnologia & Inspeção Veterinária</title>
-   <link rel="icon" type="image/x-icon" href="ICON.ico">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 
 :root {
   --bg: #050A0E;
@@ -129,19 +127,10 @@ nav {
 /* ── HERO ── */
 #hero {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 60px;
-  padding: 110px 6vw 60px;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 0 6vw;
   position: relative;
   overflow: hidden;
-}
-
-.hero-left { display: flex; flex-direction: column; justify-content: center; }
-.hero-right {
-  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
-  gap: 32px;
 }
 
 /* grid lines background */
@@ -153,17 +142,16 @@ nav {
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 80px 80px;
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
-  opacity: .35;
-  pointer-events: none;
+  opacity: .45;
 }
 
 /* glowing orb */
 #hero::after {
   content: '';
   position: absolute;
-  width: 600px; height: 600px;
-  right: -80px; top: 50%; transform: translateY(-50%);
-  background: radial-gradient(circle, rgba(62,207,207,0.14) 0%, transparent 70%);
+  width: 700px; height: 700px;
+  right: -120px; top: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(62,207,207,0.18) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -175,39 +163,47 @@ nav {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--teal);
-  margin-bottom: 18px;
+  margin-bottom: 22px;
   display: flex; align-items: center; gap: 12px;
   animation: fadeUp .8s ease both;
 }
-.hero-tag::before { content: ''; width: 36px; height: 1px; background: var(--teal); }
+.hero-tag::before {
+  content: '';
+  width: 36px; height: 1px;
+  background: var(--teal);
+}
 
 .hero-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(3rem, 5.5vw, 6rem);
+  font-size: clamp(4rem, 10vw, 9rem);
   line-height: .95;
   letter-spacing: 2px;
   animation: fadeUp .8s .15s ease both;
 }
-.hero-title em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
+.hero-title em {
+  font-style: normal;
+  -webkit-text-stroke: 1.5px var(--teal);
+  color: transparent;
+}
 
 .hero-sub {
-  margin-top: 20px;
-  font-size: 1rem;
+  margin-top: 28px;
+  font-size: 1.05rem;
   font-weight: 300;
   color: var(--muted);
-  max-width: 440px;
-  line-height: 1.75;
+  max-width: 480px;
+  line-height: 1.7;
   animation: fadeUp .8s .3s ease both;
 }
 
 .hero-cta {
-  margin-top: 32px;
-  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-top: 44px;
+  display: flex; gap: 18px; flex-wrap: wrap;
   animation: fadeUp .8s .45s ease both;
 }
 
 .btn-primary {
-  padding: 14px 32px;
+  padding: 15px 36px;
   background: var(--teal);
   color: #050A0E;
   font-family: 'Syne', sans-serif;
@@ -223,7 +219,7 @@ nav {
 .btn-primary:hover { background: var(--teal2); transform: translateY(-2px); }
 
 .btn-ghost {
-  padding: 14px 32px;
+  padding: 15px 36px;
   background: transparent;
   color: var(--teal);
   font-family: 'Syne', sans-serif;
@@ -238,38 +234,25 @@ nav {
 }
 .btn-ghost:hover { border-color: var(--teal); }
 
-/* stats grid — right side of hero */
+/* stats strip */
 .hero-stats {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  width: 100%;
-  animation: fadeUp .8s .5s ease both;
+  position: absolute; bottom: 48px; left: 6vw; right: 6vw;
+  display: flex; gap: 48px;
+  animation: fadeUp .8s .6s ease both;
 }
-.stat-item {
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 28px 24px;
-  position: relative;
-}
-.stat-item::before {
-  content: '';
-  position: absolute; top: 0; left: 0;
-  width: 30%; height: 2px;
-  background: linear-gradient(90deg, var(--teal), transparent);
-}
+
 .stat-num {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: var(--teal);
   line-height: 1;
 }
 .stat-label {
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--muted);
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 /* ── SECTION COMMON ── */
@@ -304,6 +287,7 @@ section { padding: 110px 6vw; }
   gap: 80px;
   align-items: center;
 }
+
 
 .about-desc {
   color: var(--muted);
@@ -668,8 +652,6 @@ footer p {
 
 /* ── DESKTOP ENFORCED ── */
 @media (min-width: 901px) {
-  #hero { grid-template-columns: 1fr 1fr !important; }
-  .hero-stats { grid-template-columns: 1fr 1fr !important; position: static !important; }
   .content-grid { grid-template-columns: 2fr 1fr !important; }
   .items-grid { grid-template-columns: repeat(2, 1fr) !important; }
   .contact-section { grid-template-columns: 1fr 1fr !important; }
@@ -683,29 +665,6 @@ footer p {
   .sidebar { position: sticky !important; top: 100px !important; }
 }
 
-/* ── NAV CLEARANCE ── */
-html { scroll-padding-top: 80px; }
-body { padding-top: 0; }
-
-@media (max-width: 600px) {
-  #hero {
-    grid-template-columns: 1fr !important;
-    padding-top: 100px !important;
-    padding-bottom: 60px !important;
-    gap: 40px !important;
-  }
-  .hero-stats {
-    grid-template-columns: 1fr 1fr !important;
-    position: static !important;
-    margin-top: 0 !important;
-  }
-  .page-hero {
-    padding-top: 100px !important;
-    min-height: auto !important;
-  }
-}
-
-
 </style>
 </head>
 <body>
@@ -713,7 +672,7 @@ body { padding-top: 0; }
 <!-- NAV -->
 
 <nav>
-  <div class="nav-logo"><img src="image.png"alt="JMD3 Logo" /> </div>
+  <div class="nav-logo">JMD<span>3</span></div>
   <ul class="nav-links" id="navLinks">
     <li class="nav-item"><a href="#hero" onclick="closeMenu()">Home</a></li>
     <li class="nav-item"><a href="#sobre" onclick="closeMenu()">Sobre Nós</a></li>
@@ -736,38 +695,35 @@ body { padding-top: 0; }
 <!-- HERO -->
 
 <section id="hero">
-  <div class="hero-left">
-    <div class="hero-tag">Tecnologia &amp; Inovação &amp; Soluções</div>
-    <h1 class="hero-title">
-      Inspeção<em>Veterinária</em>de Precisão
-    </h1>
-    <p class="hero-sub">
-      Soluções tecnológicas avançadas para inspeção e vigilância sanitária animal, garantindo conformidade, rastreabilidade e excelência operacional.
-    </p>
-    <div class="hero-cta">
-      <a href="#servicos" class="btn-primary">Nossos Serviços</a>
-      <a href="contato.html" class="btn-ghost">Fale Conosco</a>
-    </div>
+  <div class="hero-tag">Tecnologia &amp; Inovação &amp; Soluções</div>
+  <h1 class="hero-title">
+    Inspeção<em>Veterinária</em>de Precisão
+  </h1>
+  <p class="hero-sub">
+    Soluções tecnológicas avançadas para inspeção e vigilância sanitária animal, garantindo conformidade, rastreabilidade e excelência operacional.
+  </p>
+  <div class="hero-cta">
+    <a href="#servicos" class="btn-primary">Nossos Serviços</a>
+    <a href="#contato" class="btn-ghost">Fale Conosco</a>
   </div>
-
-  <div class="hero-right">
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">30+</div>
-        <div class="stat-label">Anos de Experiência</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">500+</div>
-        <div class="stat-label">Inspeções Realizadas</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Conformidade Legal</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-num">📍</div>
-        <div class="stat-label">Blumenau & Região</div>
-      </div>
+<br></br>
+<br></br>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num">30+</div>
+      <div class="stat-label">Anos de Experiência</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Inspeções Realizadas</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Conformidade Legal</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">📍</div>
+      <div class="stat-label">Blumenau & Região</div>
     </div>
   </div>
 </section>
@@ -829,7 +785,6 @@ body { padding-top: 0; }
 
   <div class="services-grid">
 
-```
 <!-- 01 -->
 <div class="service-card reveal">
   <div class="service-num">01</div>
@@ -891,7 +846,6 @@ body { padding-top: 0; }
     <li>Certificação sanitária internacional</li>
   </ul>
 </div>
-```
 
   </div>
 </section>
@@ -904,7 +858,6 @@ body { padding-top: 0; }
     <h2 class="section-title">Vamos Trabalhar Juntos</h2>
     <p>Entre em contato com nossa equipe técnica e descubra como a JMD3 pode otimizar seus processos de inspeção veterinária.</p>
 
-```
 <div class="contact-item">
   <div class="contact-icon">📧</div>
   <div class="contact-item-text">
@@ -916,7 +869,7 @@ body { padding-top: 0; }
   <div class="contact-icon">📞</div>
   <div class="contact-item-text">
     <span>Telefone</span>
-    <strong>+55 (47) 99224-8189</strong>
+    <strong>+55 (47) 99224-8189 <style>strong{text-decoration: none;} </style></strong>
   </div>
 </div>
 <div class="contact-item">
@@ -926,7 +879,6 @@ body { padding-top: 0; }
     <strong>Blumenau &amp; Região – SC</strong>
   </div>
 </div>
-```
 
   </div>
 
@@ -973,7 +925,7 @@ body { padding-top: 0; }
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=5547992248189&text=Quero%20saber%20mais%20sobre%20a%20empresa!&fbclid=PARlRTSAQIWIlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAad-DFhWsoiv_rPE9cNjjuYQkR7PCHTOvKbKdB2axr4ot3kyUKk2OIesf6S9_w_aem_92q3y1HgMg8Epj_4MPcDzw" target="_blank" title="Fale conosco no WhatsApp">
+<a class="whatsapp-btn" href="https://wa.me/5547999999999" target="_blank" title="Fale conosco no WhatsApp">
   <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
     <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/>
   </svg>
