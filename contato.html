@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contato JMD3</title>
+  <link rel="icon" type="image/x-icon" href="ICON.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #050A0E; --bg2: #08111A;
+      --teal: #3ECFCF; --teal2: #2AADB5;
+      --teal-dim: rgba(62,207,207,0.12);
+      --white: #F0F4F8; --muted: #6B8A9A;
+      --border: rgba(62,207,207,0.18);
+      --card: rgba(8,22,32,0.85);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--teal2); border-radius: 10px; }
+
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(5,10,14,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .25s; }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.nav-item { position: relative; }
+.nav-item .dropdown { display: none; position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%); background: rgba(5,10,14,0.97); backdrop-filter: blur(16px); border: 1px solid var(--border); min-width: 280px; z-index: 200; padding: 8px 0; }
+.nav-item .dropdown::before { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 10px; height: 10px; background: rgba(5,10,14,0.97); border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.nav-item .dropdown.open { display: block; }
+.dropdown a { display: block; padding: 11px 22px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 400; letter-spacing: 0; text-transform: none; color: var(--muted); white-space: nowrap; transition: color .2s, background .2s; border-left: 2px solid transparent; }
+.dropdown a:hover { color: var(--teal); background: var(--teal-dim); border-left-color: var(--teal); }
+.nav-arrow { display: inline-block; margin-left: 4px; font-size: 0.6rem; vertical-align: middle; transition: transform .25s; }
+.nav-arrow.open { transform: rotate(180deg); }
+.hamburger { display: none; }
+
+/* HERO */
+.page-hero {
+  min-height: 48vh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 120px 6vw 60px;
+  position: relative; overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 20% 80%, black 20%, transparent 80%);
+  opacity: .3;
+}
+.page-hero::after {
+  content: '';
+  position: absolute; width: 600px; height: 600px;
+  left: -100px; bottom: -200px;
+  background: radial-gradient(circle, rgba(62,207,207,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.breadcrumb { font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.breadcrumb a { color: var(--teal); text-decoration: none; }
+.page-hero-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+.page-hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
+.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .95; letter-spacing: 1px; position: relative; z-index: 1; }
+.page-hero h1 em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
+.page-hero-sub { margin-top: 22px; font-size: 1rem; color: var(--muted); max-width: 600px; line-height: 1.7; position: relative; z-index: 1; }
+
+/* CONTACT SECTION */
+.contact-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  padding: 90px 6vw;
+  align-items: start;
+}
+
+/* Info side */
+
+.section-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-tag::before { content: ''; width: 20px; height: 1px; background: var(--teal); }
+h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 1px; margin-bottom: 18px; }
+.contact-desc { color: var(--muted); line-height: 1.85; font-size: 1rem; margin-bottom: 40px; }
+
+.contact-item { display: flex; gap: 16px; align-items: center; margin-bottom: 20px; }
+.contact-icon { width: 48px; height: 48px; background: var(--teal-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.contact-item-text span { display: block; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; font-family: 'Syne', sans-serif; }
+.contact-item-text strong { font-size: 0.92rem; font-weight: 400; }
+
+/* horário */
+.hours-card { background: var(--card); border: 1px solid var(--border); padding: 28px 32px; margin-top: 36px; position: relative; }
+.hours-card::before { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); }
+.hours-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.85rem; margin-bottom: 16px; color: var(--teal); letter-spacing: 1px; }
+.hours-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.hours-row:last-child { border-bottom: none; }
+.hours-row span:last-child { color: var(--teal); }
+
+/* Form side */
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 48px;
+  position: relative;
+}
+.contact-form::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 2px; background: linear-gradient(270deg, var(--teal), transparent); }
+
+.form-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 28px; }
+
+.form-row { margin-bottom: 22px; }
+.form-row label { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.form-row input, .form-row textarea, .form-row select {
+  width: 100%; background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+  color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+  padding: 13px 16px; outline: none; transition: border-color .25s; resize: none;
+}
+.form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--teal); }
+.form-row select option { background: #0d1f2d; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.btn-primary { display: block; width: 100%; text-align: center; padding: 16px 24px; background: var(--teal); color: #050A0E; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); transition: background .25s; margin-top: 8px; }
+.btn-primary:hover { background: var(--teal2); }
+
+/* success message */
+.success-msg { display: none; text-align: center; padding: 20px; background: var(--teal-dim); border: 1px solid var(--border); margin-top: 16px; }
+.success-msg p { color: var(--teal); font-family: 'Syne', sans-serif; font-size: 0.85rem; letter-spacing: 1px; }
+
+/* MAP strip */
+.map-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.map-text .section-tag { margin-bottom: 14px; }
+.map-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 14px; }
+.map-text p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+.map-frame { width: 100%; height: 280px; border: 1px solid var(--border); filter: grayscale(80%) invert(10%); }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* footer */
+footer { padding: 36px 6vw; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; }
+.footer-logo span { color: var(--teal); }
+footer p { color: var(--muted); font-size: 0.8rem; }
+
+/* whatsapp */
+.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); text-decoration: none; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+@keyframes pulse-wa { 0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 36px rgba(37,211,102,0.7)} }
+
+@media(max-width:900px) { .contact-section, .map-strip { grid-template-columns: 1fr; gap: 40px; } .form-grid { grid-template-columns: 1fr; } }
+@media(max-width:600px) {
+  .contact-form { padding: 28px 20px; }
+  .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all .3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .nav-links { display: none; }
+  .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 62px; left: 0; right: 0; background: rgba(5,10,14,0.97); backdrop-filter: blur(16px); padding: 28px 6vw 36px; gap: 24px; border-bottom: 1px solid var(--border); z-index: 99; }
+  .nav-links.open .dropdown.open { display: block; position: static; transform: none; border: none; backdrop-filter: none; background: transparent; min-width: unset; padding: 4px 0 0 16px; margin-top: 8px; }
+  .nav-links.open .dropdown::before { display: none; }
+}
+
+
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="image.png"alt="JMD3 Logo" /> </div>
+  <ul class="nav-links" id="navLinks">
+    <li class="nav-item"><a href="index.html">Home</a></li>
+    <li class="nav-item"><a href="index.html#sobre">Sobre Nós</a></li>
+    <li class="nav-item">
+      <a href="index.html#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
+      <div class="dropdown" id="servDropdown">
+        <a href="servico-produtos-origem-animal.html">Produtos de Origem Animal</a>
+        <a href="servico-alimentacao-animal.html">Alimentação Animal</a>
+        <a href="servico-bebidas.html">Bebidas (MAPA)</a>
+        <a href="servico-comercio-exterior.html">Comércio Exterior — Perícia Portuária</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="contato.html" class="active">Contato</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Contato</div>
+  <div class="page-hero-tag">Fale Conosco</div>
+  <h1>Vamos<em>Trabalhar</em> Juntos</h1>
+  <p class="page-hero-sub">Entre em contato com nossa equipe técnica. Estamos prontos para atender sua demanda com agilidade e expertise em inspeção veterinária e comércio exterior agropecuário.</p>
+</div>
+
+<!-- CONTACT SECTION -->
+
+<div class="contact-section">
+
+  <!-- INFO -->
+
+  <div class="contact-info reveal">
+    <div class="section-tag">Informações</div>
+    <h2 class="block-title">Como Nos Encontrar</h2>
+    <p class="contact-desc">Nossa equipe está disponível para atender empresas de Blumenau e região com soluções técnicas em inspeção de produtos de origem animal, alimentação animal, bebidas e comércio exterior.</p>
+
+```
+<div class="contact-item">
+  <div class="contact-icon">📧</div>
+  <div class="contact-item-text">
+    <span>E-mail</span>
+    <strong>tsaeconsultoria@gmail.com</strong>
+  </div>
+</div>
+<div class="contact-item">
+  <div class="contact-icon">📞</div>
+  <div class="contact-item-text">
+    <span>Telefone / WhatsApp</span>
+    <strong>+55 (47) 99224-8189</strong>
+  </div>
+</div>
+<div class="contact-item">
+  <div class="contact-icon">📍</div>
+  <div class="contact-item-text">
+    <span>Localização</span>
+    <strong>Blumenau & Região – SC</strong>
+  </div>
+</div>
+<div class="contact-item">
+  <div class="contact-icon">🌐</div>
+  <div class="contact-item-text">
+    <span>Área de Atendimento</span>
+    <strong>Santa Catarina e demais estados</strong>
+  </div>
+</div>
+
+<div class="hours-card">
+  <h4>Horário de Atendimento</h4>
+  <div class="hours-row"><span>Segunda — Sexta</span><span>08h00 – 18h00</span></div>
+  <div class="hours-row"><span>Sábado</span><span>08h00 – 12h00</span></div>
+  <div class="hours-row"><span>Domingo</span><span>Fechado</span></div>
+</div>
+```
+
+  </div>
+
+  <!-- FORM -->
+
+  <div class="contact-form reveal">
+    <div class="form-title">Envie sua Mensagem</div>
+
+```
+<div class="form-grid">
+  <div class="form-row">
+    <label>Nome</label>
+    <input type="text" id="nome" placeholder="Seu nome completo" />
+  </div>
+  <div class="form-row">
+    <label>Empresa</label>
+    <input type="text" id="empresa" placeholder="Nome da empresa" />
+  </div>
+</div>
+<div class="form-grid">
+  <div class="form-row">
+    <label>E-mail</label>
+    <input type="email" id="email" placeholder="seu@email.com.br" />
+  </div>
+  <div class="form-row">
+    <label>Telefone</label>
+    <input type="tel" id="telefone" placeholder="(47) 99999-9999" />
+  </div>
+</div>
+<div class="form-row">
+  <label>Serviço de Interesse</label>
+  <select id="servico">
+    <option value="">Selecione um serviço…</option>
+    <option>Produtos de Origem Animal (SIF/MAPA)</option>
+    <option>Alimentação Animal</option>
+    <option>Bebidas (MAPA)</option>
+    <option>Comércio Exterior — Perícia Portuária</option>
+    <option>Outro</option>
+  </select>
+</div>
+<div class="form-row">
+  <label>Assunto</label>
+  <input type="text" id="assunto" placeholder="Resumo do seu contato" />
+</div>
+<div class="form-row">
+  <label>Mensagem</label>
+  <textarea id="mensagem" rows="6" placeholder="Descreva sua necessidade com detalhes…"></textarea>
+</div>
+<button class="btn-primary" onclick="enviarFormulario()">Enviar Mensagem</button>
+<div class="success-msg" id="successMsg">
+  <p>✅ Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
+</div>
+```
+
+  </div>
+</div>
+
+<!-- MAP STRIP -->
+
+<div class="map-strip">
+  <div class="map-text reveal">
+    <div class="section-tag">Localização</div>
+    <h3>Blumenau & Região — SC</h3>
+    <p>Atendemos presencialmente empresas de Blumenau e toda a região do Vale do Itajaí, além de prestar consultoria remota para clientes em todo o Brasil, especialmente em demandas de comércio exterior e certificação sanitária internacional.</p>
+  </div>
+  <iframe
+    class="map-frame reveal"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114886.38690994!2d-49.12577!3d-26.91972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df3b40c4a68f93%3A0x3a3bde6b55e6d99b!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1690000000000"
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2025 JMD3 – Tecnologia & Inovação & Soluções. Todos os direitos reservados.</p>
+  <p>Blumenau & Região – SC</p>
+</footer>
+
+<a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=5547992248189&text=Quero%20saber%20mais%20sobre%20a%20empresa!&fbclid=PARlRTSAQIWIlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAad-DFhWsoiv_rPE9cNjjuYQkR7PCHTOvKbKdB2axr4ot3kyUKk2OIesf6S9_w_aem_92q3y1HgMg8Epj_4MPcDzw" target="_blank" title="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/></svg>
+</a>
+
+<script>
+  function toggleMenu() {
+    const n = document.getElementById('navLinks'), b = document.getElementById('hamburger');
+    n.classList.toggle('open'); b.classList.toggle('open');
+  }
+  function toggleDropdown(e) {
+    e.preventDefault();
+    document.getElementById('servDropdown').classList.toggle('open');
+    document.getElementById('navArrow').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.nav-item')) document.getElementById('servDropdown').classList.remove('open');
+  });
+
+  function enviarFormulario() {
+    const nome = document.getElementById('nome').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const mensagem = document.getElementById('mensagem').value.trim();
+    if (!nome || !email || !mensagem) {
+      alert('Por favor, preencha pelo menos Nome, E-mail e Mensagem.');
+      return;
+    }
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('nome').value = '';
+    document.getElementById('empresa').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('telefone').value = '';
+    document.getElementById('servico').value = '';
+    document.getElementById('assunto').value = '';
+    document.getElementById('mensagem').value = '';
+    setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
+  }
+
+  document.querySelectorAll('.reveal').forEach(el =>
+    new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 }).observe(el)
+  );
+</script>
+
+</body>
+</html>

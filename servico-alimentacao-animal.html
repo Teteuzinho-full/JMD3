@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alimentação Animal – JMD3</title>
+   <link rel="icon" type="image/x-icon" href="ICON.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --bg:#050A0E;--bg2:#08111A;--teal:#3ECFCF;--teal2:#2AADB5;--teal-dim:rgba(62,207,207,0.12);--white:#F0F4F8;--muted:#6B8A9A;--border:rgba(62,207,207,0.18);--card:rgba(8,22,32,0.85); }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;overflow-x:hidden;}
+    ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--teal2);border-radius:10px;}
+    nav{position:fixed;top:0;width:100%;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:18px 6vw;background:rgba(5,10,14,0.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+    .nav-logo{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;letter-spacing:4px;color:var(--white);text-decoration:none;}
+    .nav-logo span{color:var(--teal);}
+    .nav-links{display:flex;gap:36px;list-style:none;}
+    .nav-links a{font-family:'Syne',sans-serif;font-size:0.82rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .25s;}
+    .nav-links a:hover{color:var(--teal);}
+    .nav-item{position:relative;}
+    .nav-item .dropdown{display:none;position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:rgba(5,10,14,0.97);backdrop-filter:blur(16px);border:1px solid var(--border);min-width:280px;z-index:200;padding:8px 0;}
+    .nav-item .dropdown::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%) rotate(45deg);width:10px;height:10px;background:rgba(5,10,14,0.97);border-left:1px solid var(--border);border-top:1px solid var(--border);}
+    .nav-item .dropdown.open{display:block;}
+    .dropdown a{display:block;padding:11px 22px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:400;letter-spacing:0;text-transform:none;color:var(--muted);white-space:nowrap;transition:color .2s,background .2s;border-left:2px solid transparent;}
+    .dropdown a:hover{color:var(--teal);background:var(--teal-dim);border-left-color:var(--teal);}
+    .nav-arrow{display:inline-block;margin-left:4px;font-size:0.6rem;vertical-align:middle;transition:transform .25s;}
+    .nav-arrow.open{transform:rotate(180deg);}
+    .hamburger{display:none;}
+    .page-hero{min-height:52vh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 6vw 60px;position:relative;overflow:hidden;border-bottom:1px solid var(--border);}
+    .page-hero::before{content:'';position:absolute;inset:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 80% at 20% 80%,black 20%,transparent 80%);opacity:.3;}
+    .page-hero::after{content:'';position:absolute;width:600px;height:600px;left:-100px;bottom:-200px;background:radial-gradient(circle,rgba(62,207,207,0.12) 0%,transparent 70%);border-radius:50%;}
+    .breadcrumb{font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:10px;position:relative;z-index:1;}
+    .breadcrumb a{color:var(--teal);text-decoration:none;}
+    .page-hero-tag{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:flex;align-items:center;gap:12px;position:relative;z-index:1;}
+    .page-hero-tag::before{content:'';width:24px;height:1px;background:var(--teal);}
+    .page-hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.95;letter-spacing:1px;position:relative;z-index:1;}
+    .page-hero h1 em{font-style:normal;-webkit-text-stroke:1.5px var(--teal);color:transparent;}
+    .page-hero-sub{margin-top:22px;font-size:1rem;color:var(--muted);max-width:600px;line-height:1.7;position:relative;z-index:1;}
+    .content{padding:80px 6vw;}
+    .content-grid{display:grid;grid-template-columns:2fr 1fr;gap:60px;align-items:start;}
+    .section-tag{font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+    .section-tag::before{content:'';width:20px;height:1px;background:var(--teal);}
+    h2.block-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,4vw,3rem);letter-spacing:1px;margin-bottom:20px;}
+    .intro-text{color:var(--muted);line-height:1.85;font-size:1rem;margin-bottom:20px;}
+    .items-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin:50px 0;}
+    .item-card{background:var(--card);border:1px solid var(--border);padding:32px 28px;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+    .item-card::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,var(--teal),transparent);transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+    .item-card:hover{border-color:rgba(62,207,207,0.4);transform:translateY(-3px);}
+    .item-card:hover::after{transform:scaleX(1);}
+    .item-icon{font-size:1.8rem;margin-bottom:14px;}
+    .item-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:0.95rem;margin-bottom:10px;}
+    .item-card p{color:var(--muted);font-size:0.85rem;line-height:1.6;}
+    .sidebar{position:sticky;top:100px;}
+    .sidebar-card{background:var(--card);border:1px solid var(--border);padding:32px;margin-bottom:20px;position:relative;}
+    .sidebar-card::before{content:'';position:absolute;top:0;left:0;width:40%;height:2px;background:linear-gradient(90deg,var(--teal),transparent);}
+    .sidebar-card h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:16px;}
+    .sidebar-list{list-style:none;}
+    .sidebar-list li{padding:8px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:0.85rem;display:flex;align-items:center;gap:10px;}
+    .sidebar-list li:last-child{border-bottom:none;}
+    .sidebar-list li::before{content:'';width:5px;height:1px;background:var(--teal);flex-shrink:0;}
+    .btn-primary{display:block;text-align:center;padding:15px 24px;background:var(--teal);color:#050A0E;font-family:'Syne',sans-serif;font-weight:700;font-size:0.82rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;clip-path:polygon(0 0,calc(100% - 10px) 0,100% 10px,100% 100%,10px 100%,0 calc(100% - 10px));transition:background .25s;margin-top:10px;}
+    .btn-primary:hover{background:var(--teal2);}
+    .norm-strip{background:var(--bg2);border:1px solid var(--border);padding:40px;margin:0 0 60px;}
+    .norm-strip h3{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:20px;color:var(--teal);}
+    .norm-tags{display:flex;flex-wrap:wrap;gap:10px;}
+    .norm-tag{padding:7px 16px;background:var(--teal-dim);border:1px solid var(--border);font-family:'Syne',sans-serif;font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+    .reveal.visible{opacity:1;transform:none;}
+    footer{padding:36px 6vw;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+    .footer-logo{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:4px;}
+    .footer-logo span{color:var(--teal);}
+    footer p{color:var(--muted);font-size:0.8rem;}
+    .whatsapp-btn{position:fixed;bottom:28px;right:28px;z-index:999;width:58px;height:58px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 24px rgba(37,211,102,0.4);text-decoration:none;transition:transform .25s;animation:pulse-wa 2.5s infinite;}
+    .whatsapp-btn:hover{transform:scale(1.1);}
+    .whatsapp-btn svg{width:30px;height:30px;fill:#fff;}
+    @keyframes pulse-wa{0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4)}50%{box-shadow:0 4px 36px rgba(37,211,102,0.7)}}
+    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.items-grid{grid-template-columns:1fr;}.sidebar{position:static;}}
+    @media(max-width:600px){.hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}.hamburger span{display:block;width:24px;height:2px;background:var(--white);transition:all .3s;}.nav-links{display:none;}.nav-links.open{display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(5,10,14,0.97);backdrop-filter:blur(16px);padding:28px 6vw 36px;gap:24px;border-bottom:1px solid var(--border);z-index:99;}}
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="image.png"alt="JMD3 Logo" /> </div>
+  <ul class="nav-links" id="navLinks">
+    <li class="nav-item"><a href="index.html">Home</a></li>
+    <li class="nav-item"><a href="index.html#sobre">Sobre Nós</a></li>
+    <li class="nav-item">
+      <a href="index.html#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
+      <div class="dropdown" id="servDropdown">
+        <a href="servico-produtos-origem-animal.html">Produtos de Origem Animal</a>
+        <a href="servico-alimentacao-animal.html">Alimentação Animal</a>
+        <a href="servico-bebidas.html">Bebidas (MAPA)</a>
+        <a href="servico-comercio-exterior.html">Comércio Exterior — Perícia Portuária</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> <span>Serviços</span> <span>›</span> Alimentação Animal</div>
+  <div class="page-hero-tag">MAPA / SDA</div>
+  <h1>Alimentação<em>Animal</em></h1>
+  <p class="page-hero-sub">Inspeção, registro e fiscalização de estabelecimentos fabricantes de alimentos para animais, com conformidade às normas do MAPA e da Secretaria de Defesa Agropecuária.</p>
+</div>
+
+<div class="content">
+  <div class="content-grid">
+    <div>
+      <div class="section-tag reveal">Visão Geral</div>
+      <h2 class="block-title reveal">Controle e Conformidade na Produção de Alimentos para Animais</h2>
+      <p class="intro-text reveal">A JMD3 presta serviços de inspeção e consultoria técnica para empresas do setor de alimentação animal, abrangendo fábricas de rações, produtores de suplementos, importadores de ingredientes e estabelecimentos que comercializam aditivos e premixes. Nossa atuação assegura conformidade com a legislação federal, em especial a Lei nº 6.198/1974 e o Decreto nº 6.296/2007, que regulamentam a inspeção e a fiscalização dos produtos destinados à alimentação animal no Brasil.</p>
+      <p class="intro-text reveal">Auxiliamos na obtenção e manutenção de registros junto ao MAPA, na implementação de Boas Práticas de Fabricação (BPF) e na adequação de rotulagem, garantindo que os produtos atendam aos padrões de identidade e qualidade estabelecidos pela Secretaria de Defesa Agropecuária (SDA).</p>
+
+```
+  <div class="items-grid">
+    <div class="item-card reveal">
+      <div class="item-icon">🌽</div>
+      <h3>Rações e Concentrados</h3>
+      <p>Inspeção de fabricantes de rações completas e concentradas para bovinos, suínos, aves, equinos e animais de companhia, com análise de formulação, composição e garantias declaradas.</p>
+    </div>
+    <div class="item-card reveal">
+      <div class="item-icon">💊</div>
+      <h3>Suplementos Minerais e Vitamínicos</h3>
+      <p>Fiscalização de suplementos minerais, vitamínicos e minerais-vitamínicos, verificando teores de macro e microelementos conforme os padrões mínimos estabelecidos pelo MAPA.</p>
+    </div>
+    <div class="item-card reveal">
+      <div class="item-icon">🧪</div>
+      <h3>Ingredientes e Aditivos</h3>
+      <p>Controle de qualidade e conformidade de ingredientes de origem vegetal, animal e mineral, bem como de aditivos zootécnicos, tecnológicos, sensoriais e nutritivos autorizados pelo MAPA.</p>
+    </div>
+    <div class="item-card reveal">
+      <div class="item-icon">⚗️</div>
+      <h3>Premixes</h3>
+      <p>Avaliação técnica de premixes vitamínicos, minerais e vitamínico-minerais utilizados na formulação de rações industriais, com verificação de estabilidade, homogeneidade e rotulagem.</p>
+    </div>
+    <div class="item-card reveal">
+      <div class="item-icon">🏭</div>
+      <h3>Inspeção e Registro de Estabelecimentos</h3>
+      <p>Assessoria completa para registro de novos estabelecimentos fabricantes de alimentos para animais junto ao MAPA, incluindo análise documental, adequação de instalações e implementação de BPF.</p>
+    </div>
+  </div>
+
+  <div class="norm-strip reveal">
+    <h3>Principais Legislações Aplicadas</h3>
+    <div class="norm-tags">
+      <span class="norm-tag">Lei nº 6.198/1974</span>
+      <span class="norm-tag">Decreto nº 6.296/2007</span>
+      <span class="norm-tag">IN MAPA nº 30/2009</span>
+      <span class="norm-tag">IN MAPA nº 42/2010</span>
+      <span class="norm-tag">IN MAPA nº 13/2021</span>
+      <span class="norm-tag">Portaria MAPA nº 150/2004</span>
+    </div>
+  </div>
+</div>
+
+<div class="sidebar">
+  <div class="sidebar-card reveal">
+    <h4>Outros Serviços JMD3</h4>
+    <ul class="sidebar-list">
+      <li><a href="servico-produtos-origem-animal.html" style="color:var(--muted);text-decoration:none;">Produtos de Origem Animal</a></li>
+      <li><a href="servico-bebidas.html" style="color:var(--muted);text-decoration:none;">Bebidas (MAPA)</a></li>
+      <li><a href="servico-comercio-exterior.html" style="color:var(--muted);text-decoration:none;">Comércio Exterior</a></li>
+    </ul>
+  </div>
+  <div class="sidebar-card reveal">
+    <h4>Por que escolher a JMD3?</h4>
+    <ul class="sidebar-list">
+      <li>30+ anos de experiência</li>
+      <li>Equipe de MVs habilitados</li>
+      <li>Conformidade SIF/MAPA</li>
+      <li>Laudos técnicos oficiais</li>
+      <li>Atendimento em Blumenau e região</li>
+    </ul>
+  </div>
+  <a href="index.html#contato" class="btn-primary reveal">Solicitar Orçamento</a>
+</div>
+```
+
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2025 JMD3 – Tecnologia & Inovação & Soluções. Todos os direitos reservados.</p>
+  <p>Blumenau & Região – SC</p>
+</footer>
+
+<a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=5547992248189&text=Quero%20saber%20mais%20sobre%20a%20empresa!&fbclid=PARlRTSAQIWIlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAad-DFhWsoiv_rPE9cNjjuYQkR7PCHTOvKbKdB2axr4ot3kyUKk2OIesf6S9_w_aem_92q3y1HgMg8Epj_4MPcDzw" target="_blank">
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/></svg>
+</a>
+
+<script>
+  function toggleMenu(){const n=document.getElementById('navLinks'),b=document.getElementById('hamburger');n.classList.toggle('open');b.classList.toggle('open');}
+  function toggleDropdown(e){e.preventDefault();document.getElementById('servDropdown').classList.toggle('open');document.getElementById('navArrow').classList.toggle('open');}
+  document.addEventListener('click',function(e){if(!e.target.closest('.nav-item'))document.getElementById('servDropdown').classList.remove('open');});
+  document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(el));
+</script>
+
+</body>
+</html>
+
