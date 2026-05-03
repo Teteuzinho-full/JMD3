@@ -3,9 +3,17 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
+  <meta name="description" content="Entre em contato com a equipe JMD3. Atendemos empresas em Blumenau e região com serviços de inspeção veterinária, alimentação animal, bebidas e comércio exterior."/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Contato – JMD3"/>
+  <meta property="og:description" content="Fale com nossa equipe técnica em Blumenau/SC. Inspeção veterinária, alimentação animal, bebidas e perícia portuária."/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="JMD3"/>
+  <meta name="theme-color" content="#050A0E"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contato JMD3</title>
   <link rel="icon" type="image/x-icon" href="ICON.ico">
+  <title>Contato – JMD3 | Fale com Nossa Equipe</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -22,7 +30,6 @@
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--teal2); border-radius: 10px; }
-
 
 /* NAV */
 nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(5,10,14,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
@@ -45,7 +52,7 @@ nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-i
 .page-hero {
   min-height: 48vh;
   display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 120px 6vw 60px;
+  padding: 140px 6vw 60px;
   position: relative; overflow: hidden;
   border-bottom: 1px solid var(--border);
 }
@@ -68,7 +75,7 @@ nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-i
 .breadcrumb a { color: var(--teal); text-decoration: none; }
 .page-hero-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
 .page-hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
-.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 7vw, 6.5rem); line-height: .95; letter-spacing: 1px; position: relative; z-index: 1; }
+.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 4.5rem); line-height: .95; letter-spacing: 1px; position: relative; z-index: 1; }
 .page-hero h1 em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
 .page-hero-sub { margin-top: 22px; font-size: 1rem; color: var(--muted); max-width: 600px; line-height: 1.7; position: relative; z-index: 1; }
 
@@ -167,18 +174,106 @@ footer p { color: var(--muted); font-size: 0.8rem; }
   .nav-links.open .dropdown::before { display: none; }
 }
 
+/* ── DESKTOP ENFORCED ── */
+@media (min-width: 901px) {
+  .content-grid { grid-template-columns: 2fr 1fr !important; }
+  .items-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .contact-section { grid-template-columns: 1fr 1fr !important; }
+  .map-strip { grid-template-columns: 1fr 1fr !important; }
+  #sobre { grid-template-columns: 1fr 1fr !important; }
+  #contato { grid-template-columns: 1fr 1fr !important; }
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .nav-links { display: flex !important; }
+  .hamburger { display: none !important; }
+  .form-grid { grid-template-columns: 1fr 1fr !important; }
+  .sidebar { position: sticky !important; top: 100px !important; }
+}
 
-  </style>
+/* ── NAV CLEARANCE ── */
+html { scroll-padding-top: 80px; }
+body { padding-top: 0; }
+
+@media (max-width: 600px) {
+  #hero {
+    padding-top: 100px !important;
+    justify-content: flex-start !important;
+    padding-bottom: 120px !important;
+  }
+  .page-hero {
+    padding-top: 100px !important;
+    min-height: auto !important;
+  }
+  .hero-stats {
+    position: static !important;
+    margin-top: 40px !important;
+  }
+}
+
+/* ── PAGE HERO DESKTOP FIX ── */
+@media (min-width: 901px) {
+  .page-hero {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    align-items: end !important;
+    gap: 60px !important;
+    padding: 130px 6vw 60px !important;
+    min-height: 55vh !important;
+  }
+  .page-hero-sub {
+    display: none !important; /* moved to right col */
+  }
+  .page-hero::after {
+    right: -80px !important;
+    left: auto !important;
+    bottom: -100px !important;
+    top: auto !important;
+  }
+}
+
+/* ── PAGE HERO COLUMNS ── */
+.page-hero-col-left {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; z-index: 1;
+}
+.page-hero-col-right {
+  display: flex; flex-direction: column; justify-content: flex-end;
+  position: relative; z-index: 1;
+}
+.page-hero-col-right .page-hero-sub {
+  display: block !important;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 480px;
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .page-hero {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+  .page-hero-col-right .page-hero-sub { max-width: 100%; }
+}
+
+/* Logo image fix */
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+</style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo"><img src="image.png"alt="JMD3 Logo" /> </div>
+  <a href="jmd-site.html" class="nav-logo"><img src="logo-jmd3.webp" alt="JMD3" style="height:48px;width:auto;object-fit:contain;display:block;"/></a>
   <ul class="nav-links" id="navLinks">
-    <li class="nav-item"><a href="index.html">Home</a></li>
-    <li class="nav-item"><a href="index.html#sobre">Sobre Nós</a></li>
+    <li class="nav-item"><a href="jmd-site.html">Home</a></li>
+    <li class="nav-item"><a href="sobre.html">Sobre Nós</a></li>
     <li class="nav-item">
-      <a href="index.html#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
+      <a href="jmd-site.html#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
       <div class="dropdown" id="servDropdown">
         <a href="servico-produtos-origem-animal.html">Produtos de Origem Animal</a>
         <a href="servico-alimentacao-animal.html">Alimentação Animal</a>
@@ -194,9 +289,18 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 <!-- HERO -->
 
 <div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Contato</div>
-  <div class="page-hero-tag">Fale Conosco</div>
-  <h1>Vamos<em>Trabalhar</em> Juntos</h1>
+  <div class="page-hero-col-left">
+    <div class="breadcrumb"><a href="jmd-site.html">Home</a> <span>›</span> Contato</div>
+    <div class="page-hero-tag" >Fale Conosco</div>
+    <h1>Vamos<br><em>Trabalhar</em> Juntos</h1>
+  </div>
+  <div class="page-hero-col-right">
+    <p class="page-hero-sub">Entre em contato com nossa equipe técnica. Estamos prontos para atender sua demanda com agilidade e expertise em inspeção veterinária e comércio exterior agropecuário.</p>
+  </div>
+</div>
+
+  <div class="page-hero-tag" style="margin-left: 30px auto ;">Fale Conosco</div>
+  <h1 style="margin-left: 40px auto;">Vamos<em> Trabalhar</em> Juntos</h1>
   <p class="page-hero-sub">Entre em contato com nossa equipe técnica. Estamos prontos para atender sua demanda com agilidade e expertise em inspeção veterinária e comércio exterior agropecuário.</p>
 </div>
 
@@ -211,6 +315,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
     <h2 class="block-title">Como Nos Encontrar</h2>
     <p class="contact-desc">Nossa equipe está disponível para atender empresas de Blumenau e região com soluções técnicas em inspeção de produtos de origem animal, alimentação animal, bebidas e comércio exterior.</p>
 
+
 <div class="contact-item">
   <div class="contact-icon">📧</div>
   <div class="contact-item-text">
@@ -222,7 +327,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
   <div class="contact-icon">📞</div>
   <div class="contact-item-text">
     <span>Telefone / WhatsApp</span>
-    <strong>+55 (47) 99224-8189</strong>
+    <strong>(47) 99224-8189</strong>
   </div>
 </div>
 <div class="contact-item">
@@ -255,6 +360,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
   <div class="contact-form reveal">
     <div class="form-title">Envie sua Mensagem</div>
 
+
 <div class="form-grid">
   <div class="form-row">
     <label>Nome</label>
@@ -262,7 +368,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
   </div>
   <div class="form-row">
     <label>Empresa</label>
-    <input type="text" id="empresa" placeholder="Nome da empresa" />
+    <input type="text" id="empresa" placeholder="Nome da empresa *" required />
   </div>
 </div>
 <div class="form-grid">
@@ -299,6 +405,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
   <p>✅ Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
 </div>
 
+
   </div>
 </div>
 
@@ -321,11 +428,11 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 
 <footer>
   <div class="footer-logo">JMD<span>3</span></div>
-  <p>© 2025 JMD3 – Tecnologia & Inovação & Soluções. Todos os direitos reservados.</p>
+  <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
   <p>Blumenau & Região – SC</p>
 </footer>
 
-<a class="whatsapp-btn" href="https://api.whatsapp.com/send?phone=5547992248189&text=Quero%20saber%20mais%20sobre%20a%20empresa!&fbclid=PARlRTSAQIWIlleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAad-DFhWsoiv_rPE9cNjjuYQkR7PCHTOvKbKdB2axr4ot3kyUKk2OIesf6S9_w_aem_92q3y1HgMg8Epj_4MPcDzw" target="_blank" title="Fale conosco no WhatsApp">
+<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" title="Fale conosco no WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/></svg>
 </a>
 
@@ -345,10 +452,11 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 
   function enviarFormulario() {
     const nome = document.getElementById('nome').value.trim();
+    const empresa = document.getElementById('empresa').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
-    if (!nome || !email || !mensagem) {
-      alert('Por favor, preencha pelo menos Nome, E-mail e Mensagem.');
+    if (!nome || !empresa || !email || !mensagem) {
+      alert('Por favor, preencha Nome, Empresa, E-mail e Mensagem.');
       return;
     }
     document.getElementById('successMsg').style.display = 'block';
