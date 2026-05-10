@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Política de Privacidade | JMD3</title>
+<meta name="description" content="Política de Privacidade da JMD3, com informações sobre coleta, uso, proteção e direitos dos titulares de dados pessoais." />
+<link rel="icon" href="ICON.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#050A0E; --bg2:#08131c; --card:rgba(255,255,255,0.04); --teal:#3ECFCF; --teal2:#53E0C2; --white:#F5F7FA; --muted:#8A9BA8; --border:rgba(255,255,255,0.10); }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--white); line-height:1.6; overflow-x:hidden; }
+body::before { content:''; position:fixed; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(62,207,207,0.08),transparent 34%), radial-gradient(circle at 18% 10%,rgba(83,224,194,0.12),transparent 26%); z-index:-1; }
+nav { position:fixed; top:0; width:100%; z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:18px 6vw; background:rgba(5,10,14,0.86); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); }
+.logo img { height:54px; width:auto; display:block; }
+.nav-links { display:flex; align-items:center; gap:34px; list-style:none; }
+.nav-links a { font-family:'Syne',sans-serif; font-size:0.82rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .25s; }
+.nav-links a:hover, .nav-links a.active { color:var(--teal); }
+.hamburger { display:none; }
+.page-hero { padding:150px 6vw 70px; border-bottom:1px solid var(--border); background:linear-gradient(135deg,var(--bg2),var(--bg)); }
+.breadcrumb { font-family:'Syne',sans-serif; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb span:last-child { color:var(--teal); }
+.page-hero-tag { font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,8vw,6.5rem); line-height:.9; letter-spacing:1px; max-width:900px; }
+.page-hero-sub { color:var(--muted); font-size:1.05rem; max-width:760px; margin-top:24px; }
+.content { padding:72px 6vw; max-width:1040px; margin:0 auto; }
+.policy-card { background:var(--card); border:1px solid var(--border); padding:40px; }
+.policy-card h2 { font-family:'Syne',sans-serif; font-size:1rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin:34px 0 12px; }
+.policy-card h2:first-child { margin-top:0; }
+.policy-card p { color:var(--muted); font-size:.98rem; margin-bottom:12px; }
+.policy-card a { color:var(--teal); text-decoration:none; font-weight:700; }
+footer { padding:36px 6vw; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:4px; }
+.footer-logo span { color:var(--teal); }
+footer p { color:var(--muted); font-size:0.8rem; }
+.footer-links { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.footer-links a { color:var(--teal); font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; transition:color .25s; }
+.footer-links a:hover { color:var(--teal2); }
+@media(max-width:700px) {
+  nav { padding:14px 5vw; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--white); }
+  .nav-links.open { display:flex; position:fixed; top:83px; left:0; right:0; padding:26px 6vw; background:rgba(5,10,14,.98); border-bottom:1px solid var(--border); flex-direction:column; align-items:flex-start; }
+  .policy-card { padding:28px 20px; }
+  footer { align-items:flex-start; flex-direction:column; }
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"><img src="logo-jmd3.webp" alt="JMD3"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" aria-label="Abrir menu"><span></span><span></span><span></span></div>
+</nav>
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Início</a><span>/</span><span>Privacidade</span></div>
+  <div class="page-hero-tag">LGPD e Transparência</div>
+  <h1>Política de Privacidade</h1>
+  <p class="page-hero-sub">Esta política explica como a JMD3 coleta, utiliza e protege os dados pessoais enviados por clientes, parceiros e visitantes do site.</p>
+</section>
+
+<main class="content">
+  <article class="policy-card">
+    <h2>1. Dados coletados</h2>
+    <p>Podemos coletar dados informados voluntariamente nos formulários de contato, como nome, empresa, e-mail, telefone, serviço de interesse, assunto e mensagem.</p>
+
+    <h2>2. Finalidade do uso</h2>
+    <p>Os dados são utilizados para responder solicitações, elaborar propostas, prestar atendimento técnico, manter relacionamento comercial e cumprir obrigações legais ou regulatórias aplicáveis aos serviços da JMD3.</p>
+
+    <h2>3. Base legal</h2>
+    <p>O tratamento pode ocorrer com base no consentimento do titular, execução de procedimentos preliminares relacionados a contrato, cumprimento de obrigação legal ou legítimo interesse, sempre conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+
+    <h2>4. Compartilhamento</h2>
+    <p>A JMD3 não vende dados pessoais. Informações podem ser compartilhadas apenas quando necessário para atendimento da solicitação, execução dos serviços contratados, cumprimento de obrigação legal ou suporte de fornecedores técnicos essenciais.</p>
+
+    <h2>5. Proteção e armazenamento</h2>
+    <p>Adotamos medidas razoáveis de segurança para proteger os dados contra acesso não autorizado, perda, alteração ou divulgação indevida. Os dados são mantidos pelo período necessário para as finalidades desta política e para cumprimento de obrigações legais.</p>
+
+    <h2>6. Direitos do titular</h2>
+    <p>Você pode solicitar confirmação de tratamento, acesso, correção, atualização, exclusão, portabilidade, informação sobre compartilhamento ou revogação do consentimento, conforme previsto na LGPD.</p>
+
+    <h2>7. Cookies e navegação</h2>
+    <p>O site pode utilizar recursos técnicos básicos para funcionamento, navegação, segurança e análise de desempenho. Caso ferramentas de terceiros sejam incorporadas, seus dados poderão seguir as políticas dessas plataformas.</p>
+
+    <h2>8. Contato</h2>
+    <p>Para exercer seus direitos ou tirar dúvidas sobre privacidade, entre em contato pelo e-mail <a href="mailto:contato@jmd3.com.br">contato@jmd3.com.br</a> ou pelos canais informados na página de contato.</p>
+
+    <h2>9. Atualizações</h2>
+    <p>Esta política pode ser atualizada para refletir melhorias, mudanças legais ou alterações nos serviços. Última atualização: maio de 2026.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2026 JMD3 - Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+</body>
+</html>

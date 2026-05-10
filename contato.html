@@ -130,6 +130,12 @@ h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4
 .form-row select option { background: #0d1f2d; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+.privacy-consent { margin: 4px 0 22px; }
+.privacy-consent label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.55; cursor: pointer; }
+.privacy-consent input { width: 18px; min-width: 18px; height: 18px; margin-top: 2px; accent-color: var(--teal); }
+.privacy-consent a { color: var(--teal); text-decoration: none; font-weight: 700; }
+.privacy-consent a:hover { color: var(--teal2); }
+
 .btn-primary { display: block; width: 100%; text-align: center; padding: 16px 24px; background: var(--teal); color: #050A0E; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); transition: background .25s; margin-top: 8px; }
 .btn-primary:hover { background: var(--teal2); }
 
@@ -153,6 +159,9 @@ footer { padding: 36px 6vw; border-top: 1px solid var(--border); display: flex; 
 .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; }
 .footer-logo span { color: var(--teal); }
 footer p { color: var(--muted); font-size: 0.8rem; }
+.footer-links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.footer-links a { color: var(--teal); font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: color .25s; }
+.footer-links a:hover { color: var(--teal2); }
 
 /* whatsapp */
 .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); text-decoration: none; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
@@ -400,6 +409,12 @@ body { padding-top: 0; }
   <label>Mensagem</label>
   <textarea id="mensagem" rows="6" placeholder="Descreva sua necessidade com detalhes…"></textarea>
 </div>
+<div class="privacy-consent">
+  <label for="aceitePrivacidadeContato">
+    <input type="checkbox" id="aceitePrivacidadeContato" required />
+    <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
+  </label>
+</div>
 <button class="btn-primary" onclick="enviarFormulario()">Enviar Mensagem</button>
 <div class="success-msg" id="successMsg">
   <p>✅ Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
@@ -430,6 +445,7 @@ body { padding-top: 0; }
   <div class="footer-logo">JMD<span>3</span></div>
   <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
   <p>Blumenau & Região – SC</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
 </footer>
 
 <a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" title="Fale conosco no WhatsApp">
@@ -451,10 +467,15 @@ body { padding-top: 0; }
   });
 
   function enviarFormulario() {
+    const aceite = document.getElementById('aceitePrivacidadeContato');
     const nome = document.getElementById('nome').value.trim();
     const empresa = document.getElementById('empresa').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
+    if (!aceite || !aceite.checked) {
+      alert('Para enviar a mensagem, aceite a Política de Privacidade.');
+      return;
+    }
     if (!nome || !empresa || !email || !mensagem) {
       alert('Por favor, preencha Nome, Empresa, E-mail e Mensagem.');
       return;
@@ -467,6 +488,7 @@ body { padding-top: 0; }
     document.getElementById('servico').value = '';
     document.getElementById('assunto').value = '';
     document.getElementById('mensagem').value = '';
+    aceite.checked = false;
     setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
   }
 
