@@ -21,6 +21,8 @@
   --muted: #6B8A9A;
   --border: rgba(62,207,207,0.18);
   --card: rgba(8,22,32,0.85);
+  --error: #FF6B6B;
+  --success: #25D366;
 }
 
 html { scroll-behavior: smooth; }
@@ -221,6 +223,7 @@ nav {
   transition: background .25s, transform .2s;
 }
 .btn-primary:hover { background: var(--teal2); transform: translateY(-2px); }
+.btn-primary:disabled { background: var(--muted); cursor: not-allowed; opacity: 0.6; }
 
 .btn-ghost {
   padding: 14px 32px;
@@ -546,11 +549,125 @@ section { padding: 110px 6vw; }
 
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+/* ── PRIVACY CONSENT ── */
 .privacy-consent { margin: 4px 0 22px; }
-.privacy-consent label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.55; cursor: pointer; }
-.privacy-consent input { width: 18px; min-width: 18px; height: 18px; margin-top: 2px; accent-color: var(--teal); }
-.privacy-consent a { color: var(--teal); text-decoration: none; font-weight: 700; }
-.privacy-consent a:hover { color: var(--teal2); }
+.privacy-consent label { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 12px; 
+  color: var(--muted); 
+  font-size: 0.82rem; 
+  line-height: 1.55; 
+  cursor: pointer;
+  transition: color .25s;
+}
+.privacy-consent label:hover { color: var(--white); }
+
+/* Custom checkbox styling */
+.privacy-consent input[type="checkbox"] { 
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px; 
+  min-width: 20px; 
+  height: 20px; 
+  margin-top: 1px;
+  background: rgba(255,255,255,0.03);
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .25s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy-consent input[type="checkbox"]:hover {
+  border-color: var(--teal);
+  background: rgba(62,207,207,0.08);
+}
+
+.privacy-consent input[type="checkbox"]:checked {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: inset 0 0 0 3px var(--bg);
+}
+
+.privacy-consent input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: var(--bg);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.privacy-consent input[type="checkbox"]:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.privacy-consent input[type="checkbox"].error {
+  border-color: var(--error);
+  background: rgba(255,107,107,0.1);
+  animation: shake .4s ease;
+}
+
+.privacy-consent a { 
+  color: var(--teal); 
+  text-decoration: none; 
+  font-weight: 700;
+  transition: color .25s;
+}
+.privacy-consent a:hover { 
+  color: var(--teal2); 
+  text-decoration: underline;
+}
+
+/* Privacy error message */
+.privacy-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid var(--error);
+  border-radius: 4px;
+  color: var(--error);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-error::before {
+  content: '⚠';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.privacy-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(37,211,102,0.15);
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  color: var(--success);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-success::before {
+  content: '✓';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Form submit button state */
+.btn-primary[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 /* ── FOOTER ── */
 footer {
@@ -577,6 +694,17 @@ footer p {
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .reveal {
@@ -723,8 +851,7 @@ body { padding-top: 0; }
   display: block;
 }
 
-
-</style>
+  </style>
 </head>
 <body>
 
@@ -760,7 +887,7 @@ body { padding-top: 0; }
       Inspeção<br><em>Veterinária</em><br>de Precisão
     </h1>
     <p class="hero-sub">
-      Soluções em inspeção e vigilância sanitária animal com emissão de <strong style="color:var(--teal)">laudos digitais</strong>, relatórios em nuvem e rastreabilidade completa — garantindo conformidade, agilidade e excelência operacional.
+      Soluções em inspeção e vigilância sanitária animal com emissão de <strong style="color:var(--teal)">laudos digitais</strong>, relatórios em nuvem e rastreabilidade completa — garantindo conformidade total e eficiência operacional.
     </p>
     <div class="hero-cta">
       <a href="#servicos" class="btn-primary">Nossos Serviços</a>
@@ -949,41 +1076,44 @@ body { padding-top: 0; }
   </div>
 
   <div class="contact-form reveal">
-    <div class="form-grid">
-      <div class="form-row">
-        <label>Nome</label>
-        <input type="text" placeholder="Seu nome" />
+    <form id="formHome" onsubmit="enviarFormularioHome(event)">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="nomeHome">Nome</label>
+          <input type="text" id="nomeHome" placeholder="Seu nome" required />
+        </div>
+        <div class="form-row">
+          <label for="empresaHome">Empresa</label>
+          <input type="text" id="empresaHome" placeholder="Nome da empresa" required />
+        </div>
       </div>
       <div class="form-row">
-        <label>Empresa</label>
-        <input type="text" placeholder="Nome da empresa" />
+        <label for="emailHome">E-mail</label>
+        <input type="email" id="emailHome" placeholder="seu@email.com.br" required />
       </div>
-    </div>
-    <div class="form-row">
-      <label>E-mail</label>
-      <input type="email" placeholder="seu@email.com.br" />
-    </div>
-    <div class="form-row">
-      <label>Serviço de Interesse</label>
-      <select>
-        <option value="">Selecione um serviço…</option>
-        <option>Produtos de Origem Animal (SIF/MAPA)</option>
-        <option>Alimentação Animal</option>
-        <option>Bebidas (MAPA)</option>
-        <option>Comércio Exterior — Perícia Portuária</option>
-      </select>
-    </div>
-    <div class="form-row">
-      <label>Mensagem</label>
-      <textarea rows="5" placeholder="Descreva sua necessidade…"></textarea>
-    </div>
-    <div class="privacy-consent">
-      <label for="aceitePrivacidadeHome">
-        <input type="checkbox" id="aceitePrivacidadeHome" required />
-        <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
-      </label>
-    </div>
-    <button class="btn-primary" style="width:100%; text-align:center; font-size:.8rem;" onclick="enviarFormularioHome()">Enviar Mensagem</button>
+      <div class="form-row">
+        <label for="servicoHome">Serviço de Interesse</label>
+        <select id="servicoHome" required>
+          <option value="">Selecione um serviço…</option>
+          <option>Produtos de Origem Animal (SIF/MAPA)</option>
+          <option>Alimentação Animal</option>
+          <option>Bebidas (MAPA)</option>
+          <option>Comércio Exterior — Perícia Portuária</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="mensagemHome">Mensagem</label>
+        <textarea id="mensagemHome" rows="5" placeholder="Descreva sua necessidade…" required></textarea>
+      </div>
+      <div class="privacy-consent">
+        <label for="aceitePrivacidadeHome">
+          <input type="checkbox" id="aceitePrivacidadeHome" />
+          <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
+        </label>
+        <div id="privacyErrorHome"></div>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; text-align:center; font-size:.8rem;">Enviar Mensagem</button>
+    </form>
   </div>
 </section>
 
@@ -998,78 +1128,125 @@ body { padding-top: 0; }
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" title="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/>
-  </svg>
+<a href="https://wa.me/5547992248189" class="whatsapp-btn" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-2.759 0-5.327 1.273-7.044 3.542-.422.553-.817 1.158-1.156 1.8-.57 1.115-.915 2.465-.915 3.933 0 5.597 4.55 10.147 10.147 10.147 2.725 0 5.265-1.073 7.167-3.007l1.41-1.41c.623-.623 1.179-1.309 1.653-2.044.556-.876.976-1.82 1.237-2.801h-13.54v-.738h14.296c.084-.405.137-.82.154-1.243.016-.437 0-.873-.046-1.305-.096-1.024-.297-2.004-.596-2.932-.421-1.344-1.104-2.573-1.999-3.6-1.184-1.337-2.828-2.261-4.654-2.543-.47-.074-.954-.114-1.444-.114z"/></svg>
 </a>
 
+<!-- SCRIPTS -->
+
 <script>
-  // Hamburger menu
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    const btn = document.getElementById('hamburger');
-    nav.classList.toggle('open');
-    btn.classList.toggle('open');
-  }
-  function closeMenu() {
-    document.getElementById('navLinks').classList.remove('open');
-    document.getElementById('hamburger').classList.remove('open');
-    closeDropdown();
-  }
+// Navigation functionality
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+}
 
-  // Serviços dropdown
-  function toggleDropdown(e) {
-    e.preventDefault();
-    const dd = document.getElementById('servDropdown');
-    const arrow = document.getElementById('navArrow');
-    dd.classList.toggle('open');
-    arrow.classList.toggle('open');
-  }
-  function closeDropdown() {
-    document.getElementById('servDropdown').classList.remove('open');
-    document.getElementById('navArrow').classList.remove('open');
-  }
+function closeMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+}
 
-  // Close dropdown when clicking outside
-  document.addEventListener('click', function(e) {
-    const navItem = e.target.closest('.nav-item');
-    if (!navItem) closeDropdown();
+function toggleDropdown(event) {
+  event.preventDefault();
+  const dropdown = event.target.closest('.nav-item').querySelector('.dropdown');
+  const arrow = event.target.closest('.nav-item').querySelector('.nav-arrow');
+  dropdown.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+// Reveal on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
   });
+}, observerOptions);
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 80);
-        observer.unobserve(e.target);
+document.querySelectorAll('.reveal').forEach(el => {
+  observer.observe(el);
+});
+
+// Form validation and submission
+function enviarFormularioHome(event) {
+  event.preventDefault();
+
+  const checkbox = document.getElementById('aceitePrivacidadeHome');
+  const errorDiv = document.getElementById('privacyErrorHome');
+  const form = document.getElementById('formHome');
+
+  // Clear previous errors
+  errorDiv.innerHTML = '';
+  checkbox.classList.remove('error');
+
+  // Validate privacy checkbox
+  if (!checkbox.checked) {
+    errorDiv.innerHTML = '<div class="privacy-error">Você deve aceitar a Política de Privacidade para enviar o formulário.</div>';
+    checkbox.classList.add('error');
+    checkbox.focus();
+    return false;
+  }
+
+  // Show success message
+  errorDiv.innerHTML = '<div class="privacy-success">Formulário enviado com sucesso! Entraremos em contato em breve.</div>';
+
+  // Here you would typically send the form data to your backend
+  // Example:
+  // const formData = new FormData(form);
+  // fetch('/api/contact', { method: 'POST', body: formData })
+  //   .then(response => response.json())
+  //   .then(data => console.log('Success:', data))
+  //   .catch(error => console.error('Error:', error));
+
+  // Reset form after 2 seconds
+  setTimeout(() => {
+    form.reset();
+    errorDiv.innerHTML = '';
+    checkbox.classList.remove('error');
+  }, 2000);
+
+  return false;
+}
+
+// Add event listener for real-time checkbox validation
+document.addEventListener('DOMContentLoaded', function() {
+  const checkbox = document.getElementById('aceitePrivacidadeHome');
+  const errorDiv = document.getElementById('privacyErrorHome');
+
+  if (checkbox) {
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        this.classList.remove('error');
+        errorDiv.innerHTML = '';
       }
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
 
-  // Nav active highlight
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let cur = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) cur = s.id;
+    checkbox.addEventListener('focus', function() {
+      if (!this.checked) {
+        this.classList.add('error');
+      }
     });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === `#${cur}` ? 'var(--teal)' : '';
-    });
-  });
 
-  function enviarFormularioHome() {
-    const aceite = document.getElementById('aceitePrivacidadeHome');
-    if (!aceite || !aceite.checked) {
-      alert('Para enviar a mensagem, aceite a Política de Privacidade.');
-      return;
-    }
-    alert('Mensagem enviada! Em breve entraremos em contato.');
+    checkbox.addEventListener('blur', function() {
+      if (!this.checked) {
+        this.classList.add('error');
+      } else {
+        this.classList.remove('error');
+        errorDiv.innerHTML = '';
+      }
+    });
   }
+});
 </script>
 
 </body>
