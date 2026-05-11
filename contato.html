@@ -3,7 +3,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8"/>
-  <meta name="description" content="Entre em contato com a equipe JMD3. Atendemos empresas em Blumenau e região com serviços de inspeção veterinária, alimentação animal, bebidas e comércio exterior."/>
+  <meta name="description" content="Entre em contato com a equipe JMD3. Atendemos empresas em Blumenau e região com serviços de inspeção veterinária, alimentação animal, bebidas e comércio exterior agropecuário."/>
   <meta name="robots" content="index, follow"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="Contato – JMD3"/>
@@ -24,6 +24,8 @@
       --white: #F0F4F8; --muted: #6B8A9A;
       --border: rgba(62,207,207,0.18);
       --card: rgba(8,22,32,0.85);
+      --error: #FF6B6B;
+      --success: #25D366;
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
@@ -71,9 +73,9 @@ nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-i
   background: radial-gradient(circle, rgba(62,207,207,0.12) 0%, transparent 70%);
   border-radius: 50%;
 }
-.breadcrumb { font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; position: relative; z-index: 1; }
+.breadcrumb { font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
 .breadcrumb a { color: var(--teal); text-decoration: none; }
-.page-hero-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+.page-hero-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
 .page-hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
 .page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 4.5rem); line-height: .95; letter-spacing: 1px; position: relative; z-index: 1; }
 .page-hero h1 em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
@@ -90,7 +92,7 @@ nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-i
 
 /* Info side */
 
-.section-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
 .section-tag::before { content: ''; width: 20px; height: 1px; background: var(--teal); }
 h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 1px; margin-bottom: 18px; }
 .contact-desc { color: var(--muted); line-height: 1.85; font-size: 1rem; margin-bottom: 40px; }
@@ -130,18 +132,127 @@ h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4
 .form-row select option { background: #0d1f2d; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
+/* ── PRIVACY CONSENT ── */
 .privacy-consent { margin: 4px 0 22px; }
-.privacy-consent label { display: flex; align-items: flex-start; gap: 10px; color: var(--muted); font-size: 0.82rem; line-height: 1.55; cursor: pointer; }
-.privacy-consent input { width: 18px; min-width: 18px; height: 18px; margin-top: 2px; accent-color: var(--teal); }
-.privacy-consent a { color: var(--teal); text-decoration: none; font-weight: 700; }
-.privacy-consent a:hover { color: var(--teal2); }
+.privacy-consent label { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 12px; 
+  color: var(--muted); 
+  font-size: 0.82rem; 
+  line-height: 1.55; 
+  cursor: pointer;
+  transition: color .25s;
+}
+.privacy-consent label:hover { color: var(--white); }
 
-.btn-primary { display: block; width: 100%; text-align: center; padding: 16px 24px; background: var(--teal); color: #050A0E; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); transition: background .25s; margin-top: 8px; }
+/* Custom checkbox styling */
+.privacy-consent input[type="checkbox"] { 
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px; 
+  min-width: 20px; 
+  height: 20px; 
+  margin-top: 1px;
+  background: rgba(255,255,255,0.03);
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .25s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy-consent input[type="checkbox"]:hover {
+  border-color: var(--teal);
+  background: rgba(62,207,207,0.08);
+}
+
+.privacy-consent input[type="checkbox"]:checked {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: inset 0 0 0 3px var(--bg);
+}
+
+.privacy-consent input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: var(--bg);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.privacy-consent input[type="checkbox"]:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.privacy-consent input[type="checkbox"].error {
+  border-color: var(--error);
+  background: rgba(255,107,107,0.1);
+  animation: shake .4s ease;
+}
+
+.privacy-consent a { 
+  color: var(--teal); 
+  text-decoration: none; 
+  font-weight: 700;
+  transition: color .25s;
+}
+.privacy-consent a:hover { 
+  color: var(--teal2); 
+  text-decoration: underline;
+}
+
+/* Privacy error message */
+.privacy-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid var(--error);
+  border-radius: 4px;
+  color: var(--error);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-error::before {
+  content: '⚠';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.privacy-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(37,211,102,0.15);
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  color: var(--success);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-success::before {
+  content: '✓';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.btn-primary { display: block; width: 100%; text-align: center; padding: 16px 24px; background: var(--teal); color: #050A0E; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: background .25s; }
 .btn-primary:hover { background: var(--teal2); }
+.btn-primary:disabled { background: var(--muted); cursor: not-allowed; opacity: 0.6; }
 
 /* success message */
-.success-msg { display: none; text-align: center; padding: 20px; background: var(--teal-dim); border: 1px solid var(--border); margin-top: 16px; }
-.success-msg p { color: var(--teal); font-family: 'Syne', sans-serif; font-size: 0.85rem; letter-spacing: 1px; }
+.success-msg { display: none; text-align: center; padding: 20px; background: rgba(37,211,102,0.15); border: 1px solid var(--success); border-radius: 4px; margin-top: 16px; }
+.success-msg p { color: var(--success); font-family: 'Syne', sans-serif; font-size: 0.85rem; letter-spacing: 1px; }
 
 /* MAP strip */
 .map-strip { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 6vw; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
@@ -154,6 +265,18 @@ h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4
 .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+/* animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* footer */
 footer { padding: 36px 6vw; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
 .footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; }
@@ -164,8 +287,8 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 .footer-links a:hover { color: var(--teal2); }
 
 /* whatsapp */
-.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); text-decoration: none; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
-.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); cursor: pointer; text-decoration: none; transition: transform .25s, box-shadow .25s; animation: pulse-wa 2.5s infinite; }
+.whatsapp-btn:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,0.6); }
 .whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
 @keyframes pulse-wa { 0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 36px rgba(37,211,102,0.7)} }
 
@@ -218,52 +341,6 @@ body { padding-top: 0; }
   }
 }
 
-/* ── PAGE HERO DESKTOP FIX ── */
-@media (min-width: 901px) {
-  .page-hero {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    align-items: end !important;
-    gap: 60px !important;
-    padding: 130px 6vw 60px !important;
-    min-height: 55vh !important;
-  }
-  .page-hero-sub {
-    display: none !important; /* moved to right col */
-  }
-  .page-hero::after {
-    right: -80px !important;
-    left: auto !important;
-    bottom: -100px !important;
-    top: auto !important;
-  }
-}
-
-/* ── PAGE HERO COLUMNS ── */
-.page-hero-col-left {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  position: relative; z-index: 1;
-}
-.page-hero-col-right {
-  display: flex; flex-direction: column; justify-content: flex-end;
-  position: relative; z-index: 1;
-}
-.page-hero-col-right .page-hero-sub {
-  display: block !important;
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--muted);
-  max-width: 480px;
-  margin-top: 0;
-}
-@media (max-width: 900px) {
-  .page-hero {
-    grid-template-columns: 1fr !important;
-    gap: 24px !important;
-  }
-  .page-hero-col-right .page-hero-sub { max-width: 100%; }
-}
-
 /* Logo image fix */
 .nav-logo img {
   height: 48px;
@@ -272,7 +349,7 @@ body { padding-top: 0; }
   display: block;
 }
 
-</style>
+  </style>
 </head>
 <body>
 
@@ -298,21 +375,14 @@ body { padding-top: 0; }
 <!-- HERO -->
 
 <div class="page-hero">
-  <div class="page-hero-col-left">
+  <div>
     <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Contato</div>
     <div class="page-hero-tag" >Fale Conosco</div>
     <h1>Vamos<br><em>Trabalhar</em> Juntos</h1>
   </div>
-  <div class="page-hero-col-right">
-    <p class="page-hero-sub">Entre em contato com nossa equipe técnica. Estamos prontos para atender sua demanda com agilidade e expertise em inspeção veterinária e comércio exterior agropecuário.</p>
-  </div>
-</div>
-
-<!-- <div class="page-hero-tag">Fale Conosco</div>
-  <h1>Vamos<em> Trabalhar</em> Juntos</h1>
   <p class="page-hero-sub">Entre em contato com nossa equipe técnica. Estamos prontos para atender sua demanda com agilidade e expertise em inspeção veterinária e comércio exterior agropecuário.</p>
 </div>
--->
+
 <!-- CONTACT SECTION -->
 
 <div class="contact-section">
@@ -322,7 +392,7 @@ body { padding-top: 0; }
   <div class="contact-info reveal">
     <div class="section-tag">Informações</div>
     <h2 class="block-title">Como Nos Encontrar</h2>
-    <p class="contact-desc">Nossa equipe está disponível para atender empresas de Blumenau e região com soluções técnicas em inspeção de produtos de origem animal, alimentação animal, bebidas e comércio exterior.</p>
+    <p class="contact-desc">Nossa equipe está disponível para atender empresas de Blumenau e região com soluções técnicas em inspeção de produtos de origem animal, alimentação animal, bebidas e perícia portuária.</p>
 
 
 <div class="contact-item">
@@ -369,30 +439,30 @@ body { padding-top: 0; }
   <div class="contact-form reveal">
     <div class="form-title">Envie sua Mensagem</div>
 
-
+    <form id="formContato" onsubmit="enviarFormularioContato(event)">
 <div class="form-grid">
   <div class="form-row">
-    <label>Nome</label>
-    <input type="text" id="nome" placeholder="Seu nome completo" />
+    <label for="nomeContato">Nome</label>
+    <input type="text" id="nomeContato" placeholder="Seu nome completo" required />
   </div>
   <div class="form-row">
-    <label>Empresa</label>
-    <input type="text" id="empresa" placeholder="Nome da empresa *" required />
+    <label for="empresaContato">Empresa</label>
+    <input type="text" id="empresaContato" placeholder="Nome da empresa" required />
   </div>
 </div>
 <div class="form-grid">
   <div class="form-row">
-    <label>E-mail</label>
-    <input type="email" id="email" placeholder="seu@email.com.br" />
+    <label for="emailContato">E-mail</label>
+    <input type="email" id="emailContato" placeholder="seu@email.com.br" required />
   </div>
   <div class="form-row">
-    <label>Telefone</label>
-    <input type="tel" id="telefone" placeholder="(47) 99999-9999" />
+    <label for="telefoneContato">Telefone</label>
+    <input type="tel" id="telefoneContato" placeholder="(47) 99999-9999" />
   </div>
 </div>
 <div class="form-row">
-  <label>Serviço de Interesse</label>
-  <select id="servico">
+  <label for="servicoContato">Serviço de Interesse</label>
+  <select id="servicoContato" required>
     <option value="">Selecione um serviço…</option>
     <option>Produtos de Origem Animal (SIF/MAPA)</option>
     <option>Alimentação Animal</option>
@@ -402,24 +472,23 @@ body { padding-top: 0; }
   </select>
 </div>
 <div class="form-row">
-  <label>Assunto</label>
-  <input type="text" id="assunto" placeholder="Resumo do seu contato" />
+  <label for="assuntoContato">Assunto</label>
+  <input type="text" id="assuntoContato" placeholder="Resumo do seu contato" />
 </div>
 <div class="form-row">
-  <label>Mensagem</label>
-  <textarea id="mensagem" rows="6" placeholder="Descreva sua necessidade com detalhes…"></textarea>
+  <label for="mensagemContato">Mensagem</label>
+  <textarea id="mensagemContato" rows="6" placeholder="Descreva sua necessidade com detalhes…" required></textarea>
 </div>
 <div class="privacy-consent">
   <label for="aceitePrivacidadeContato">
-    <input type="checkbox" id="aceitePrivacidadeContato" required />
+    <input type="checkbox" id="aceitePrivacidadeContato" />
     <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
   </label>
+  <div id="privacyErrorContato"></div>
 </div>
-<button class="btn-primary" onclick="enviarFormulario()">Enviar Mensagem</button>
-<div class="success-msg" id="successMsg">
-  <p>✅ Mensagem enviada com sucesso! Em breve entraremos em contato.</p>
-</div>
-
+<button type="submit" class="btn-primary">Enviar Mensagem</button>
+<div id="successMsgContato"></div>
+    </form>
 
   </div>
 </div>
@@ -430,11 +499,11 @@ body { padding-top: 0; }
   <div class="map-text reveal">
     <div class="section-tag">Localização</div>
     <h3>Blumenau & Região — SC</h3>
-    <p>Atendemos presencialmente empresas de Blumenau e toda a região do Vale do Itajaí, além de prestar consultoria remota para clientes em todo o Brasil, especialmente em demandas de comércio exterior e certificação sanitária internacional.</p>
+    <p>Atendemos presencialmente empresas de Blumenau e toda a região do Vale do Itajaí, além de prestar consultoria remota para clientes em todo o Brasil, especialmente em demandas de comércio exterior agropecuário.</p>
   </div>
   <iframe
     class="map-frame reveal"
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114886.38690994!2d-49.12577!3d-26.91972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df3b40c4a68f93%3A0x3a3bde6b55e6d99b!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1690000000000"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114886.38690994!2d-49.12577!3d-26.91972!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df3b40c4a68f93%3A0x3a3bde6b55e6d99b!2sBlumenau%2C%20SC!5e0!3m2!1spt-BR!2sbr!4v1234567890"
     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
   </iframe>
 </div>
@@ -449,7 +518,7 @@ body { padding-top: 0; }
 </footer>
 
 <a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" title="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/></svg>
+  <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-4.28-.688l-.307-.1-3.184.762.774-3.061-.1-.32a13.271 13.271 0 1 1 6.997 1.407z"/></svg>
 </a>
 
 <script>
@@ -457,41 +526,93 @@ body { padding-top: 0; }
     const n = document.getElementById('navLinks'), b = document.getElementById('hamburger');
     n.classList.toggle('open'); b.classList.toggle('open');
   }
+  
   function toggleDropdown(e) {
     e.preventDefault();
     document.getElementById('servDropdown').classList.toggle('open');
     document.getElementById('navArrow').classList.toggle('open');
   }
+  
   document.addEventListener('click', function(e) {
     if (!e.target.closest('.nav-item')) document.getElementById('servDropdown').classList.remove('open');
   });
 
-  function enviarFormulario() {
-    const aceite = document.getElementById('aceitePrivacidadeContato');
-    const nome = document.getElementById('nome').value.trim();
-    const empresa = document.getElementById('empresa').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const mensagem = document.getElementById('mensagem').value.trim();
-    if (!aceite || !aceite.checked) {
-      alert('Para enviar a mensagem, aceite a Política de Privacidade.');
-      return;
+  // Form validation and submission
+  function enviarFormularioContato(event) {
+    event.preventDefault();
+
+    const checkbox = document.getElementById('aceitePrivacidadeContato');
+    const errorDiv = document.getElementById('privacyErrorContato');
+    const form = document.getElementById('formContato');
+    const successDiv = document.getElementById('successMsgContato');
+
+    // Clear previous errors
+    errorDiv.innerHTML = '';
+    successDiv.innerHTML = '';
+    checkbox.classList.remove('error');
+
+    // Validate privacy checkbox
+    if (!checkbox.checked) {
+      errorDiv.innerHTML = '<div class="privacy-error">Você deve aceitar a Política de Privacidade para enviar o formulário.</div>';
+      checkbox.classList.add('error');
+      checkbox.focus();
+      return false;
     }
-    if (!nome || !empresa || !email || !mensagem) {
-      alert('Por favor, preencha Nome, Empresa, E-mail e Mensagem.');
-      return;
-    }
-    document.getElementById('successMsg').style.display = 'block';
-    document.getElementById('nome').value = '';
-    document.getElementById('empresa').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('telefone').value = '';
-    document.getElementById('servico').value = '';
-    document.getElementById('assunto').value = '';
-    document.getElementById('mensagem').value = '';
-    aceite.checked = false;
-    setTimeout(() => document.getElementById('successMsg').style.display = 'none', 5000);
+
+    // Show success message
+    successDiv.innerHTML = '<div class="success-msg"><p>✅ Mensagem enviada com sucesso! Entraremos em contato em breve.</p></div>';
+    successDiv.querySelector('.success-msg').style.display = 'block';
+
+    // Here you would typically send the form data to your backend
+    // Example:
+    // const formData = new FormData(form);
+    // fetch('/api/contact', { method: 'POST', body: formData })
+    //   .then(response => response.json())
+    //   .then(data => console.log('Success:', data))
+    //   .catch(error => console.error('Error:', error));
+
+    // Reset form after 2 seconds
+    setTimeout(() => {
+      form.reset();
+      errorDiv.innerHTML = '';
+      successDiv.innerHTML = '';
+      checkbox.classList.remove('error');
+    }, 2000);
+
+    return false;
   }
 
+  // Add event listener for real-time checkbox validation
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('aceitePrivacidadeContato');
+    const errorDiv = document.getElementById('privacyErrorContato');
+
+    if (checkbox) {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          this.classList.remove('error');
+          errorDiv.innerHTML = '';
+        }
+      });
+
+      checkbox.addEventListener('focus', function() {
+        if (!this.checked) {
+          this.classList.add('error');
+        }
+      });
+
+      checkbox.addEventListener('blur', function() {
+        if (!this.checked) {
+          this.classList.add('error');
+        } else {
+          this.classList.remove('error');
+          errorDiv.innerHTML = '';
+        }
+      });
+    }
+  });
+
+  // Reveal on scroll
   document.querySelectorAll('.reveal').forEach(el =>
     new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
