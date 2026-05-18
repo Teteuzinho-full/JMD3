@@ -3,7 +3,17 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="JMD3 em Blumenau/SC: inspeção veterinária, conformidade MAPA/SIF, alimentação animal, bebidas, comércio exterior e laudos técnicos com rastreabilidade."/>
+    <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="JMD3 – Tecnologia & Inspeção Veterinária | Blumenau/SC"/>
+  <meta property="og:description" content="JMD3 em Blumenau/SC: inspeção veterinária, conformidade MAPA/SIF, alimentação animal, bebidas, comércio exterior e laudos técnicos com rastreabilidade."/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="JMD3"/>
+  <meta property="og:image" content="https://jmd-3.vercel.app/logo-jmd3.webp"/>
+  <meta property="og:url" content="https://jmd-3.vercel.app/"/>
+    <link rel="canonical" href="https://jmd-3.vercel.app/"/>
   <link rel="icon" type="image/x-icon" href="ICON.ico">
   <title>JMD3 – Tecnologia & Inspeção Veterinária | Blumenau/SC</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -851,7 +861,18 @@ body { padding-top: 0; }
   display: block;
 }
 
-  </style>
+  
+/* SOCIAL LINKS */
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-links a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); text-decoration: none; transition: border-color .25s, color .25s, transform .2s; }
+.social-links a:hover { border-color: var(--teal); color: var(--white); transform: translateY(-2px); }
+.social-links svg { width: 17px; height: 17px; fill: currentColor; }
+.social-panel { margin-top: 28px; }
+.social-panel-title { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.social-links-large a { width: 42px; height: 42px; }
+.social-links-large svg { width: 19px; height: 19px; }
+
+</style>
 </head>
 <body>
 
@@ -873,9 +894,9 @@ body { padding-top: 0; }
     </li>
     <li class="nav-item"><a href="contato.html" onclick="closeMenu()">Contato</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+  <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
     <span></span><span></span><span></span>
-  </div>
+  </button>
 </nav>
 
 <!-- HERO -->
@@ -1080,20 +1101,20 @@ body { padding-top: 0; }
       <div class="form-grid">
         <div class="form-row">
           <label for="nomeHome">Nome</label>
-          <input type="text" id="nomeHome" placeholder="Seu nome" required />
+          <input type="text" id="nomeHome" name="nome" placeholder="Seu nome" required />
         </div>
         <div class="form-row">
           <label for="empresaHome">Empresa</label>
-          <input type="text" id="empresaHome" placeholder="Nome da empresa" required />
+          <input type="text" id="empresaHome" name="empresa" placeholder="Nome da empresa" required />
         </div>
       </div>
       <div class="form-row">
         <label for="emailHome">E-mail</label>
-        <input type="email" id="emailHome" placeholder="seu@email.com.br" required />
+        <input type="email" id="emailHome" name="email" placeholder="seu@email.com.br" required />
       </div>
       <div class="form-row">
         <label for="servicoHome">Serviço de Interesse</label>
-        <select id="servicoHome" required>
+        <select id="servicoHome" name="servico" required>
           <option value="">Selecione um serviço…</option>
           <option>Produtos de Origem Animal (SIF/MAPA)</option>
           <option>Alimentação Animal</option>
@@ -1103,11 +1124,11 @@ body { padding-top: 0; }
       </div>
       <div class="form-row">
         <label for="mensagemHome">Mensagem</label>
-        <textarea id="mensagemHome" rows="5" placeholder="Descreva sua necessidade…" required></textarea>
+        <textarea id="mensagemHome" name="mensagem" rows="5" placeholder="Descreva sua necessidade…" required></textarea>
       </div>
       <div class="privacy-consent">
         <label for="aceitePrivacidadeHome">
-          <input type="checkbox" id="aceitePrivacidadeHome" />
+          <input type="checkbox" id="aceitePrivacidadeHome" name="aceite" required />
           <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
         </label>
         <div id="privacyErrorHome"></div>
@@ -1122,25 +1143,33 @@ body { padding-top: 0; }
 <footer>
   <div class="footer-logo">JMD<span>3</span></div>
   <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="social-links" aria-label="Redes sociais da JMD3">
+  <a href="#" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="#" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="#" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
   <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária</p>
   <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
 </footer>
 
 <!-- WHATSAPP -->
 
-<a href="https://wa.me/5547992248189" class="whatsapp-btn" target="_blank" rel="noopener">
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004c-2.759 0-5.327 1.273-7.044 3.542-.422.553-.817 1.158-1.156 1.8-.57 1.115-.915 2.465-.915 3.933 0 5.597 4.55 10.147 10.147 10.147 2.725 0 5.265-1.073 7.167-3.007l1.41-1.41c.623-.623 1.179-1.309 1.653-2.044.556-.876.976-1.82 1.237-2.801h-13.54v-.738h14.296c.084-.405.137-.82.154-1.243.016-.437 0-.873-.046-1.305-.096-1.024-.297-2.004-.596-2.932-.421-1.344-1.104-2.573-1.999-3.6-1.184-1.337-2.828-2.261-4.654-2.543-.47-.074-.954-.114-1.444-.114z"/></svg>
+<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/>
+  </svg>
 </a>
 
 <!-- SCRIPTS -->
 
 <script>
-// Navigation functionality
 function toggleMenu() {
   const navLinks = document.getElementById('navLinks');
   const hamburger = document.getElementById('hamburger');
   navLinks.classList.toggle('open');
   hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
 }
 
 function closeMenu() {
@@ -1148,22 +1177,28 @@ function closeMenu() {
   const hamburger = document.getElementById('hamburger');
   navLinks.classList.remove('open');
   hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
 }
 
 function toggleDropdown(event) {
   event.preventDefault();
-  const dropdown = event.target.closest('.nav-item').querySelector('.dropdown');
-  const arrow = event.target.closest('.nav-item').querySelector('.nav-arrow');
+  const item = event.target.closest('.nav-item');
+  const dropdown = item.querySelector('.dropdown');
+  const arrow = item.querySelector('.nav-arrow');
   dropdown.classList.toggle('open');
   arrow.classList.toggle('open');
 }
 
-// Reveal on scroll
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.nav-item')) {
+    const dropdown = document.getElementById('servDropdown');
+    const arrow = document.getElementById('navArrow');
+    if (dropdown) dropdown.classList.remove('open');
+    if (arrow) arrow.classList.remove('open');
+  }
+});
 
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1173,23 +1208,16 @@ const observer = new IntersectionObserver(function(entries) {
   });
 }, observerOptions);
 
-document.querySelectorAll('.reveal').forEach(el => {
-  observer.observe(el);
-});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// Form validation and submission
 function enviarFormularioHome(event) {
   event.preventDefault();
-
   const checkbox = document.getElementById('aceitePrivacidadeHome');
   const errorDiv = document.getElementById('privacyErrorHome');
   const form = document.getElementById('formHome');
-
-  // Clear previous errors
   errorDiv.innerHTML = '';
   checkbox.classList.remove('error');
 
-  // Validate privacy checkbox
   if (!checkbox.checked) {
     errorDiv.innerHTML = '<div class="privacy-error">Você deve aceitar a Política de Privacidade para enviar o formulário.</div>';
     checkbox.classList.add('error');
@@ -1197,55 +1225,32 @@ function enviarFormularioHome(event) {
     return false;
   }
 
-  // Show success message
-  errorDiv.innerHTML = '<div class="privacy-success">Formulário enviado com sucesso! Entraremos em contato em breve.</div>';
+  const mensagem = [
+    'Olá, equipe JMD3. Gostaria de solicitar atendimento.',
+    '',
+    'Nome: ' + document.getElementById('nomeHome').value,
+    'Empresa: ' + document.getElementById('empresaHome').value,
+    'E-mail: ' + document.getElementById('emailHome').value,
+    'Serviço: ' + document.getElementById('servicoHome').value,
+    'Mensagem: ' + document.getElementById('mensagemHome').value
+  ].join('\n');
 
-  // Here you would typically send the form data to your backend
-  // Example:
-  // const formData = new FormData(form);
-  // fetch('/api/contact', { method: 'POST', body: formData })
-  //   .then(response => response.json())
-  //   .then(data => console.log('Success:', data))
-  //   .catch(error => console.error('Error:', error));
-
-  // Reset form after 2 seconds
-  setTimeout(() => {
-    form.reset();
-    errorDiv.innerHTML = '';
-    checkbox.classList.remove('error');
-  }, 2000);
-
+  errorDiv.innerHTML = '<div class="privacy-success">Abrindo WhatsApp com sua mensagem pronta...</div>';
+  window.open('https://wa.me/5547992248189?text=' + encodeURIComponent(mensagem), '_blank', 'noopener');
+  setTimeout(() => form.reset(), 500);
   return false;
 }
 
-// Add event listener for real-time checkbox validation
 document.addEventListener('DOMContentLoaded', function() {
   const checkbox = document.getElementById('aceitePrivacidadeHome');
   const errorDiv = document.getElementById('privacyErrorHome');
-
-  if (checkbox) {
-    checkbox.addEventListener('change', function() {
-      if (this.checked) {
-        this.classList.remove('error');
-        errorDiv.innerHTML = '';
-      }
-    });
-
-    checkbox.addEventListener('focus', function() {
-      if (!this.checked) {
-        this.classList.add('error');
-      }
-    });
-
-    checkbox.addEventListener('blur', function() {
-      if (!this.checked) {
-        this.classList.add('error');
-      } else {
-        this.classList.remove('error');
-        errorDiv.innerHTML = '';
-      }
-    });
-  }
+  if (!checkbox) return;
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      this.classList.remove('error');
+      errorDiv.innerHTML = '';
+    }
+  });
 });
 </script>
 

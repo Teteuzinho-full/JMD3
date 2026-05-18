@@ -10,8 +10,11 @@
  <meta property="og:description" content="Conheça nossa história, missão, valores e diferenciais. 30 anos servindo a cadeia agropecuária com rigor técnico e conformidade sanitária."/>
  <meta property="og:locale" content="pt_BR"/>
  <meta property="og:site_name" content="JMD3"/>
+  <meta property="og:image" content="https://jmd-3.vercel.app/logo-jmd3.webp"/>
+  <meta property="og:url" content="https://jmd-3.vercel.app/sobre.html"/>
  <meta name="theme-color" content="#050A0E"/>
  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="canonical" href="https://jmd-3.vercel.app/sobre.html"/>
   <link rel="icon" type="image/x-icon" href="ICON.ico">
  <title>Sobre Nós – JMD3 | Inspeção Veterinária Blumenau</title>
  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -283,6 +286,17 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 }
 
 
+
+/* SOCIAL LINKS */
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-links a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); text-decoration: none; transition: border-color .25s, color .25s, transform .2s; }
+.social-links a:hover { border-color: var(--teal); color: var(--white); transform: translateY(-2px); }
+.social-links svg { width: 17px; height: 17px; fill: currentColor; }
+.social-panel { margin-top: 28px; }
+.social-panel-title { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.social-links-large a { width: 42px; height: 42px; }
+.social-links-large svg { width: 19px; height: 19px; }
+
 </style>
 </head>
 <body>
@@ -303,7 +317,7 @@ footer p { color: var(--muted); font-size: 0.8rem; }
    </li>
    <li class="nav-item"><a href="contato.html">Contato</a></li>
  </ul>
- <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+ <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 
 <!-- HERO -->
@@ -540,6 +554,15 @@ footer p { color: var(--muted); font-size: 0.8rem; }
  <div class="reveal">
    <h3>Pronto para Trabalhar com a JMD3?</h3>
    <p>Entre em contato com nossa equipe técnica e descubra como podemos apoiar sua operação.</p>
+ <div class="social-panel sobre-social">
+   <span class="social-panel-title">Acompanhe a JMD3</span>
+   <div class="social-links social-links-large" aria-label="Redes sociais da JMD3">
+  <a href="#" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="#" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="#" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+ </div>
  </div>
  <a href="contato.html" class="btn-primary reveal">Fale Conosco</a>
 </div>
@@ -547,20 +570,28 @@ footer p { color: var(--muted); font-size: 0.8rem; }
 <!-- FOOTER -->
 
 <footer>
- <div class="footer-logo">JMD<span>3</span></div>
- <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
- <p>Blumenau & Região – SC</p>
- <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="social-links" aria-label="Redes sociais da JMD3">
+  <a href="#" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="#" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="#" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
 </footer>
 
-<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" title="Fale conosco no WhatsApp">
- <svg viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.736 5.469 2.027 7.77L0 32l8.437-2.01A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 01-6.771-1.854l-.486-.289-5.01 1.194 1.234-4.883-.317-.502A13.267 13.267 0 012.667 16C2.667 8.637 8.637 2.667 16 2.667S29.333 8.637 29.333 16 23.363 29.333 16 29.333zm7.27-9.862c-.398-.199-2.354-1.162-2.719-1.295-.365-.133-.631-.199-.897.2-.266.398-1.03 1.295-1.263 1.561-.232.266-.465.299-.863.1-.398-.2-1.681-.619-3.202-1.977-1.183-1.056-1.982-2.36-2.214-2.758-.232-.399-.025-.614.175-.812.18-.178.398-.465.597-.698.2-.232.266-.398.399-.664.133-.266.066-.498-.033-.697-.1-.2-.897-2.162-1.229-2.96-.324-.777-.652-.672-.897-.684l-.764-.013c-.266 0-.698.1-1.063.498-.365.399-1.396 1.363-1.396 3.325s1.43 3.857 1.629 4.123c.2.265 2.815 4.298 6.821 6.026.954.412 1.698.658 2.279.842.957.305 1.829.262 2.517.159.768-.114 2.354-.962 2.686-1.891.332-.93.332-1.727.232-1.892-.099-.164-.365-.265-.763-.464z"/></svg>
+<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/>
+  </svg>
 </a>
 
 <script>
  function toggleMenu() {
    const n = document.getElementById('navLinks'), b = document.getElementById('hamburger');
-   n.classList.toggle('open'); b.classList.toggle('open');
+   n.classList.toggle('open'); b.classList.toggle('open'); b.setAttribute('aria-expanded', n.classList.contains('open') ? 'true' : 'false');
  }
  function toggleDropdown(e) {
    e.preventDefault();
