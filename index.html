@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content="JMD3 em Blumenau/SC: inspeção veterinária, conformidade MAPA/SIF, alimentação animal, bebidas, comércio exterior e laudos técnicos com rastreabilidade."/>
-    <meta name="robots" content="index, follow"/>
+  <meta name="keywords" content="inspeção veterinária, consultoria veterinária, inspeção sanitária, inspeção de produtos de origem animal, SIF, MAPA, RIISPOA, consultoria MAPA, regularização MAPA, laudo veterinário, laudo técnico veterinário, auditoria sanitária, vigilância sanitária animal, conformidade sanitária, rastreabilidade animal, rastreabilidade de alimentos, segurança dos alimentos, qualidade de alimentos, indústria de alimentos, frigorífico, laticínio, indústria de carnes, indústria de pescados, indústria de ovos, mel e derivados, produtos de origem animal, alimentação animal, fábrica de ração, registro de ração, suplementos para animais, aditivos para ração, premix, bebidas MAPA, registro de bebidas, cervejaria, vinícola, cachaçaria, sucos e néctares, comércio exterior, importação de alimentos, exportação de alimentos, perícia portuária, perícia em carga, certificação sanitária, habilitação de exportador, inspeção federal, serviço de inspeção federal, consultoria SIF, consultoria SISBI, consultoria SIM, fiscalização sanitária, adequação regulatória, documentação sanitária, inspeção industrial, inspeção de alimentos, consultoria agroindustrial, veterinário Blumenau, inspeção veterinária Blumenau, consultoria MAPA Blumenau, inspeção veterinária Santa Catarina, consultoria sanitária SC, laudo técnico Blumenau"/>
+  <meta name="robots" content="index, follow"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta property="og:type" content="website"/>
   <meta property="og:title" content="JMD3 – Tecnologia & Inspeção Veterinária | Blumenau/SC"/>
@@ -18,6 +19,9 @@
   <title>JMD3 – Tecnologia & Inspeção Veterinária | Blumenau/SC</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="jmd3-icons.css"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"JMD3 Tecnologia, Inovação e Soluções","description":"Consultoria e inspeção veterinária, conformidade MAPA/SIF, alimentação animal, bebidas e comércio exterior.","url":"https://jmd-3.vercel.app/","telephone":"+5547992248189","email":"tsaeconsultoria@gmail.com","areaServed":["Blumenau","Santa Catarina","Brasil"],"sameAs":["https://www.instagram.com/jmd3insp/","https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/"],"serviceType":["Inspeção veterinária","Consultoria MAPA e SIF","Alimentação animal","Bebidas","Comércio exterior"]}
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -218,6 +222,8 @@ nav {
   display: flex; gap: 16px; flex-wrap: wrap;
   animation: fadeUp .8s .45s ease both;
 }
+.hero-reassurance { margin-top: 16px; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+.hero-reassurance strong { color: var(--white); font-weight: 500; }
 
 .btn-primary {
   padding: 14px 32px;
@@ -558,6 +564,17 @@ section { padding: 110px 6vw; }
   line-height: 1.65;
 }
 
+/* FAQ */
+#faq { background: var(--bg2); }
+.faq-header { max-width: 720px; margin-bottom: 38px; }
+.faq-header p { color: var(--muted); line-height: 1.7; margin-top: 14px; }
+.faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.faq-item { background: var(--card); border: 1px solid var(--border); padding: 24px; }
+.faq-item h3 { font-family: 'Syne', sans-serif; font-size: .95rem; margin-bottom: 10px; color: var(--white); }
+.faq-item p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.contact-form-heading { font-family: 'Syne', sans-serif; font-size: 1.15rem; margin-bottom: 8px; }
+.contact-form-intro { color: var(--muted); font-size: .88rem; line-height: 1.55; margin-bottom: 26px; }
+
 /* ── CONTACT ── */
 #contato {
   display: grid;
@@ -821,6 +838,7 @@ footer p {
   .form-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   nav { padding: 16px 5vw; }
@@ -898,9 +916,10 @@ footer p {
   transform: scale(1.1);
   box-shadow: 0 6px 32px rgba(37,211,102,0.6);
 }
-.whatsapp-btn svg {
-  width: 30px; height: 30px;
-  fill: #fff;
+.whatsapp-btn img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
 }
 @keyframes pulse-wa {
   0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
@@ -966,7 +985,7 @@ body { padding-top: 0; }
 .social-links-large svg { width: 19px; height: 19px; }
 @media (max-width: 600px) {
   .whatsapp-btn { width: 52px; height: 52px; right: 18px; bottom: 18px; }
-  .whatsapp-btn svg { width: 27px; height: 27px; }
+  .whatsapp-btn img { width: 100%; height: 100%; }
 }
 
 </style>
@@ -1008,9 +1027,10 @@ body { padding-top: 0; }
       Soluções em inspeção e vigilância sanitária animal com emissão de <strong style="color:var(--teal)">laudos digitais</strong>, relatórios em nuvem e rastreabilidade completa — garantindo conformidade total e eficiência operacional.
     </p>
     <div class="hero-cta">
-      <a href="#servicos" class="btn-primary">Nossos Serviços</a>
-      <a href="contato.html" class="btn-ghost">Fale Conosco</a>
+      <a href="#contato" class="btn-primary">Solicitar Diagnóstico</a>
+      <a href="#servicos" class="btn-ghost">Conheça os Serviços</a>
     </div>
+    <p class="hero-reassurance"><strong>Atendimento técnico em Blumenau e região.</strong> Conte sua necessidade e receba a orientação para o próximo passo.</p>
   </div>
 
   <div class="hero-right">
@@ -1024,8 +1044,8 @@ body { padding-top: 0; }
         <div class="stat-label">Inspeções Realizadas</div>
       </div>
       <div class="stat-item">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Conformidade Legal</div>
+        <div class="stat-num"><span class="svg-symbol icon-shield-check" aria-hidden="true"></span></div>
+        <div class="stat-label">Foco em Conformidade</div>
       </div>
       <div class="stat-item">
         <div class="stat-num"><span class="svg-symbol icon-pin" aria-hidden="true"></span></div>
@@ -1203,6 +1223,21 @@ body { padding-top: 0; }
   </div>
 </section>
 
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-header reveal">
+    <div class="section-tag">Dúvidas Frequentes</div>
+    <h2 class="section-title">Apoio Técnico Para Decisões Seguras</h2>
+    <p>Entenda como a JMD3 pode apoiar a regularização sanitária, a inspeção veterinária e a conformidade de sua operação.</p>
+  </div>
+  <div class="faq-grid">
+    <article class="faq-item reveal"><h3>Quais empresas precisam de inspeção veterinária?</h3><p>Indústrias de produtos de origem animal, alimentos para animais, bebidas e operações de importação ou exportação podem precisar de suporte técnico e sanitário.</p></article>
+    <article class="faq-item reveal"><h3>A JMD3 auxilia com MAPA e SIF?</h3><p>Sim. A atuação inclui orientação sobre conformidade, documentação e exigências aplicáveis a registros e inspeção federal.</p></article>
+    <article class="faq-item reveal"><h3>Vocês atendem alimentação animal e bebidas?</h3><p>Sim. O escopo contempla rações, suplementos, ingredientes e aditivos, além de cervejas, vinhos, destilados, sucos e néctares.</p></article>
+    <article class="faq-item reveal"><h3>Como solicitar uma avaliação?</h3><p>Preencha o formulário com o serviço desejado ou chame no WhatsApp. Assim, a equipe entende o cenário e direciona os próximos passos.</p></article>
+  </div>
+</section>
+
 <!-- CONTATO -->
 
 <section id="contato">
@@ -1238,6 +1273,8 @@ body { padding-top: 0; }
   </div>
 
   <div class="contact-form reveal">
+    <h2 class="contact-form-heading">Solicite uma avaliação técnica</h2>
+    <p class="contact-form-intro">Preencha o essencial. A mensagem será aberta diretamente no WhatsApp para agilizar seu atendimento.</p>
     <form id="formHome" onsubmit="enviarFormularioHome(event)">
       <div class="form-grid">
         <div class="form-row">
@@ -1246,7 +1283,7 @@ body { padding-top: 0; }
         </div>
         <div class="form-row">
           <label for="empresaHome">Empresa</label>
-          <input type="text" id="empresaHome" name="empresa" placeholder="Nome da empresa" required />
+          <input type="text" id="empresaHome" name="empresa" placeholder="Nome da empresa (opcional)" />
         </div>
       </div>
       <div class="form-row">
@@ -1265,7 +1302,7 @@ body { padding-top: 0; }
       </div>
       <div class="form-row">
         <label for="mensagemHome">Mensagem</label>
-        <textarea id="mensagemHome" name="mensagem" rows="5" placeholder="Descreva sua necessidade…" required></textarea>
+        <textarea id="mensagemHome" name="mensagem" rows="4" placeholder="Descreva sua necessidade (opcional)"></textarea>
       </div>
       <div class="privacy-consent">
         <label for="aceitePrivacidadeHome">
@@ -1274,7 +1311,7 @@ body { padding-top: 0; }
         </label>
         <div id="privacyErrorHome"></div>
       </div>
-      <button type="submit" class="btn-primary" style="width:100%; text-align:center; font-size:.8rem;">Enviar Mensagem</button>
+      <button type="submit" class="btn-primary" style="width:100%; text-align:center; font-size:.8rem;">Solicitar Contato Técnico</button>
     </form>
   </div>
 </section>
@@ -1297,9 +1334,7 @@ body { padding-top: 0; }
 <!-- WHATSAPP -->
 
 <a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
-  <svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/>
-  </svg>
+  <img src="whatsapp-verde.png" alt="" aria-hidden="true">
 </a>
 
 <!-- SCRIPTS -->
