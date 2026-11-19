@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+  <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Política de Privacidade | JMD3"/>
+  <meta property="og:description" content="Política de Privacidade da JMD3: saiba como os dados enviados em formulários de contato são tratados."/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="JMD3"/>
+  <meta property="og:image" content="https://jmd3com.vercel.app/logo-jmd3.webp"/>
+  <meta property="og:url" content="https://jmd3com.vercel.app/privacidade.html"/>
+<title>Política de Privacidade | JMD3</title>
+<meta name="description" content="Política de Privacidade da JMD3, com informações sobre coleta, uso, proteção e direitos dos titulares de dados pessoais." />
+  <link rel="canonical" href="https://jmd3com.vercel.app/privacidade.html"/>
+  <link rel="icon" href="ICON.ico" type="image/x-icon" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&family=Syne:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#050A0E; --bg2:#08131c; --card:rgba(255,255,255,0.04); --teal:#3ECFCF; --teal2:#53E0C2; --teal-dim:rgba(62,207,207,0.12); --white:#F5F7FA; --muted:#8A9BA8; --border:rgba(255,255,255,0.10); }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--white); line-height:1.6; overflow-x:hidden; }
+body::before { content:''; position:fixed; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(62,207,207,0.08),transparent 34%), radial-gradient(circle at 18% 10%,rgba(83,224,194,0.12),transparent 26%); z-index:-1; }
+nav { position:fixed; top:0; width:100%; z-index:1000; display:flex; justify-content:space-between; align-items:center; padding:18px 6vw; background:rgba(5,10,14,0.86); backdrop-filter:blur(18px); border-bottom:1px solid var(--border); }
+.logo img { height:54px; width:auto; display:block; }
+.nav-links { display:flex; align-items:center; gap:34px; list-style:none; }
+.nav-links a { font-family:'Syne',sans-serif; font-size:0.82rem; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; transition:color .25s; }
+.nav-links a:hover, .nav-links a.active { color:var(--teal); }
+.hamburger { display:none; background:transparent; border:0; color:inherit; }
+.page-hero { padding:150px 6vw 70px; border-bottom:1px solid var(--border); background:linear-gradient(135deg,var(--bg2),var(--bg)); }
+.breadcrumb { font-family:'Syne',sans-serif; font-size:0.72rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:20px; display:flex; gap:10px; flex-wrap:wrap; }
+.breadcrumb a { color:var(--muted); text-decoration:none; }
+.breadcrumb span:last-child { color:var(--teal); }
+.page-hero-tag { font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--teal); margin-bottom:16px; }
+h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3rem,8vw,6.5rem); line-height:.9; letter-spacing:1px; max-width:900px; }
+.page-hero-sub { color:var(--muted); font-size:1.05rem; max-width:760px; margin-top:24px; }
+.content { padding:72px 6vw; max-width:1040px; margin:0 auto; }
+.policy-card { background:var(--card); border:1px solid var(--border); padding:40px; }
+.policy-card h2 { font-family:'Syne',sans-serif; font-size:1rem; letter-spacing:2px; text-transform:uppercase; color:var(--teal); margin:34px 0 12px; }
+.policy-card h2:first-child { margin-top:0; }
+.policy-card p { color:var(--muted); font-size:.98rem; margin-bottom:12px; }
+.policy-card a { color:var(--teal); text-decoration:none; font-weight:700; }
+footer { padding:36px 6vw; border-top:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; }
+.footer-logo { font-family:'Bebas Neue',sans-serif; font-size:1.4rem; letter-spacing:4px; }
+.footer-logo span { color:var(--teal); }
+footer p { color:var(--muted); font-size:0.8rem; }
+.footer-links { display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+.footer-links a { color:var(--teal); font-family:'Syne',sans-serif; font-size:0.72rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; text-decoration:none; transition:color .25s; }
+.footer-links a:hover { color:var(--teal2); }
+@media(max-width:700px) {
+  nav { padding:14px 5vw; }
+  .nav-links { display:none; }
+  .hamburger { display:flex; flex-direction:column; gap:5px; cursor:pointer; }
+  .hamburger span { display:block; width:24px; height:2px; background:var(--white); }
+  .nav-links.open { display:flex; position:fixed; top:82px; left:0; right:0; padding:26px 6vw; background:rgba(5,10,14,.98); border-bottom:1px solid var(--border); flex-direction:column; align-items:flex-start; max-height:calc(100vh - 82px); overflow-y:auto; }
+  .policy-card { padding:28px 20px; }
+  footer { align-items:flex-start; flex-direction:column; }
+}
+
+/* SOCIAL LINKS */
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-links a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); text-decoration: none; transition: border-color .25s, color .25s, transform .2s; }
+.social-links a:hover { border-color: var(--teal); color: var(--white); transform: translateY(-2px); }
+.social-links svg { width: 17px; height: 17px; fill: currentColor; }
+.social-panel { margin-top: 28px; }
+.social-panel-title { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.social-links-large a { width: 42px; height: 42px; }
+.social-links-large svg { width: 19px; height: 19px; }
+
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="index.html"><img src="logo-jmd3.webp" alt="JMD3"></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Início</a></li>
+    <li><a href="sobre.html">Sobre</a></li>
+    <li><a href="index.html#servicos">Serviços</a></li>
+    <li><a href="contato.html">Contato</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+</nav>
+
+<section class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Início</a><span>/</span><span>Privacidade</span></div>
+  <div class="page-hero-tag">LGPD e Transparência</div>
+  <h1>Política de Privacidade</h1>
+  <p class="page-hero-sub">Esta política explica como a JMD3 coleta, utiliza e protege os dados pessoais enviados por clientes, parceiros e visitantes do site.</p>
+</section>
+
+<main class="content">
+  <article class="policy-card">
+    <h2>1. Dados coletados</h2>
+    <p>Podemos coletar dados informados voluntariamente nos formulários de contato, como nome, empresa, e-mail, telefone, serviço de interesse, assunto e mensagem.</p>
+
+    <h2>2. Finalidade do uso</h2>
+    <p>Os dados são utilizados para responder solicitações, elaborar propostas, prestar atendimento técnico, manter relacionamento comercial e cumprir obrigações legais ou regulatórias aplicáveis aos serviços da JMD3.</p>
+
+    <h2>3. Base legal</h2>
+    <p>O tratamento pode ocorrer com base no consentimento do titular, execução de procedimentos preliminares relacionados a contrato, cumprimento de obrigação legal ou legítimo interesse, sempre conforme a Lei Geral de Proteção de Dados (Lei nº 13.709/2018).</p>
+
+    <h2>4. Compartilhamento</h2>
+    <p>A JMD3 não vende dados pessoais. Informações podem ser compartilhadas apenas quando necessário para atendimento da solicitação, execução dos serviços contratados, cumprimento de obrigação legal ou suporte de fornecedores técnicos essenciais.</p>
+
+    <h2>5. Proteção e armazenamento</h2>
+    <p>Adotamos medidas razoáveis de segurança para proteger os dados contra acesso não autorizado, perda, alteração ou divulgação indevida. Os dados são mantidos pelo período necessário para as finalidades desta política e para cumprimento de obrigações legais.</p>
+
+    <h2>6. Direitos do titular</h2>
+    <p>Você pode solicitar confirmação de tratamento, acesso, correção, atualização, exclusão, portabilidade, informação sobre compartilhamento ou revogação do consentimento, conforme previsto na LGPD.</p>
+
+    <h2>7. Cookies e navegação</h2>
+    <p>O site pode utilizar recursos técnicos básicos para funcionamento, navegação, segurança e análise de desempenho. Caso ferramentas de terceiros sejam incorporadas, seus dados poderão seguir as políticas dessas plataformas.</p>
+
+    <h2>8. Contato</h2>
+    <p>Para exercer seus direitos ou tirar dúvidas sobre privacidade, entre em contato pelo e-mail <a href="mailto:contato@jmd3.com.br">contato@jmd3.com.br</a> ou pelos canais informados na página de contato.</p>
+
+    <h2>9. Atualizações</h2>
+    <p>Esta política pode ser atualizada para refletir melhorias, mudanças legais ou alterações nos serviços. Última atualização: maio de 2026.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="social-links" aria-label="Redes sociais da JMD3">
+  <a href="https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/" target="_blank" rel="noopener" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="https://www.instagram.com/jmd3insp/" target="_blank" rel="noopener" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="https://www.linkedin.com/in/airson-junior-a565262a3/?originalSubdomain=br" target="_blank" rel="noopener" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
+}
+</script>
+</body>
+</html>

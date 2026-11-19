@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8"/>
+ <meta name="description" content="Conheça a JMD3: 30 anos de expertise em inspeção veterinária e comércio exterior agropecuário em Blumenau/SC. Equipe técnica habilitada e conformidade total com MAPA/SIF."/>
+ <meta name="robots" content="index, follow"/>
+ <meta property="og:type" content="website"/>
+ <meta property="og:title" content="Sobre a JMD3 – Tecnologia & Inspeção Veterinária"/>
+ <meta property="og:description" content="Conheça nossa história, missão, valores e diferenciais. 30 anos servindo a cadeia agropecuária com rigor técnico e conformidade sanitária."/>
+ <meta property="og:locale" content="pt_BR"/>
+ <meta property="og:site_name" content="JMD3"/>
+  <meta property="og:image" content="https://jmd3com.vercel.app/logo-jmd3.webp"/>
+  <meta property="og:url" content="https://jmd3com.vercel.app/sobre.html"/>
+ <meta name="theme-color" content="#050A0E"/>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="canonical" href="https://jmd3com.vercel.app/sobre.html"/>
+  <link rel="icon" type="image/x-icon" href="ICON.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+ <title>Sobre Nós – JMD3 | Inspeção Veterinária Blumenau</title>
+ <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+ <link rel="stylesheet" href="jmd3-icons.css"/>
+ <style>
+   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+   :root {
+     --bg: #050A0E; --bg2: #08111A;
+     --teal: #3ECFCF; --teal2: #2AADB5;
+     --teal-dim: rgba(62,207,207,0.12);
+     --white: #F0F4F8; --muted: #6B8A9A;
+     --border: rgba(62,207,207,0.18);
+     --card: rgba(8,22,32,0.85);
+   }
+   html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+   body { background: var(--bg); color: var(--white); font-family: 'DM Sans', sans-serif; overflow-x: hidden; }
+   ::-webkit-scrollbar { width: 5px; }
+   ::-webkit-scrollbar-track { background: var(--bg); }
+   ::-webkit-scrollbar-thumb { background: var(--teal2); border-radius: 10px; }
+
+
+/* NAV */
+nav { position: fixed; top: 0; width: 100%; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(5,10,14,0.85); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.9rem; letter-spacing: 4px; color: var(--white); text-decoration: none; }
+.nav-logo span { color: var(--teal); }
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .25s; }
+.nav-links a:hover, .nav-links a.active { color: var(--teal); }
+.nav-item { position: relative; }
+.nav-item .dropdown { display: none; position: absolute; top: calc(100% + 18px); left: 50%; transform: translateX(-50%); background: rgba(5,10,14,0.97); backdrop-filter: blur(16px); border: 1px solid var(--border); min-width: 280px; z-index: 200; padding: 8px 0; }
+.nav-item .dropdown::before { content: ''; position: absolute; top: -5px; left: 50%; transform: translateX(-50%) rotate(45deg); width: 10px; height: 10px; background: rgba(5,10,14,0.97); border-left: 1px solid var(--border); border-top: 1px solid var(--border); }
+.nav-item .dropdown.open { display: block; }
+.dropdown a { display: block; padding: 11px 22px; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; color: var(--muted); white-space: nowrap; transition: color .2s, background .2s; border-left: 2px solid transparent; text-decoration: none; }
+.dropdown a:hover { color: var(--teal); background: var(--teal-dim); border-left-color: var(--teal); }
+.nav-arrow { display: inline-block; margin-left: 4px; font-size: 0.6rem; vertical-align: middle; transition: transform .25s; }
+.nav-arrow.open { transform: rotate(180deg); }
+.hamburger { display: none; background: transparent; border: 0; color: inherit; }
+
+/* PAGE HERO */
+.page-hero {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ align-items: end;
+ gap: 60px;
+ padding: 130px 6vw 60px;
+ position: relative;
+ overflow: hidden;
+ border-bottom: 1px solid var(--border);
+ min-height: 55vh;
+}
+.page-hero::before {
+ content: ''; position: absolute; inset: 0;
+ background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+ background-size: 80px 80px;
+ mask-image: radial-gradient(ellipse 80% 80% at 20% 80%, black 20%, transparent 80%);
+ opacity: .3;
+}
+.page-hero::after {
+ content: ''; position: absolute; width: 600px; height: 600px;
+ left: -100px; bottom: -200px;
+ background: radial-gradient(circle, rgba(62,207,207,0.12) 0%, transparent 70%);
+ border-radius: 50%;
+}
+.page-hero-col { display: flex; flex-direction: column; justify-content: flex-end; position: relative; z-index: 1; }
+.breadcrumb { font-family: 'Syne', sans-serif; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.breadcrumb a { color: var(--teal); text-decoration: none; }
+.page-hero-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 16px; display: flex; align-items: center; gap: 12px; }
+.page-hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--teal); }
+.page-hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.2rem, 4vw, 4.5rem); line-height: .95; letter-spacing: 1px; }
+.page-hero h1 em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
+.page-hero-sub { font-size: 1.05rem; color: var(--muted); line-height: 1.8; max-width: 480px; }
+
+/* SECTIONS */
+section { padding: 90px 6vw; }
+.section-tag { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--teal); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.section-tag::before { content: ''; width: 20px; height: 1px; background: var(--teal); }
+h2.block-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: 1px; margin-bottom: 20px; }
+.body-text { color: var(--muted); line-height: 1.85; font-size: 1rem; margin-bottom: 18px; }
+
+/* MISSION / VISION / VALUES */
+.mvv-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 2px;
+ margin-top: 20px;
+}
+.mvv-card {
+ background: var(--card);
+ border: 1px solid var(--border);
+ padding: 40px 32px;
+ position: relative;
+ overflow: hidden;
+ transition: border-color .3s, transform .3s;
+}
+.mvv-card::before { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); }
+.mvv-card:hover { border-color: rgba(62,207,207,0.4); transform: translateY(-4px); }
+.mvv-icon { font-size: 2.2rem; margin-bottom: 18px; }
+.mvv-card h3 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; margin-bottom: 14px; color: var(--teal); letter-spacing: 1px; text-transform: uppercase; }
+.mvv-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
+
+/* WHO WE ARE — two col */
+.who-grid {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 80px;
+ align-items: center;
+}
+.who-image-placeholder {
+ background: var(--card);
+ border: 1px solid var(--border);
+ min-height: 380px;
+ position: relative;
+ display: flex; align-items: center; justify-content: center;
+ overflow: hidden;
+}
+.who-image-placeholder::before { content: ''; position: absolute; top: 0; left: 0; width: 40%; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); }
+.who-image-placeholder::after { content: ''; position: absolute; bottom: 0; right: 0; width: 40%; height: 2px; background: linear-gradient(270deg, var(--teal), transparent); }
+.who-image-inner { text-align: center; }
+.who-image-inner .big-logo { font-family: 'Bebas Neue', sans-serif; font-size: 5rem; letter-spacing: 6px; color: rgba(62,207,207,0.15); }
+.who-image-inner .big-logo span { color: rgba(62,207,207,0.3); }
+.who-badge {
+ position: absolute; bottom: 24px; right: 24px;
+ background: var(--teal);
+ color: #050A0E;
+ font-family: 'Bebas Neue', sans-serif;
+ font-size: 1.1rem;
+ letter-spacing: 2px;
+ padding: 10px 18px;
+ clip-path: polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px));
+}
+
+/* STATS ROW */
+.stats-row {
+ background: var(--bg2);
+ border-top: 1px solid var(--border);
+ border-bottom: 1px solid var(--border);
+ padding: 60px 6vw;
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 2px;
+}
+.stat-block {
+ background: var(--card);
+ border: 1px solid var(--border);
+ padding: 32px 28px;
+ position: relative;
+ text-align: left;
+}
+.stat-block::before { content: ''; position: absolute; top: 0; left: 0; width: 35%; height: 2px; background: linear-gradient(90deg, var(--teal), transparent); }
+.stat-block .num { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: var(--teal); line-height: 1; }
+.stat-block .label { font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-top: 8px; }
+
+/* TEAM / PILLARS */
+.pillars-grid {
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ gap: 2px;
+ margin-top: 20px;
+}
+.pillar-card {
+ background: var(--card);
+ border: 1px solid var(--border);
+ padding: 36px 28px;
+ display: flex; gap: 18px; align-items: flex-start;
+ transition: border-color .3s;
+}
+.pillar-card:hover { border-color: rgba(62,207,207,0.4); }
+.pillar-icon-box { width: 44px; height: 44px; background: var(--teal-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.pillar-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; }
+.pillar-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+/* TIMELINE */
+.timeline { margin-top: 20px; position: relative; padding-left: 32px; }
+.timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+.tl-item { position: relative; margin-bottom: 40px; }
+.tl-item:last-child { margin-bottom: 0; }
+.tl-dot { position: absolute; left: -37px; top: 4px; width: 10px; height: 10px; background: var(--teal); border-radius: 50%; box-shadow: 0 0 12px rgba(62,207,207,0.5); }
+.tl-year { font-family: 'Bebas Neue', sans-serif; font-size: 1rem; color: var(--teal); letter-spacing: 2px; margin-bottom: 6px; }
+.tl-item h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.92rem; margin-bottom: 6px; }
+.tl-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+/* CERTIFICATIONS */
+.cert-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 2px;
+ margin-top: 20px;
+}
+.cert-card {
+ background: var(--card);
+ border: 1px solid var(--border);
+ padding: 28px 24px;
+ text-align: center;
+ transition: border-color .3s, transform .3s;
+}
+.cert-card:hover { border-color: rgba(62,207,207,0.4); transform: translateY(-3px); }
+.cert-icon { font-size: 2rem; margin-bottom: 12px; }
+.cert-card h4 { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 1px; color: var(--teal); margin-bottom: 6px; }
+.cert-card p { color: var(--muted); font-size: 0.78rem; line-height: 1.5; }
+
+/* CTA STRIP */
+.cta-strip {
+ background: var(--teal-dim);
+ border: 1px solid var(--border);
+ padding: 60px 6vw;
+ display: grid;
+ grid-template-columns: 1fr auto;
+ align-items: center;
+ gap: 40px;
+}
+.cta-strip h3 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem, 3vw, 2.8rem); letter-spacing: 1px; margin-bottom: 10px; }
+.cta-strip p { color: var(--muted); font-size: 0.95rem; }
+.btn-primary { display: inline-block; padding: 15px 36px; background: var(--teal); color: #050A0E; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px)); transition: background .25s; white-space: nowrap; }
+.btn-primary:hover { background: var(--teal2); }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* footer */
+footer { padding: 36px 6vw; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 4px; }
+.footer-logo span { color: var(--teal); }
+footer p { color: var(--muted); font-size: 0.8rem; }
+.footer-links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.footer-links a { color: var(--teal); font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: color .25s; }
+.footer-links a:hover { color: var(--teal2); }
+
+/* whatsapp */
+.whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 58px; height: 58px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 24px rgba(37,211,102,0.4); text-decoration: none; transition: transform .25s; animation: pulse-wa 2.5s infinite; }
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-btn svg { width: 30px; height: 30px; fill: #fff; }
+@keyframes pulse-wa { 0%,100%{box-shadow:0 4px 24px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 36px rgba(37,211,102,0.7)} }
+
+/* responsive */
+@media (max-width: 900px) {
+ .page-hero { grid-template-columns: 1fr !important; gap: 24px; min-height: auto; }
+ .who-grid { grid-template-columns: 1fr; gap: 40px; }
+ .mvv-grid { grid-template-columns: 1fr; }
+ .pillars-grid { grid-template-columns: 1fr; }
+ .cert-grid { grid-template-columns: repeat(2, 1fr); }
+ .stats-row { grid-template-columns: repeat(2, 1fr); }
+ .cta-strip { grid-template-columns: 1fr; text-align: center; }
+}
+@media (max-width: 600px) {
+ nav { padding: 16px 5vw; }
+ .nav-logo img { height: 48px !important; }
+ .hamburger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+ .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); transition: all .3s; }
+ .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+ .hamburger.open span:nth-child(2) { opacity: 0; }
+ .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+ .nav-links { display: none; }
+ .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 80px; left: 0; right: 0; background: rgba(5,10,14,0.97); backdrop-filter: blur(16px); padding: 28px 6vw 36px; gap: 24px; border-bottom: 1px solid var(--border); z-index: 99; max-height: calc(100vh - 80px); overflow-y: auto; }
+ .nav-links.open .dropdown.open { display: block; position: static; transform: none; border: none; backdrop-filter: none; background: transparent; padding: 4px 0 0 16px; margin-top: 8px; }
+ .nav-links.open .dropdown::before { display: none; }
+ .cert-grid { grid-template-columns: 1fr 1fr; }
+ .stats-row { grid-template-columns: 1fr 1fr; }
+ section { padding: 70px 5vw; }
+}
+@media (min-width: 901px) {
+ .nav-links { display: flex !important; }
+ .hamburger { display: none !important; }
+}
+
+/* Logo image fix */
+.nav-logo img {
+ height: 48px;
+ width: auto;
+ object-fit: contain;
+ display: block;
+}
+
+
+
+/* SOCIAL LINKS */
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-links a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); text-decoration: none; transition: border-color .25s, color .25s, transform .2s; }
+.social-links a:hover { border-color: var(--teal); color: var(--white); transform: translateY(-2px); }
+.social-links svg { width: 17px; height: 17px; fill: currentColor; }
+.social-panel { margin-top: 28px; }
+.social-panel-title { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.social-links-large a { width: 42px; height: 42px; }
+.social-links-large svg { width: 19px; height: 19px; }
+@media (max-width: 600px) {
+ .whatsapp-btn { width: 52px; height: 52px; right: 18px; bottom: 18px; }
+ .whatsapp-btn svg { width: 27px; height: 27px; }
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+ <a href="index.html" class="nav-logo"><img src="logo-jmd3.webp" alt="JMD3" style="height:48px;width:auto;object-fit:contain;display:block;"/></a>
+ <ul class="nav-links" id="navLinks">
+   <li class="nav-item"><a href="index.html">Home</a></li>
+   <li class="nav-item"><a href="sobre.html" class="active">Sobre Nós</a></li>
+   <li class="nav-item">
+     <a href="index.html#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
+     <div class="dropdown" id="servDropdown">
+       <a href="servico-produtos-origem-animal.html">Produtos de Origem Animal</a>
+       <a href="servico-alimentacao-animal.html">Alimentação Animal</a>
+       <a href="servico-bebidas.html">Bebidas (MAPA)</a>
+       <a href="servico-comercio-exterior.html">Comércio Exterior — Perícia Portuária</a>
+     </div>
+   </li>
+   <li class="nav-item"><a href="contato.html">Contato</a></li>
+ </ul>
+ <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+
+<div class="page-hero">
+ <div class="page-hero-col">
+   <div class="breadcrumb"><a href="index.html">Home</a> <span>›</span> Sobre Nós</div>
+   <div class="page-hero-tag">Quem Somos</div>
+   <h1>Sobre a<em> JMD3</em></h1>
+ </div>
+ <div class="page-hero-col">
+   <p class="page-hero-sub">30 anos de expertise em inspeção veterinária e comércio exterior agropecuário, unindo tecnologia, inovação e rigor técnico para garantir conformidade sanitária em toda a cadeia produtiva.</p>
+ </div>
+</div>
+
+<!-- STATS ROW -->
+
+<div class="stats-row">
+ <div class="stat-block reveal">
+   <div class="num">30+</div>
+   <div class="label">Anos de Experiência</div>
+ </div>
+ <div class="stat-block reveal" >
+   <div class="num">500+</div>
+   <div class="label">Inspeções Realizadas</div>
+ </div>
+ <div class="stat-block reveal">
+   <div class="num">100%</div>
+   <div class="label">Conformidade Legal</div>
+ </div>
+ <div class="stat-block reveal">
+   <div class="num">4</div>
+   <div class="label">Áreas de Atuação</div>
+ </div>
+</div>
+
+<!-- QUEM SOMOS -->
+
+<section>
+ <div class="who-grid">
+   <div class="reveal">
+     <div class="section-tag">Nossa História</div>
+     <h2 class="block-title">Tecnologia a Serviço da Saúde Animal</h2>
+     <p class="body-text">A JMD3 nasceu da convergência entre tecnologia de ponta e expertise veterinária consolidada ao longo de três décadas. Desde o início das nossas atividades, nos posicionamos como parceiros estratégicos de estabelecimentos que operam sob rigorosas exigências sanitárias federais e internacionais.</p>
+     <p class="body-text">Com sede em Blumenau/SC e atuação em toda a região, desenvolvemos soluções que transformam processos de inspeção em fluxos inteligentes, rastreáveis e seguros — sempre alinhados às normativas do Ministério da Agricultura, Pecuária e Abastecimento (MAPA) e dos principais organismos reguladores internacionais.</p>
+     <p class="body-text">Nossa equipe é formada por médicos veterinários especializados, peritos em comércio exterior e consultores regulatórios com profundo conhecimento da legislação brasileira e das exigências de mercados como União Europeia, Estados Unidos, China e Oriente Médio.</p>
+   </div>
+   <div class="reveal">
+     <div class="who-image-placeholder">
+       <div class="who-image-inner">
+         <div class="big-logo"><img src="logo-jmd3.webp" alt="JMD3" style="height: 250px; width: auto; object-fit: contain; display: block;"/></div>
+         <p style="color: var(--muted); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; margin-top: 12px;">Blumenau — SC</p>
+       </div>
+       <div class="who-badge">Desde 1995</div>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- MISSÃO / VISÃO / VALORES -->
+
+<section style="background: var(--bg2); padding-top: 80px; padding-bottom: 80px;">
+ <div class="reveal">
+   <div class="section-tag">Identidade Corporativa</div>
+   <h2 class="block-title">Missão, Visão e Valores</h2>
+ </div>
+ <div class="mvv-grid">
+   <div class="mvv-card reveal">
+     <div class="mvv-icon"><span class="svg-symbol icon-target" aria-hidden="true"></span></div>
+     <h3>Missão</h3>
+     <p>Promover a segurança alimentar e a conformidade sanitária em toda a cadeia produtiva agropecuária, por meio de serviços técnicos especializados de inspeção, consultoria e certificação, com excelência, ética e compromisso com a legislação vigente.</p>
+   </div>
+   <div class="mvv-card reveal">
+     <div class="mvv-icon"><span class="svg-symbol icon-telescope" aria-hidden="true"></span></div>
+     <h3>Visão</h3>
+     <p>Ser reconhecida como a referência em inspeção veterinária e consultoria regulatória no Sul do Brasil, expandindo nossa atuação no comércio exterior e consolidando parcerias estratégicas com os principais mercados internacionais.</p>
+   </div>
+   <div class="mvv-card reveal">
+     <div class="mvv-icon"><span class="svg-symbol icon-scale" aria-hidden="true"></span></div>
+     <h3>Valores</h3>
+     <p>Ética e transparência em todas as relações. Excelência técnica e atualização constante. Comprometimento com a segurança alimentar. Respeito às normas e à legislação. Inovação a serviço da precisão e da rastreabilidade.</p>
+   </div>
+ </div>
+</section>
+
+<!-- PILARES / DIFERENCIAIS -->
+
+<section>
+ <div class="reveal">
+   <div class="section-tag">Nossos Diferenciais</div>
+   <h2 class="block-title">Por que Escolher a JMD3</h2>
+ </div>
+ <div class="pillars-grid">
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-microscope" aria-hidden="true"></span></div>
+     <div>
+       <h4>Expertise Técnica Comprovada</h4>
+       <p>Equipe de médicos veterinários habilitados com décadas de experiência em inspeção oficial, auditoria sanitária e comércio exterior agropecuário.</p>
+     </div>
+   </div>
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-clipboard" aria-hidden="true"></span></div>
+     <div>
+       <h4>Conformidade Total com MAPA/SIF</h4>
+       <p>Atuação 100% alinhada às normas do Serviço de Inspeção Federal, Ministério da Agricultura e demais órgãos reguladores nacionais e internacionais.</p>
+     </div>
+   </div>
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-globe" aria-hidden="true"></span></div>
+     <div>
+       <h4>Visão Global</h4>
+       <p>Profundo conhecimento dos requisitos sanitários de mercados como União Europeia, EUA, China, Japão e Oriente Médio para habilitação de exportadores.</p>
+     </div>
+   </div>
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-bolt" aria-hidden="true"></span></div>
+     <div>
+       <h4>Agilidade Operacional</h4>
+       <p>Processos otimizados que garantem rapidez na emissão de laudos, certificados e pareceres técnicos, sem comprometer a qualidade e a precisão.</p>
+     </div>
+   </div>
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-handshake" aria-hidden="true"></span></div>
+     <div>
+       <h4>Atendimento Personalizado</h4>
+       <p>Cada cliente recebe soluções sob medida para sua realidade operacional, com suporte dedicado e comunicação clara em todas as etapas do serviço.</p>
+     </div>
+   </div>
+   <div class="pillar-card reveal">
+     <div class="pillar-icon-box"><span class="svg-symbol icon-pin" aria-hidden="true"></span></div>
+     <div>
+       <h4>Presença Regional Forte</h4>
+       <p>Atendimento presencial em Blumenau e toda a região do Vale do Itajaí — SC, com disponibilidade para deslocamentos e atendimento remoto em todo o Brasil.</p>
+     </div>
+   </div>
+ </div>
+</section>
+
+<!-- CERTIFICAÇÕES / ÓRGÃOS -->
+
+<section>
+ <div class="reveal">
+   <div class="section-tag">Credenciamentos</div>
+   <h2 class="block-title">Órgãos e Normas Brasileiras</h2>
+ </div>
+ <div class="cert-grid">
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-building" aria-hidden="true"></span></div>
+     <h4>MAPA / SIF</h4>
+     <p>Serviço de Inspeção Federal — Ministério da Agricultura, Pecuária e Abastecimento</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-customs" aria-hidden="true"></span></div>
+     <h4>VIGIAGRO</h4>
+     <p>Vigilância Agropecuária Internacional do MAPA nos portos, aeroportos e fronteiras</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-document" aria-hidden="true"></span></div>
+     <h4>RIISPOA</h4>
+     <p>Decreto nº 9.013/2017 — Regulamento de Inspeção Industrial e Sanitária de Produtos de Origem Animal</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-scale" aria-hidden="true"></span></div>
+     <h4>SDA / MAPA</h4>
+     <p>Secretaria de Defesa Agropecuária — alimentação animal, bebidas e fiscalização vegetal</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-cow" aria-hidden="true"></span></div>
+     <h4>Lei nº 1.283/1950</h4>
+     <p>Lei federal de inspeção industrial e sanitária dos produtos de origem animal</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-grain" aria-hidden="true"></span></div>
+     <h4>Lei nº 6.198/1974</h4>
+     <p>Lei de fiscalização de produtos para uso na alimentação animal</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-beverage" aria-hidden="true"></span></div>
+     <h4>Decreto nº 6.871/2009</h4>
+     <p>Regulamentação da Lei de Bebidas — padrões de identidade e qualidade</p>
+   </div>
+   <div class="cert-card reveal">
+     <div class="cert-icon"><span class="svg-symbol icon-microscope" aria-hidden="true"></span></div>
+     <h4>ANVISA</h4>
+     <p>Agência Nacional de Vigilância Sanitária — normas complementares de segurança alimentar</p>
+   </div>
+ </div>
+</section>
+
+<!-- RESPONSÁVEL TÉCNICO -->
+
+<section style="background: var(--bg2); padding-top: 80px; padding-bottom: 80px;">
+ 
+  <div class="cert-card reveal">
+   <div class="section-tag">Responsabilidade Técnica</div>
+   <h2 class="block-title">Nossa Equipe Técnica</h2>
+   <p class="body-text" style="max-width: 640px;">A JMD3 é operada por médicos veterinários habilitados junto ao Conselho Federal de Medicina Veterinária (CFMV), com registro ativo no CRMV-SC e ampla experiência em inspeção oficial de produtos de origem animal, alimentação animal, bebidas e comércio exterior agropecuário.</p>
+ </div>
+ <div class="cert-card reveal">
+ <div class="responsabilidades" style="display: flex; justify-content: center; align-items: center;">
+   <div class="cert-card reveal">
+    <!--<div class="cert-icon">👨‍⚕️</div>-->
+     <div>
+       <!--<h4>Responsável Técnico</h4>-->
+       <h4>Médico Veterinário — CRMV-SC</h4>
+       <p class="body-text" style="max-width: 640px;">Especialização em inspeção de produtos de origem animal e comércio exterior agropecuário. Habilitado junto ao SIF/MAPA.</p>
+     </div>
+   </div>
+   <div class="cert-card reveal">
+     <!--<div class="cert-icon">🔬</div>-->
+     <div>
+       <h4>Equipe de Inspetores</h4>
+      <!--<p>Médicos Veterinários — CRMV-SC</p>-->
+       <p class="body-text" style="max-width: 640px;">Profissionais especializados em auditoria sanitária, inspeção ante e post mortem, laudos técnicos e rastreabilidade.</p>
+     </div>
+   </div>
+   <div class="cert-card reveal">
+    <!---<div class="cert-icon">🚢</div>-->
+     <div>
+       <h4>Peritos em Comércio Exterior</h4>
+       <!--<p>Consultores Regulatórios</p> -->
+       <p class="body-text" style="max-width: 640px;">Especialistas em habilitação de exportadores, certificação sanitária internacional e perícia portuária junto ao VIGIAGRO.</p>
+     </div>
+   </div>
+   </div>
+  </div>
+ </div>
+ <p class="reveal" style="text-align: center; color:var(--muted);font-size:0.82rem;margin-top:28px;font-style:italic;">Para informações sobre o responsável técnico registrado, CRMV e habilitações específicas, entre em contato conosco.</p>
+</section>
+
+<!-- CTA STRIP -->
+
+<div class="cta-strip">
+ <div class="reveal">
+   <h3>Pronto para Trabalhar com a JMD3?</h3>
+   <p>Entre em contato com nossa equipe técnica e descubra como podemos apoiar sua operação.</p>
+ <div class="social-panel sobre-social">
+   <span class="social-panel-title">Acompanhe a JMD3</span>
+   <div class="social-links social-links-large" aria-label="Redes sociais da JMD3">
+  <a href="https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/" target="_blank" rel="noopener" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="https://www.instagram.com/jmd3insp/" target="_blank" rel="noopener" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="https://www.linkedin.com/in/airson-junior-a565262a3/?originalSubdomain=br" target="_blank" rel="noopener" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+ </div>
+ </div>
+ <a href="contato.html" class="btn-primary reveal">Fale Conosco</a>
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="social-links" aria-label="Redes sociais da JMD3">
+  <a href="https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/" target="_blank" rel="noopener" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="https://www.instagram.com/jmd3insp/" target="_blank" rel="noopener" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="https://www.linkedin.com/in/airson-junior-a565262a3/?originalSubdomain=br" target="_blank" rel="noopener" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/>
+  </svg>
+</a>
+
+<script>
+ function toggleMenu() {
+   const n = document.getElementById('navLinks'), b = document.getElementById('hamburger');
+   n.classList.toggle('open'); b.classList.toggle('open'); b.setAttribute('aria-expanded', n.classList.contains('open') ? 'true' : 'false');
+ }
+ function toggleDropdown(e) {
+   e.preventDefault();
+   document.getElementById('servDropdown').classList.toggle('open');
+   document.getElementById('navArrow').classList.toggle('open');
+ }
+ document.addEventListener('click', function(e) {
+   if (!e.target.closest('.nav-item')) document.getElementById('servDropdown').classList.remove('open');
+ });
+ document.querySelectorAll('.reveal').forEach(el =>
+   new IntersectionObserver(entries => {
+     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+   }, { threshold: 0.1 }).observe(el)
+ );
+</script>
+
+</body>
+</html>
