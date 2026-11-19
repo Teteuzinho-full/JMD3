@@ -13,9 +13,12 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta property="og:locale" content="pt_BR"/>
   <meta property="og:site_name" content="JMD3"/>
-  <meta property="og:image" content="https://jmd3com.vercel.app/logo-jmd3.webp"/>
-  <meta property="og:url" content="https://jmd3com.vercel.app/"/>
-    <link rel="canonical" href="https://jmd3com.vercel.app/"/>
+  <meta property="og:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:url" content="https://jmd3.vercel.app/"/>
+    <link rel="canonical" href="https://jmd3.vercel.app/"/>
   <link rel="icon" type="image/x-icon" href="ICON.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -23,7 +26,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="jmd3-icons.css"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"JMD3 Tecnologia, Inovação e Soluções","description":"Inspeção veterinária, perícias portuárias, assistência técnica aduaneira e laudos técnico-científicos em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente.","url":"https://jmd3com.vercel.app/","image":"https://jmd3com.vercel.app/logo-jmd3.webp","telephone":"+5547992248189","email":"tsaeconsultoria@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Blumenau","addressRegion":"SC","addressCountry":"BR"},"areaServed":["Blumenau","Santa Catarina","Brasil"],"sameAs":["https://www.instagram.com/jmd3insp/","https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/"],"serviceType":["Inspeção veterinária","Perícias portuárias","Perícia de avarias em cargas e contêineres","Assistência técnica aduaneira","Laudos e pareceres técnico-científicos","Avaliação da cadeia do frio","Assistência técnica pericial"]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"JMD3 Tecnologia, Inovação e Soluções","description":"Inspeção veterinária, perícias portuárias, assistência técnica aduaneira e laudos técnico-científicos em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente.","url":"https://jmd3.vercel.app/","image":"https://jmd3.vercel.app/logo-jmd3.webp","telephone":"+5547992248189","email":"tsaeconsultoria@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Blumenau","addressRegion":"SC","addressCountry":"BR"},"areaServed":["Blumenau","Santa Catarina","Brasil"],"sameAs":["https://www.instagram.com/jmd3insp/","https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/"],"serviceType":["Inspeção veterinária","Perícias portuárias","Perícia de avarias em cargas e contêineres","Assistência técnica aduaneira","Laudos e pareceres técnico-científicos","Avaliação da cadeia do frio","Assistência técnica pericial"]}
   </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1011,6 +1014,15 @@ body { padding-top: 0; }
 .x-aviso{padding:28px 6%;background:var(--teal-dim);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .x-aviso p{font-size:.88rem;line-height:1.7;color:var(--muted);max-width:900px}.x-aviso strong{color:var(--teal)}
 @media(max-width:800px){.avarias-wrap{grid-template-columns:1fr}.x-sec{padding:56px 6%}}
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--teal) transparent;-webkit-overflow-scrolling:touch}
+.carousel .seg-card{flex:0 0 min(300px,78vw);scroll-snap-align:start;display:flex;flex-direction:column}
+.carousel .seg-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center}
+.seg-points{list-style:none;margin-top:12px}.seg-points li{font-size:.82rem;color:var(--muted);padding:6px 0 6px 20px;position:relative;border-top:1px solid var(--border)}
+.seg-points li::before{content:"✓";position:absolute;left:0;color:var(--teal)}
+.car-btn{position:absolute;top:38%;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--teal);background:rgba(5,10,14,.85);color:var(--teal);font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.car-prev{left:-8px}.car-next{right:-8px}.car-btn:hover{background:var(--teal);color:#05080A}
+@media(max-width:600px){.car-btn{width:38px;height:38px}}
 </style>
 </head>
 <body>
@@ -1095,22 +1107,22 @@ body { padding-top: 0; }
       <div class="pillar">
         <div class="pillar-icon"><span class="svg-symbol icon-microscope" aria-hidden="true"></span></div>
         <div class="pillar-text">
-          <h4>Tecnologia</h4>
-          <p>Sistemas digitais de gestão e monitoramento para inspeções veterinárias com total rastreabilidade.</p>
+          <h4>Rigor Técnico</h4>
+          <p>Avaliações baseadas em critérios técnico-científicos, evidências documentadas e rastreabilidade.</p>
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-icon"><span class="svg-symbol icon-bulb" aria-hidden="true"></span></div>
         <div class="pillar-text">
-          <h4>Inovação</h4>
-          <p>Processos modernizados que substituem métodos manuais por soluções ágeis e precisas.</p>
+          <h4>Atuação Multidisciplinar</h4>
+          <p>Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente, respeitando as habilitações profissionais.</p>
         </div>
       </div>
       <div class="pillar">
         <div class="pillar-icon"><span class="svg-symbol icon-shield-check" aria-hidden="true"></span></div>
         <div class="pillar-text">
-          <h4>Conformidade</h4>
-          <p>Atuação alinhada às normas do MAPA e demais órgãos reguladores do setor veterinário.</p>
+          <h4>Conformidade Legal</h4>
+          <p>Atuação alinhada à legislação aplicável, às normas do MAPA e às exigências das operações de comércio exterior.</p>
         </div>
       </div>
     </div>
@@ -1188,7 +1200,12 @@ body { padding-top: 0; }
   <div class="section-tag">Destaque</div>
   <h2 class="section-title">Perícias Portuárias e Aduaneiras</h2>
   <p class="x-lead">Inspeção de cargas, avaliação de danos, investigação de não conformidades e assistência técnica especializada.</p>
-  <div class="seg-grid"><div class="seg-card reveal"><img src="img/food.webp" alt="FOOD" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FOOD</h3><span>Alimentos</span><p>Alimentos de origem animal e vegetal.</p></div></div><div class="seg-card reveal"><img src="img/feed.webp" alt="FEED" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FEED</h3><span>Alimentação Animal</span><p>Rações, ingredientes e produtos para alimentação animal.</p></div></div><div class="seg-card reveal"><img src="img/bebidas.webp" alt="BEBIDAS" loading="lazy" width="640" height="960"><div class="seg-body"><h3>BEBIDAS</h3><span>Alcoólicas e não alcoólicas</span><p>Vinhos, cervejas, destilados, sucos e demais bebidas.</p></div></div><div class="seg-card reveal"><img src="img/vegetais.webp" alt="Produtos vegetais: grãos, frutas e cereais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>VEGETAIS</h3><span>Produtos Vegetais</span><p>Grãos, frutas, sementes e produtos processados.</p></div></div><div class="seg-card reveal"><img src="img/oleos.webp" alt="Óleos, azeites e gorduras vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>ÓLEOS, AZEITES E GORDURAS VEGETAIS</h3><span>Segmento próprio</span><p>Azeites de oliva e óleos de soja, girassol, milho, canola, palma, coco e similares.</p></div></div></div>
+  <div class="carousel-wrap" data-carousel>
+    <button class="car-btn car-prev" type="button" aria-label="Segmento anterior">‹</button>
+    <div class="carousel" tabindex="0" aria-label="Segmentos atendidos"><article class="seg-card"><img src="img/food.webp" alt="Alimentos" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FOOD – Alimentos</h3><p>Alimentos de origem animal e vegetal: carnes, pescados, laticínios e produtos processados.</p><ul class="seg-points"><li>Conservação e cadeia do frio</li><li>Identidade e integridade da carga</li><li>Avarias, deterioração e alterações térmicas</li></ul></div></article><article class="seg-card"><img src="img/feed.webp" alt="Rações e ingredientes" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FEED – Alimentação Animal</h3><p>Rações, ingredientes, matérias-primas, aditivos e produtos para alimentação animal.</p><ul class="seg-points"><li>Condições de transporte e armazenamento</li><li>Contaminações e perdas</li><li>Identidade e rastreabilidade</li></ul></div></article><article class="seg-card"><img src="img/bebidas.webp" alt="Cerveja, vinho e destilados" loading="lazy" width="640" height="960"><div class="seg-body"><h3>BEBIDAS</h3><p>Vinhos, cervejas, destilados, sucos e demais bebidas alcoólicas e não alcoólicas.</p><ul class="seg-points"><li>Vazamentos, quebras e avarias</li><li>Alterações de temperatura</li><li>Integridade de embalagens e lacres</li></ul></div></article><article class="seg-card"><img src="img/vegetais.webp" alt="Grãos, frutas e vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>VEGETAIS</h3><p>Grãos, frutas, sementes, produtos agrícolas e vegetais processados.</p><ul class="seg-points"><li>Deterioração, umidade e infestações</li><li>Qualidade e integridade da carga</li><li>Condições de transporte e armazenamento</li></ul></div></article><article class="seg-card"><img src="img/oleos.webp" alt="Azeites e óleos vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>ÓLEOS, AZEITES E GORDURAS VEGETAIS</h3><p>Azeites de oliva, óleos de soja, girassol, milho, canola, palma, coco e similares.</p><ul class="seg-points"><li>Inspeção de tanques e embalagens</li><li>Identidade e possíveis adulterações</li><li>Amostragem para análise laboratorial</li></ul></div></article></div>
+    <button class="car-btn car-next" type="button" aria-label="Próximo segmento">›</button>
+  </div>
+
 </section>
 
 <!-- AVARIAS -->
@@ -1274,6 +1291,9 @@ body { padding-top: 0; }
     <article class="faq-item reveal"><h3>A JMD3 auxilia com MAPA e SIF?</h3><p>Sim. A atuação inclui orientação sobre conformidade, documentação e exigências aplicáveis a registros e inspeção federal.</p></article>
     <article class="faq-item reveal"><h3>Vocês atendem alimentação animal e bebidas?</h3><p>Sim. O escopo contempla rações, suplementos, ingredientes e aditivos, além de cervejas, vinhos, destilados, sucos e néctares.</p></article>
     <article class="faq-item reveal"><h3>Como solicitar uma avaliação?</h3><p>Preencha o formulário com o serviço desejado ou chame no WhatsApp. Assim, a equipe entende o cenário e direciona os próximos passos.</p></article>
+    <article class="faq-item reveal"><h3>A JMD3 realiza perícia em cargas e contêineres avariados?</h3><p>Sim. Fazemos inspeção de cargas e contêineres, avaliação de avarias, vazamentos, contaminações e alterações de temperatura, com laudo técnico e parecer pericial.</p></article>
+    <article class="faq-item reveal"><h3>O serviço é uma perícia oficial da Receita Federal?</h3><p>Não. A JMD3 presta perícias particulares e assistência técnica. Atos oficiais dependem do credenciamento e da designação correspondentes.</p></article>
+    <article class="faq-item reveal"><h3>Quais produtos podem ser periciados?</h3><p>Alimentos, rações, bebidas, vegetais e óleos, azeites e gorduras vegetais, em importação, exportação e transporte nacional.</p></article>
   </div>
 </section>
 
@@ -1283,7 +1303,7 @@ body { padding-top: 0; }
   <div class="contact-info reveal">
     <div class="section-tag">Fale Conosco</div>
     <h2 class="section-title">Vamos Trabalhar Juntos</h2>
-    <p>Entre em contato com nossa equipe técnica e descubra como a JMD3 pode otimizar seus processos de inspeção veterinária.</p>
+    <p>Entre em contato com nossa equipe técnica e descubra como a JMD3 pode apoiar suas operações de inspeção, perícia e comércio exterior.</p>
 
 
 <div class="contact-item">
@@ -1333,10 +1353,14 @@ body { padding-top: 0; }
         <label for="servicoHome">Serviço de Interesse</label>
         <select id="servicoHome" name="servico" required>
           <option value="">Selecione um serviço…</option>
-          <option>Produtos de Origem Animal (SIF/MAPA)</option>
+          <option>Inspeção Veterinária (Produtos de Origem Animal)</option>
           <option>Alimentação Animal</option>
           <option>Bebidas (MAPA)</option>
-          <option>Comércio Exterior — Perícia Portuária</option>
+          <option>Perícias Portuárias e Aduaneiras</option>
+          <option>Perícia de Avarias em Cargas e Contêineres</option>
+          <option>Assistência Técnica Aduaneira</option>
+          <option>Laudos e Pareceres Técnico-Científicos</option>
+          <option>Outro assunto</option>
         </select>
       </div>
       <div class="form-row">
@@ -1366,7 +1390,7 @@ body { padding-top: 0; }
   <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
   <a href="https://www.linkedin.com/in/airson-junior-a565262a3/?originalSubdomain=br" target="_blank" rel="noopener" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
 </div>
-  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária</p>
+  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária, Perícias Portuárias e Laudos Técnicos</p>
   <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
 </footer>
 
@@ -1469,5 +1493,15 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<script>
+(function(){document.querySelectorAll('[data-carousel]').forEach(function(w){var c=w.querySelector('.carousel'),p=w.querySelector('.car-prev'),n=w.querySelector('.car-next'),paused=false;
+function step(d){var card=c.querySelector('.seg-card');var s=card.offsetWidth+18;var end=c.scrollLeft+c.clientWidth>=c.scrollWidth-4;
+if(d>0&&end){c.scrollTo({left:0})}else if(d<0&&c.scrollLeft<=4){c.scrollTo({left:c.scrollWidth})}else{c.scrollBy({left:d*s})}}
+p.addEventListener('click',function(){step(-1)});n.addEventListener('click',function(){step(1)});
+['mouseenter','touchstart','focusin'].forEach(function(e){w.addEventListener(e,function(){paused=true},{passive:true})});
+['mouseleave','focusout'].forEach(function(e){w.addEventListener(e,function(){paused=false})});
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(function(){if(!paused&&!document.hidden)step(1)},5000)}
+c.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});});})();
+</script>
 </body>
 </html>

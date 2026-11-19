@@ -11,11 +11,14 @@
   <meta name="twitter:card" content="summary_large_image"/>
   <meta property="og:locale" content="pt_BR"/>
   <meta property="og:site_name" content="JMD3"/>
-  <meta property="og:image" content="https://jmd3com.vercel.app/logo-jmd3.webp"/>
-  <meta property="og:url" content="https://jmd3com.vercel.app/servico-comercio-exterior.html"/>
+  <meta property="og:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:url" content="https://jmd3.vercel.app/servico-comercio-exterior.html"/>
   <meta name="theme-color" content="#050A0E"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="canonical" href="https://jmd3com.vercel.app/servico-comercio-exterior.html"/>
+    <link rel="canonical" href="https://jmd3.vercel.app/servico-comercio-exterior.html"/>
   <link rel="icon" type="image/x-icon" href="ICON.ico">
   <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -203,6 +206,15 @@ body { padding-top: 0; }
 .seg-card img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;display:block}
 .seg-body{padding:14px}.seg-body h3{font-family:'Syne',sans-serif;font-size:.95rem;color:var(--teal);margin-bottom:6px}.seg-body p{font-size:.85rem;line-height:1.6;color:var(--muted)}
 .x-list{list-style:none;margin-top:16px}.x-list li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--border);line-height:1.6}.x-list li::before{content:"✓";position:absolute;left:0;color:var(--teal)}
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--teal) transparent;-webkit-overflow-scrolling:touch}
+.carousel .seg-card{flex:0 0 min(300px,78vw);scroll-snap-align:start;display:flex;flex-direction:column}
+.carousel .seg-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center}
+.seg-points{list-style:none;margin-top:12px}.seg-points li{font-size:.82rem;color:var(--muted);padding:6px 0 6px 20px;position:relative;border-top:1px solid var(--border)}
+.seg-points li::before{content:"✓";position:absolute;left:0;color:var(--teal)}
+.car-btn{position:absolute;top:38%;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--teal);background:rgba(5,10,14,.85);color:var(--teal);font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.car-prev{left:-8px}.car-next{right:-8px}.car-btn:hover{background:var(--teal);color:#05080A}
+@media(max-width:600px){.car-btn{width:38px;height:38px}}
 </style>
 </head>
 <body>
@@ -239,7 +251,11 @@ body { padding-top: 0; }
       <h2 class="block-title reveal">Inspeção, Avaliação de Danos e Laudos Técnicos</h2>
       <p class="intro-text reveal">A <strong>JMD3</strong> oferece serviços especializados de inspeção de mercadorias, avaliação de danos e avarias, investigação de não conformidades e elaboração de laudos e pareceres técnicos em operações portuárias, logísticas e de comércio exterior.</p>
       <h2 class="block-title reveal" style="margin-top:48px">Segmentos Atendidos</h2>
-      <div class="seg-grid"><div class="seg-card reveal"><img src="img/food.webp" alt="Alimentos de origem animal" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FOOD – Alimentos</h3><p>Carnes, pescados, laticínios, produtos processados e demais alimentos de origem animal e vegetal.</p></div></div><div class="seg-card reveal"><img src="img/feed.webp" alt="Rações e ingredientes para alimentação animal" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FEED – Alimentação Animal</h3><p>Rações, ingredientes, matérias-primas, aditivos e produtos destinados à alimentação animal.</p></div></div><div class="seg-card reveal"><img src="img/bebidas.webp" alt="Cerveja, vinho e destilados" loading="lazy" width="640" height="960"><div class="seg-body"><h3>BEBIDAS</h3><p>Vinhos, cervejas, destilados, sucos e demais bebidas alcoólicas e não alcoólicas.</p></div></div><div class="seg-card reveal"><img src="img/vegetais.webp" alt="Grãos, frutas e produtos vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>VEGETAIS</h3><p>Grãos, frutas, sementes, produtos agrícolas e vegetais processados.</p></div></div><div class="seg-card reveal"><img src="img/oleos.webp" alt="Azeites, óleos e gorduras vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>ÓLEOS, AZEITES E GORDURAS VEGETAIS</h3><p>Azeites de oliva, óleos de soja, girassol, milho, canola, palma, coco e demais óleos e gorduras vegetais.</p></div></div></div>
+      <div class="carousel-wrap" data-carousel>
+    <button class="car-btn car-prev" type="button" aria-label="Segmento anterior">‹</button>
+    <div class="carousel" tabindex="0" aria-label="Segmentos atendidos"><article class="seg-card"><img src="img/food.webp" alt="Alimentos" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FOOD – Alimentos</h3><p>Alimentos de origem animal e vegetal: carnes, pescados, laticínios e produtos processados.</p><ul class="seg-points"><li>Conservação e cadeia do frio</li><li>Identidade e integridade da carga</li><li>Avarias, deterioração e alterações térmicas</li></ul></div></article><article class="seg-card"><img src="img/feed.webp" alt="Rações e ingredientes" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FEED – Alimentação Animal</h3><p>Rações, ingredientes, matérias-primas, aditivos e produtos para alimentação animal.</p><ul class="seg-points"><li>Condições de transporte e armazenamento</li><li>Contaminações e perdas</li><li>Identidade e rastreabilidade</li></ul></div></article><article class="seg-card"><img src="img/bebidas.webp" alt="Cerveja, vinho e destilados" loading="lazy" width="640" height="960"><div class="seg-body"><h3>BEBIDAS</h3><p>Vinhos, cervejas, destilados, sucos e demais bebidas alcoólicas e não alcoólicas.</p><ul class="seg-points"><li>Vazamentos, quebras e avarias</li><li>Alterações de temperatura</li><li>Integridade de embalagens e lacres</li></ul></div></article><article class="seg-card"><img src="img/vegetais.webp" alt="Grãos, frutas e vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>VEGETAIS</h3><p>Grãos, frutas, sementes, produtos agrícolas e vegetais processados.</p><ul class="seg-points"><li>Deterioração, umidade e infestações</li><li>Qualidade e integridade da carga</li><li>Condições de transporte e armazenamento</li></ul></div></article><article class="seg-card"><img src="img/oleos.webp" alt="Azeites e óleos vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>ÓLEOS, AZEITES E GORDURAS VEGETAIS</h3><p>Azeites de oliva, óleos de soja, girassol, milho, canola, palma, coco e similares.</p><ul class="seg-points"><li>Inspeção de tanques e embalagens</li><li>Identidade e possíveis adulterações</li><li>Amostragem para análise laboratorial</li></ul></div></article></div>
+    <button class="car-btn car-next" type="button" aria-label="Próximo segmento">›</button>
+  </div>
       <h2 class="block-title reveal" style="margin-top:48px">Serviços Especializados</h2>
       <ul class="x-list reveal"><li>Inspeção de cargas, contêineres, tanques e embalagens.</li><li>Avaliação de avarias, vazamentos, perdas e contaminações.</li><li>Investigação de possíveis fraudes, adulterações e não conformidades.</li><li>Avaliação das condições de transporte, armazenamento e conservação.</li><li>Verificação de identidade, integridade e rastreabilidade das mercadorias.</li><li>Amostragem técnica e encaminhamento para análises laboratoriais, quando necessário.</li><li>Elaboração de laudos periciais e pareceres técnico-científicos.</li><li>Assistência técnica em procedimentos aduaneiros, disputas comerciais e demandas de seguradoras.</li></ul>
       <div class="norm-strip reveal" style="margin-top:40px">
@@ -299,5 +315,15 @@ body { padding-top: 0; }
   document.querySelectorAll('.reveal').forEach(el=>new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});},{threshold:0.1}).observe(el));
 </script>
 
+<script>
+(function(){document.querySelectorAll('[data-carousel]').forEach(function(w){var c=w.querySelector('.carousel'),p=w.querySelector('.car-prev'),n=w.querySelector('.car-next'),paused=false;
+function step(d){var card=c.querySelector('.seg-card');var s=card.offsetWidth+18;var end=c.scrollLeft+c.clientWidth>=c.scrollWidth-4;
+if(d>0&&end){c.scrollTo({left:0})}else if(d<0&&c.scrollLeft<=4){c.scrollTo({left:c.scrollWidth})}else{c.scrollBy({left:d*s})}}
+p.addEventListener('click',function(){step(-1)});n.addEventListener('click',function(){step(1)});
+['mouseenter','touchstart','focusin'].forEach(function(e){w.addEventListener(e,function(){paused=true},{passive:true})});
+['mouseleave','focusout'].forEach(function(e){w.addEventListener(e,function(){paused=false})});
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(function(){if(!paused&&!document.hidden)step(1)},5000)}
+c.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});});})();
+</script>
 </body>
 </html>
