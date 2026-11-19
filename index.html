@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Inspeção veterinária, perícias portuárias, assistência técnica aduaneira e laudos técnico-científicos em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente. Blumenau/SC."/>
+  <meta name="keywords" content="inspeção veterinária, consultoria veterinária, inspeção sanitária, inspeção de produtos de origem animal, SIF, MAPA, RIISPOA, consultoria MAPA, regularização MAPA, laudo veterinário, laudo técnico veterinário, auditoria sanitária, vigilância sanitária animal, conformidade sanitária, rastreabilidade animal, rastreabilidade de alimentos, segurança dos alimentos, qualidade de alimentos, indústria de alimentos, frigorífico, laticínio, indústria de carnes, indústria de pescados, indústria de ovos, mel e derivados, produtos de origem animal, alimentação animal, fábrica de ração, registro de ração, suplementos para animais, aditivos para ração, premix, bebidas MAPA, registro de bebidas, cervejaria, vinícola, cachaçaria, sucos e néctares, comércio exterior, importação de alimentos, exportação de alimentos, perícia portuária, perícia em carga, certificação sanitária, habilitação de exportador, inspeção federal, serviço de inspeção federal, consultoria SIF, consultoria SISBI, consultoria SIM, fiscalização sanitária, adequação regulatória, documentação sanitária, inspeção industrial, inspeção de alimentos, consultoria agroindustrial, veterinário Blumenau, inspeção veterinária Blumenau, consultoria MAPA Blumenau, inspeção veterinária Santa Catarina, consultoria sanitária SC, laudo técnico Blumenau"/>
+  <meta name="robots" content="index, follow"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="JMD3 | Inspeção Veterinária, Perícias Portuárias e Laudos Técnico-Científicos"/>
+  <meta property="og:description" content="Inspeção veterinária, perícias portuárias, assistência técnica aduaneira e laudos técnico-científicos em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente. Blumenau/SC."/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta property="og:locale" content="pt_BR"/>
+  <meta property="og:site_name" content="JMD3"/>
+  <meta property="og:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:image" content="https://jmd3.vercel.app/og-image.jpg"/>
+  <meta property="og:url" content="https://jmd3.vercel.app/"/>
+    <link rel="canonical" href="https://jmd3.vercel.app/"/>
+  <link rel="icon" type="image/x-icon" href="ICON.ico">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <title>JMD3 | Inspeção Veterinária, Perícias Portuárias e Laudos Técnico-Científicos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="jmd3-icons.css"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"JMD3 Tecnologia, Inovação e Soluções","description":"Inspeção veterinária, perícias portuárias, assistência técnica aduaneira e laudos técnico-científicos em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente.","url":"https://jmd3.vercel.app/","image":"https://jmd3.vercel.app/logo-jmd3.webp","telephone":"+5547992248189","email":"tsaeconsultoria@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Blumenau","addressRegion":"SC","addressCountry":"BR"},"areaServed":["Blumenau","Santa Catarina","Brasil"],"sameAs":["https://www.instagram.com/jmd3insp/","https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/"],"serviceType":["Inspeção veterinária","Perícias portuárias","Perícia de avarias em cargas e contêineres","Assistência técnica aduaneira","Laudos e pareceres técnico-científicos","Avaliação da cadeia do frio","Assistência técnica pericial"]}
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+
+:root {
+  --bg: #050A0E;
+  --bg2: #08111A;
+  --teal: #3ECFCF;
+  --teal2: #2AADB5;
+  --teal-dim: rgba(62,207,207,0.12);
+  --white: #F0F4F8;
+  --muted: #6B8A9A;
+  --border: rgba(62,207,207,0.18);
+  --card: rgba(8,22,32,0.85);
+  --error: #FF6B6B;
+  --success: #25D366;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--teal2); border-radius: 10px; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 6vw;
+  background: rgba(5,10,14,0.75);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.9rem;
+  letter-spacing: 4px;
+  color: var(--white);
+}
+.nav-logo span { color: var(--teal); }
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .25s;
+}
+.nav-links a:hover { color: var(--teal); }
+
+/* ── DROPDOWN ── */
+.nav-item { position: relative; }
+
+.nav-item .dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(5,10,14,0.97);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  min-width: 280px;
+  z-index: 200;
+  padding: 8px 0;
+}
+.nav-item .dropdown::before {
+  content: '';
+  position: absolute;
+  top: -5px; left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 10px; height: 10px;
+  background: rgba(5,10,14,0.97);
+  border-left: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+.nav-item .dropdown.open { display: block; }
+
+.dropdown a {
+  display: block;
+  padding: 11px 22px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--muted);
+  white-space: nowrap;
+  transition: color .2s, background .2s;
+  border-left: 2px solid transparent;
+}
+.dropdown a:hover {
+  color: var(--teal);
+  background: var(--teal-dim);
+  border-left-color: var(--teal);
+}
+
+.nav-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.6rem;
+  vertical-align: middle;
+  transition: transform .25s;
+}
+.nav-arrow.open { transform: rotate(180deg); }
+
+.hamburger { display: none; background: transparent; border: 0; color: inherit; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 110px 6vw 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-left { display: flex; flex-direction: column; justify-content: center; }
+.hero-right {
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+  gap: 32px;
+}
+
+/* grid lines background */
+#hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+  opacity: .35;
+  pointer-events: none;
+}
+
+/* glowing orb */
+#hero::after {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  right: -80px; top: 50%; transform: translateY(-50%);
+  background: radial-gradient(circle, rgba(62,207,207,0.14) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-tag {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 18px;
+  display: flex; align-items: center; gap: 12px;
+  animation: fadeUp .8s ease both;
+}
+.hero-tag::before { content: ''; width: 36px; height: 1px; background: var(--teal); }
+
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 5.5vw, 6rem);
+  line-height: .95;
+  letter-spacing: 2px;
+  animation: fadeUp .8s .15s ease both;
+}
+.hero-title em { font-style: normal; -webkit-text-stroke: 1.5px var(--teal); color: transparent; }
+
+.hero-sub {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--muted);
+  max-width: 440px;
+  line-height: 1.75;
+  animation: fadeUp .8s .3s ease both;
+}
+
+.hero-cta {
+  margin-top: 32px;
+  display: flex; gap: 16px; flex-wrap: wrap;
+  animation: fadeUp .8s .45s ease both;
+}
+.hero-reassurance { margin-top: 16px; color: var(--muted); font-size: .8rem; line-height: 1.5; }
+.hero-reassurance strong { color: var(--white); font-weight: 500; }
+
+.btn-primary {
+  padding: 14px 32px;
+  background: var(--teal);
+  color: #050A0E;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none; cursor: pointer;
+  clip-path: polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px));
+  transition: background .25s, transform .2s;
+}
+.btn-primary:hover { background: var(--teal2); transform: translateY(-2px); }
+.btn-primary:disabled { background: var(--muted); cursor: not-allowed; opacity: 0.6; }
+
+.btn-ghost {
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--teal);
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.82rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color .25s, color .25s;
+}
+.btn-ghost:hover { border-color: var(--teal); }
+
+/* stats grid — right side of hero */
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  width: 100%;
+  animation: fadeUp .8s .5s ease both;
+}
+.stat-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 28px 24px;
+  position: relative;
+}
+.stat-item::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 30%; height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem;
+  color: var(--teal);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ── SECTION COMMON ── */
+section { padding: 110px 6vw; }
+.section-tag {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px;
+}
+.section-tag::before {
+  content: '';
+  width: 24px; height: 1px;
+  background: var(--teal);
+}
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  letter-spacing: 1px;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+/* ── ABOUT ── */
+#sobre {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+
+.about-desc {
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1rem;
+  margin-bottom: 24px;
+}
+
+.about-right {
+  position: relative;
+}
+
+.about-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 36px;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+.about-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 40%; height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+.pillar {
+  display: flex; gap: 18px; align-items: flex-start;
+  margin-bottom: 28px;
+}
+.pillar:last-child { margin-bottom: 0; }
+.pillar-icon {
+  width: 40px; height: 40px;
+  background: var(--teal-dim);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+.pillar-text h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+}
+.pillar-text p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ── SERVICES ── */
+#servicos { background: var(--bg2); }
+
+.services-header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  margin-bottom: 60px; flex-wrap: wrap; gap: 20px;
+}
+
+.services-header p {
+  color: var(--muted);
+  max-width: 360px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.svc-list {
+  list-style: none;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.svc-list li {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+  padding-left: 16px;
+  position: relative;
+}
+.svc-list li::before {
+  content: '';
+  position: absolute; left: 0; top: 8px;
+  width: 5px; height: 1px;
+  background: var(--teal);
+}
+
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 42px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .3s, transform .3s;
+  cursor: default;
+}
+.service-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0;
+  width: 100%; height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .4s ease;
+}
+.service-card:hover { border-color: rgba(62,207,207,0.4); transform: translateY(-4px); }
+.service-card:hover::after { transform: scaleX(1); }
+
+.service-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: var(--teal-dim);
+  line-height: 1;
+  margin-bottom: 20px;
+  -webkit-text-stroke: 1px rgba(62,207,207,0.25);
+  color: transparent;
+}
+
+.service-icon {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.service-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+  letter-spacing: .5px;
+}
+.service-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.service-tag {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px 14px;
+  background: var(--teal-dim);
+  border: 1px solid var(--border);
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+/* ── PROCESS ── */
+#atendimento {
+  background: var(--bg);
+}
+
+.process-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 54px;
+  flex-wrap: wrap;
+}
+
+.process-header p {
+  color: var(--muted);
+  max-width: 420px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+}
+
+.process-step {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 34px 28px;
+  position: relative;
+  min-height: 235px;
+}
+
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 36%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--teal), transparent);
+}
+
+.process-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.3rem;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(62,207,207,0.42);
+  margin-bottom: 18px;
+}
+
+.process-icon {
+  width: 42px;
+  height: 42px;
+  background: var(--teal-dim);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: var(--teal);
+}
+
+.process-icon .svg-symbol {
+  width: 20px;
+  height: 20px;
+}
+
+.process-step h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: .5px;
+  margin-bottom: 12px;
+}
+
+.process-step p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* FAQ */
+#faq { background: var(--bg2); }
+.faq-header { max-width: 720px; margin-bottom: 38px; }
+.faq-header p { color: var(--muted); line-height: 1.7; margin-top: 14px; }
+.faq-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.faq-item { background: var(--card); border: 1px solid var(--border); padding: 24px; }
+.faq-item h3 { font-family: 'Syne', sans-serif; font-size: .95rem; margin-bottom: 10px; color: var(--white); }
+.faq-item p { color: var(--muted); font-size: .9rem; line-height: 1.65; }
+.contact-form-heading { font-family: 'Syne', sans-serif; font-size: 1.15rem; margin-bottom: 8px; }
+.contact-form-intro { color: var(--muted); font-size: .88rem; line-height: 1.55; margin-bottom: 26px; }
+
+/* ── CONTACT ── */
+#contato {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.contact-info h2 { margin-bottom: 16px; }
+.contact-info p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.contact-item {
+  display: flex; gap: 16px; align-items: center;
+  margin-bottom: 20px;
+}
+.contact-icon {
+  width: 42px; height: 42px;
+  background: var(--teal-dim);
+  border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.contact-item-text span {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 3px;
+  font-family: 'Syne', sans-serif;
+}
+.contact-item-text strong {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+/* form */
+.contact-form {
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 44px;
+  position: relative;
+}
+.contact-form::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 50%; height: 2px;
+  background: linear-gradient(270deg, var(--teal), transparent);
+}
+
+.form-row { margin-bottom: 22px; }
+.form-row label {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color .25s;
+  resize: none;
+}
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus { border-color: var(--teal); }
+.form-row select option { background: #0d1f2d; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+/* ── PRIVACY CONSENT ── */
+.privacy-consent { margin: 4px 0 22px; }
+.privacy-consent label { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 12px; 
+  color: var(--muted); 
+  font-size: 0.82rem; 
+  line-height: 1.55; 
+  cursor: pointer;
+  transition: color .25s;
+}
+.privacy-consent label:hover { color: var(--white); }
+
+/* Custom checkbox styling */
+.privacy-consent input[type="checkbox"] { 
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px; 
+  min-width: 20px; 
+  height: 20px; 
+  margin-top: 1px;
+  background: rgba(255,255,255,0.03);
+  border: 2px solid var(--border);
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all .25s ease;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.privacy-consent input[type="checkbox"]:hover {
+  border-color: var(--teal);
+  background: rgba(62,207,207,0.08);
+}
+
+.privacy-consent input[type="checkbox"]:checked {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: inset 0 0 0 3px var(--bg);
+}
+
+.privacy-consent input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: var(--bg);
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.privacy-consent input[type="checkbox"]:focus {
+  outline: 2px solid var(--teal);
+  outline-offset: 2px;
+}
+
+.privacy-consent input[type="checkbox"].error {
+  border-color: var(--error);
+  background: rgba(255,107,107,0.1);
+  animation: shake .4s ease;
+}
+
+.privacy-consent a { 
+  color: var(--teal); 
+  text-decoration: none; 
+  font-weight: 700;
+  transition: color .25s;
+}
+.privacy-consent a:hover { 
+  color: var(--teal2); 
+  text-decoration: underline;
+}
+
+/* Privacy error message */
+.privacy-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(255,107,107,0.15);
+  border: 1px solid var(--error);
+  border-radius: 4px;
+  color: var(--error);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-error::before {
+  content: '⚠';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.privacy-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  background: rgba(37,211,102,0.15);
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  color: var(--success);
+  font-size: 0.82rem;
+  margin-top: 8px;
+  animation: slideDown .3s ease;
+}
+
+.privacy-success::before {
+  content: '✓';
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* Form submit button state */
+.btn-primary[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── FOOTER ── */
+footer {
+  padding: 36px 6vw;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+}
+.footer-logo span { color: var(--teal); }
+footer p {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.footer-links { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.footer-links a { color: var(--teal); font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; transition: color .25s; }
+.footer-links a:hover { color: var(--teal2); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  #sobre, #contato { grid-template-columns: 1fr; gap: 48px; }
+  .hero-stats { flex-wrap: wrap; gap: 28px; position: static; margin-top: 56px; }
+  nav { padding: 16px 5vw; }
+  .nav-links { gap: 20px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .faq-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  nav { padding: 16px 5vw; }
+  .nav-logo img { height: 48px !important; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px; left: 0; right: 0;
+    background: rgba(5,10,14,0.97);
+    backdrop-filter: blur(16px);
+    padding: 28px 6vw 36px;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+    z-index: 99;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .nav-links.open a { font-size: 1rem; }
+  /* Mobile dropdown */
+  .nav-links.open .dropdown.open {
+    display: block;
+    position: static;
+    transform: none;
+    border: none;
+    border-top: 1px solid var(--border);
+    backdrop-filter: none;
+    background: transparent;
+    min-width: unset;
+    padding: 4px 0 0 16px;
+    margin-top: 8px;
+  }
+  .nav-links.open .dropdown::before { display: none; }
+  .nav-links.open .dropdown a { padding: 9px 8px; font-size: 0.88rem; border-left: none; }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px; height: 2px;
+    background: var(--white);
+    transition: all .3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  section { padding: 80px 5vw; }
+  .contact-form { padding: 28px 20px; }
+  .services-header { flex-direction: column; }
+  .process-header { align-items: flex-start; margin-bottom: 36px; }
+  .process-grid { grid-template-columns: 1fr; }
+  .process-step { min-height: auto; padding: 28px 22px; }
+}
+/* ── WHATSAPP BUTTON ── */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  z-index: 999;
+  width: 58px; height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.4);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform .25s, box-shadow .25s;
+  animation: pulse-wa 2.5s infinite;
+}
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 32px rgba(37,211,102,0.6);
+}
+.whatsapp-btn img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+}
+@keyframes pulse-wa {
+  0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.4); }
+  50%       { box-shadow: 0 4px 36px rgba(37,211,102,0.7); }
+}
+
+/* ── DESKTOP ENFORCED ── */
+@media (min-width: 901px) {
+  #hero { grid-template-columns: 1fr 1fr !important; }
+  .hero-stats { grid-template-columns: 1fr 1fr !important; position: static !important; }
+  .content-grid { grid-template-columns: 2fr 1fr !important; }
+  .items-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .contact-section { grid-template-columns: 1fr 1fr !important; }
+  .map-strip { grid-template-columns: 1fr 1fr !important; }
+  #sobre { grid-template-columns: 1fr 1fr !important; }
+  #contato { grid-template-columns: 1fr 1fr !important; }
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .nav-links { display: flex !important; }
+  .hamburger { display: none !important; }
+  .form-grid { grid-template-columns: 1fr 1fr !important; }
+  .sidebar { position: sticky !important; top: 100px !important; }
+}
+
+/* ── NAV CLEARANCE ── */
+html { scroll-padding-top: 80px; }
+body { padding-top: 0; }
+
+@media (max-width: 600px) {
+  #hero {
+    grid-template-columns: 1fr !important;
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    gap: 40px !important;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr 1fr !important;
+    position: static !important;
+    margin-top: 0 !important;
+  }
+  .page-hero {
+    padding-top: 100px !important;
+    min-height: auto !important;
+  }
+}
+
+/* Logo image fix */
+.nav-logo img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+  
+/* SOCIAL LINKS */
+.social-links { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-links a { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; background: var(--teal-dim); border: 1px solid var(--border); color: var(--teal); text-decoration: none; transition: border-color .25s, color .25s, transform .2s; }
+.social-links a:hover { border-color: var(--teal); color: var(--white); transform: translateY(-2px); }
+.social-links svg { width: 17px; height: 17px; fill: currentColor; }
+.social-panel { margin-top: 28px; }
+.social-panel-title { display: block; font-family: 'Syne', sans-serif; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 12px; }
+.social-links-large a { width: 42px; height: 42px; }
+.social-links-large svg { width: 19px; height: 19px; }
+@media (max-width: 600px) {
+  .whatsapp-btn { width: 52px; height: 52px; right: 18px; bottom: 18px; }
+  .whatsapp-btn img { width: 100%; height: 100%; }
+}
+
+
+.svc-link{display:inline-block;margin-top:14px;color:var(--teal);font-size:.85rem;text-decoration:none;font-weight:500}
+.x-sec{padding:80px 6%}.x-alt{background:var(--bg2)}
+.x-lead{color:var(--muted);max-width:720px;line-height:1.7;margin:14px 0 28px}
+.seg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.seg-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.seg-card img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;display:block}
+.seg-ico{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--teal-dim);color:var(--teal);font-size:3rem}
+.seg-body{padding:16px}.seg-body h3{font-family:'Syne',sans-serif;font-size:1rem;color:var(--teal)}
+.seg-body span{display:block;font-size:.75rem;color:var(--muted);margin:2px 0 8px}.seg-body p{font-size:.88rem;line-height:1.6}
+.avarias-wrap{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:40px;align-items:center}
+.avarias-wrap img{width:100%;max-height:560px;object-fit:cover;object-position:top;border-radius:14px;border:1px solid var(--border)}
+.x-list{list-style:none;margin:0 0 28px}.x-list li{padding:10px 0 10px 26px;position:relative;border-bottom:1px solid var(--border)}
+.x-list li::before{content:"✓";position:absolute;left:0;color:var(--teal)}
+.esp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:24px}
+.esp{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center;color:var(--teal);font-size:2rem}
+.esp h4{font-family:'Syne',sans-serif;font-size:.95rem;color:var(--white);margin-top:10px}
+.x-aviso{padding:28px 6%;background:var(--teal-dim);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.x-aviso p{font-size:.88rem;line-height:1.7;color:var(--muted);max-width:900px}.x-aviso strong{color:var(--teal)}
+@media(max-width:800px){.avarias-wrap{grid-template-columns:1fr}.x-sec{padding:56px 6%}}
+.content-grid>div{min-width:0}.carousel-wrap{min-width:0;max-width:100%}
+.carousel-wrap{position:relative}
+.carousel{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:thin;scrollbar-color:var(--teal) transparent;-webkit-overflow-scrolling:touch}
+.carousel .seg-card{flex:0 0 min(300px,78vw);scroll-snap-align:start;display:flex;flex-direction:column}
+.carousel .seg-card img{width:100%;height:auto;aspect-ratio:2/3;object-fit:cover;object-position:center}
+.seg-points{list-style:none;margin-top:12px}.seg-points li{font-size:.82rem;color:var(--muted);padding:6px 0 6px 20px;position:relative;border-top:1px solid var(--border)}
+.seg-points li::before{content:"✓";position:absolute;left:0;color:var(--teal)}
+.car-btn{position:absolute;top:38%;z-index:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--teal);background:rgba(5,10,14,.85);color:var(--teal);font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.car-prev{left:-8px}.car-next{right:-8px}.car-btn:hover{background:var(--teal);color:#05080A}
+@media(max-width:600px){.car-btn{width:38px;height:38px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="index.html" class="nav-logo"><img src="logo-jmd3.webp" alt="JMD3" style="height: 60px; width: auto; object-fit: contain; display: block;"/></a>
+  <ul class="nav-links" id="navLinks">
+    <li class="nav-item"><a href="#hero" onclick="closeMenu()">Home</a></li>
+    <li class="nav-item"><a href="sobre.html" onclick="closeMenu()">Sobre Nós</a></li>
+    <li class="nav-item">
+      <a href="#servicos" onclick="toggleDropdown(event)">Serviços <span class="nav-arrow" id="navArrow">▼</span></a>
+      <div class="dropdown" id="servDropdown">
+        <a href="servico-produtos-origem-animal.html">Produtos de Origem Animal</a>
+        <a href="servico-alimentacao-animal.html">Alimentação Animal</a>
+        <a href="servico-bebidas.html">Bebidas (MAPA)</a>
+        <a href="servico-comercio-exterior.html">Perícias Portuárias e Aduaneiras</a>
+        <a href="#avarias">Perícia de Avarias em Cargas</a>
+        <a href="#laudos">Laudos Técnico-Científicos</a>
+      </div>
+    </li>
+    <li class="nav-item"><a href="contato.html" onclick="closeMenu()">Contato</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Inspeção &amp; Perícia &amp; Laudos</div>
+    <h1 class="hero-title">
+      Inspeção Veterinária,<br><em>Perícias Portuárias</em><br>e Laudos Técnico-Científicos
+    </h1>
+    <p class="hero-sub">Excelência técnica, segurança sanitária e confiabilidade nas operações industriais, portuárias e de comércio exterior.</p>
+    <div class="hero-cta">
+      <a href="#contato" class="btn-primary">Solicite uma Avaliação Técnica</a>
+      <a href="#servicos" class="btn-ghost">Conheça os Serviços</a>
+    </div>
+    <p class="hero-reassurance"><strong>Atendimento técnico em Blumenau e região.</strong> Conte sua necessidade e receba a orientação para o próximo passo.</p>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Anos de Experiência</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Inspeções Realizadas</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="svg-symbol icon-shield-check" aria-hidden="true"></span></div>
+        <div class="stat-label">Foco em Conformidade</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num"><span class="svg-symbol icon-pin" aria-hidden="true"></span></div>
+        <div class="stat-label">Blumenau & Região</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+
+<section id="sobre">
+  <div class="about-left reveal">
+    <div class="section-tag">Quem Somos</div>
+    <h2 class="section-title">Rigor Técnico em Cada Avaliação</h2>
+    <p class="about-desc">
+      A JMD3 oferece serviços especializados de inspeção veterinária, perícias portuárias, assistência técnica aduaneira, avaliações técnico-científicas e elaboração de laudos e pareceres técnicos, com atuação multidisciplinar nas áreas de Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente, respeitando as habilitações profissionais aplicáveis.
+    </p>
+    <a href="#contato" class="btn-primary" style="display:inline-block; margin-top: 8px;">Entre em Contato</a>
+  </div>
+
+  <div class="about-right reveal">
+    <div class="about-card">
+      <div class="pillar">
+        <div class="pillar-icon"><span class="svg-symbol icon-microscope" aria-hidden="true"></span></div>
+        <div class="pillar-text">
+          <h4>Rigor Técnico</h4>
+          <p>Avaliações baseadas em critérios técnico-científicos, evidências documentadas e rastreabilidade.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><span class="svg-symbol icon-bulb" aria-hidden="true"></span></div>
+        <div class="pillar-text">
+          <h4>Atuação Multidisciplinar</h4>
+          <p>Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente, respeitando as habilitações profissionais.</p>
+        </div>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon"><span class="svg-symbol icon-shield-check" aria-hidden="true"></span></div>
+        <div class="pillar-text">
+          <h4>Conformidade Legal</h4>
+          <p>Atuação alinhada à legislação aplicável, às normas do MAPA e às exigências das operações de comércio exterior.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+
+<section id="servicos">
+  <div class="services-header">
+    <div class="services-header-left reveal">
+      <div class="section-tag">O Que Fazemos</div>
+      <h2 class="section-title">Serviços Especializados</h2>
+    </div>
+    <p class="reveal" style="color: var(--muted); max-width: 340px; font-size: .95rem; line-height: 1.7;">
+      Inspeção, perícia e assistência técnica para importadores, exportadores, indústrias, operadores logísticos, seguradoras e escritórios de advocacia.
+    </p>
+  </div>
+
+  <div class="services-grid">
+<div class="service-card reveal">
+  <div class="service-num">01</div>
+  <div class="service-icon"><span class="svg-symbol icon-meat" aria-hidden="true"></span></div>
+  <h3>Inspeção Veterinária</h3>
+  <p>Avaliação sanitária, qualidade, conservação e conformidade de produtos de origem animal.</p>
+  <a class="svc-link" href="servico-produtos-origem-animal.html">Saiba mais →</a>
+</div>
+
+<div class="service-card reveal">
+  <div class="service-num">02</div>
+  <div class="service-icon"><span class="svg-symbol icon-ship" aria-hidden="true"></span></div>
+  <h3>Perícias Portuárias e Comércio Exterior</h3>
+  <p>Inspeção técnica de cargas e contêineres, investigação de avarias, contaminações, alterações térmicas, perdas e não conformidades em importação e exportação.</p>
+  <a class="svc-link" href="servico-comercio-exterior.html">Saiba mais →</a>
+</div>
+
+<div class="service-card reveal">
+  <div class="service-num">03</div>
+  <div class="service-icon"><span class="svg-symbol icon-customs" aria-hidden="true"></span></div>
+  <h3>Assistência Técnica Aduaneira</h3>
+  <p>Avaliação técnica de mercadorias, apoio documental e acompanhamento de procedimentos de importação e exportação.</p>
+  <a class="svc-link" href="#aviso">Saiba mais →</a>
+</div>
+
+<div class="service-card reveal">
+  <div class="service-num">04</div>
+  <div class="service-icon"><span class="svg-symbol icon-flask" aria-hidden="true"></span></div>
+  <h3>Laudos, Perícias e Pareceres Técnico-Científicos</h3>
+  <p>Avaliações especializadas em Medicina Veterinária, Química, Química de Alimentos e Meio Ambiente.</p>
+  <a class="svc-link" href="#laudos">Saiba mais →</a>
+</div>
+
+<div class="service-card reveal">
+  <div class="service-num">05</div>
+  <div class="service-icon"><span class="svg-symbol icon-bolt" aria-hidden="true"></span></div>
+  <h3>Cadeia do Frio e Integridade de Cargas</h3>
+  <p>Avaliação de temperatura, transporte, armazenamento e comprometimento de produtos refrigerados e congelados.</p>
+  <a class="svc-link" href="#avarias">Saiba mais →</a>
+</div>
+
+<div class="service-card reveal">
+  <div class="service-num">06</div>
+  <div class="service-icon"><span class="svg-symbol icon-scale" aria-hidden="true"></span></div>
+  <h3>Assistência Técnica Pericial</h3>
+  <p>Suporte em disputas comerciais, processos judiciais e administrativos e demandas de seguradoras.</p>
+  <a class="svc-link" href="#contato">Saiba mais →</a>
+</div>
+
+  </div>
+</section>
+
+
+<!-- PERÍCIAS PORTUÁRIAS -->
+<section id="pericias" class="x-sec">
+  <div class="section-tag">Destaque</div>
+  <h2 class="section-title">Perícias Portuárias e Aduaneiras</h2>
+  <p class="x-lead">Inspeção de cargas, avaliação de danos, investigação de não conformidades e assistência técnica especializada.</p>
+  <div class="carousel-wrap" data-carousel>
+    <button class="car-btn car-prev" type="button" aria-label="Segmento anterior">‹</button>
+    <div class="carousel" tabindex="0" aria-label="Segmentos atendidos"><article class="seg-card"><img src="img/food.webp" alt="Alimentos" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FOOD – Alimentos</h3><p>Alimentos de origem animal e vegetal: carnes, pescados, laticínios e produtos processados.</p><ul class="seg-points"><li>Conservação e cadeia do frio</li><li>Identidade e integridade da carga</li><li>Avarias, deterioração e alterações térmicas</li></ul></div></article><article class="seg-card"><img src="img/feed.webp" alt="Rações e ingredientes" loading="lazy" width="640" height="960"><div class="seg-body"><h3>FEED – Alimentação Animal</h3><p>Rações, ingredientes, matérias-primas, aditivos e produtos para alimentação animal.</p><ul class="seg-points"><li>Condições de transporte e armazenamento</li><li>Contaminações e perdas</li><li>Identidade e rastreabilidade</li></ul></div></article><article class="seg-card"><img src="img/bebidas.webp" alt="Cerveja, vinho e destilados" loading="lazy" width="640" height="960"><div class="seg-body"><h3>BEBIDAS</h3><p>Vinhos, cervejas, destilados, sucos e demais bebidas alcoólicas e não alcoólicas.</p><ul class="seg-points"><li>Vazamentos, quebras e avarias</li><li>Alterações de temperatura</li><li>Integridade de embalagens e lacres</li></ul></div></article><article class="seg-card"><img src="img/vegetais.webp" alt="Grãos, frutas e vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>VEGETAIS</h3><p>Grãos, frutas, sementes, produtos agrícolas e vegetais processados.</p><ul class="seg-points"><li>Deterioração, umidade e infestações</li><li>Qualidade e integridade da carga</li><li>Condições de transporte e armazenamento</li></ul></div></article><article class="seg-card"><img src="img/oleos.webp" alt="Azeites e óleos vegetais" loading="lazy" width="640" height="960"><div class="seg-body"><h3>ÓLEOS, AZEITES E GORDURAS VEGETAIS</h3><p>Azeites de oliva, óleos de soja, girassol, milho, canola, palma, coco e similares.</p><ul class="seg-points"><li>Inspeção de tanques e embalagens</li><li>Identidade e possíveis adulterações</li><li>Amostragem para análise laboratorial</li></ul></div></article></div>
+    <button class="car-btn car-next" type="button" aria-label="Próximo segmento">›</button>
+  </div>
+
+</section>
+
+<!-- AVARIAS -->
+<section id="avarias" class="x-sec x-alt">
+  <div class="avarias-wrap">
+    <img class="reveal" src="img/comex.webp" alt="Navio, contêineres e caminhão em operação portuária" loading="lazy" width="640" height="960">
+    <div class="reveal">
+      <div class="section-tag">Novo</div>
+      <h2 class="section-title">Perícia de Avarias em Cargas e Contêineres</h2>
+      <p class="x-lead">Aplicável a todos os segmentos: Food, Feed, Bebidas, Vegetais e Óleos.</p>
+      <ul class="x-list"><li>Inspeção de cargas e contêineres.</li><li>Avaliação de avarias, vazamentos e contaminações.</li><li>Investigação de danos durante o transporte.</li><li>Avaliação de alterações de temperatura.</li><li>Verificação da integridade das mercadorias.</li><li>Elaboração de laudos técnicos e pareceres periciais.</li></ul>
+      <a class="btn-primary" href="https://wa.me/5547992248189?text=Ol%C3%A1%2C%20equipe%20JMD3.%20Gostaria%20de%20solicitar%20uma%20avalia%C3%A7%C3%A3o%20t%C3%A9cnica%20(inspe%C3%A7%C3%A3o%2C%20per%C3%ADcia%20ou%20laudo%20t%C3%A9cnico)." target="_blank" rel="noopener">Solicite uma Avaliação Técnica</a>
+    </div>
+  </div>
+</section>
+
+<!-- LAUDOS -->
+<section id="laudos" class="x-sec">
+  <div class="section-tag">Especialidades</div>
+  <h2 class="section-title">Laudos e Perícias Técnico-Científicas</h2>
+  <div class="esp-grid"><div class="esp reveal"><span class="svg-symbol icon-cow" aria-hidden="true"></span><h4>Medicina Veterinária</h4></div><div class="esp reveal"><span class="svg-symbol icon-flask" aria-hidden="true"></span><h4>Química</h4></div><div class="esp reveal"><span class="svg-symbol icon-microscope" aria-hidden="true"></span><h4>Química de Alimentos</h4></div><div class="esp reveal"><span class="svg-symbol icon-leaf" aria-hidden="true"></span><h4>Meio Ambiente</h4></div></div>
+  <p class="x-lead">Os serviços incluem avaliações técnicas, investigações de não conformidades, perícias extrajudiciais, pareceres e assistência técnica judicial, dentro das atribuições dos profissionais habilitados.</p>
+</section>
+
+<!-- AVISO -->
+<section id="aviso" class="x-sec x-aviso">
+  <p><strong>Transparência:</strong> a JMD3 presta perícias particulares e assistência técnica. Esses serviços não constituem atos oficiais da Receita Federal ou de órgãos fiscalizadores, salvo quando houver o credenciamento e a designação correspondentes. A atuação em Química, Medicina Veterinária e Meio Ambiente respeita as habilitações e atribuições dos profissionais responsáveis.</p>
+</section>
+
+<!-- ATENDIMENTO -->
+
+<section id="atendimento">
+  <div class="process-header">
+    <div class="process-header-left reveal">
+      <div class="section-tag">Como Funciona</div>
+      <h2 class="section-title">Atendimento Técnico e Objetivo</h2>
+    </div>
+    <p class="reveal">
+      Um fluxo simples para entender sua necessidade, orientar os próximos passos e entregar suporte técnico com segurança documental.
+    </p>
+  </div>
+
+  <div class="process-grid">
+    <div class="process-step reveal">
+      <div class="process-num">01</div>
+      <div class="process-icon"><span class="svg-symbol icon-phone" aria-hidden="true"></span></div>
+      <h3>Contato Inicial</h3>
+      <p>Você informa sua demanda, área de atuação, localização e urgência para direcionarmos o atendimento correto.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="process-num">02</div>
+      <div class="process-icon"><span class="svg-symbol icon-clipboard" aria-hidden="true"></span></div>
+      <h3>Análise da Necessidade</h3>
+      <p>A JMD3 avalia o enquadramento técnico, exigências regulatórias e documentos necessários para o serviço.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="process-num">03</div>
+      <div class="process-icon"><span class="svg-symbol icon-microscope" aria-hidden="true"></span></div>
+      <h3>Execução Técnica</h3>
+      <p>Realizamos inspeções, orientações, verificações ou perícias conforme o escopo definido e as normas aplicáveis.</p>
+    </div>
+
+    <div class="process-step reveal">
+      <div class="process-num">04</div>
+      <div class="process-icon"><span class="svg-symbol icon-document" aria-hidden="true"></span></div>
+      <h3>Entrega e Acompanhamento</h3>
+      <p>Você recebe relatórios, laudos ou orientações finais com rastreabilidade e suporte para os próximos passos.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="faq-header reveal">
+    <div class="section-tag">Dúvidas Frequentes</div>
+    <h2 class="section-title">Apoio Técnico Para Decisões Seguras</h2>
+    <p>Entenda como a JMD3 pode apoiar a regularização sanitária, a inspeção veterinária e a conformidade de sua operação.</p>
+  </div>
+  <div class="faq-grid">
+    <article class="faq-item reveal"><h3>Quais empresas precisam de inspeção veterinária?</h3><p>Indústrias de produtos de origem animal, alimentos para animais, bebidas e operações de importação ou exportação podem precisar de suporte técnico e sanitário.</p></article>
+    <article class="faq-item reveal"><h3>A JMD3 auxilia com MAPA e SIF?</h3><p>Sim. A atuação inclui orientação sobre conformidade, documentação e exigências aplicáveis a registros e inspeção federal.</p></article>
+    <article class="faq-item reveal"><h3>Vocês atendem alimentação animal e bebidas?</h3><p>Sim. O escopo contempla rações, suplementos, ingredientes e aditivos, além de cervejas, vinhos, destilados, sucos e néctares.</p></article>
+    <article class="faq-item reveal"><h3>Como solicitar uma avaliação?</h3><p>Preencha o formulário com o serviço desejado ou chame no WhatsApp. Assim, a equipe entende o cenário e direciona os próximos passos.</p></article>
+    <article class="faq-item reveal"><h3>A JMD3 realiza perícia em cargas e contêineres avariados?</h3><p>Sim. Fazemos inspeção de cargas e contêineres, avaliação de avarias, vazamentos, contaminações e alterações de temperatura, com laudo técnico e parecer pericial.</p></article>
+    <article class="faq-item reveal"><h3>O serviço é uma perícia oficial da Receita Federal?</h3><p>Não. A JMD3 presta perícias particulares e assistência técnica. Atos oficiais dependem do credenciamento e da designação correspondentes.</p></article>
+    <article class="faq-item reveal"><h3>Quais produtos podem ser periciados?</h3><p>Alimentos, rações, bebidas, vegetais e óleos, azeites e gorduras vegetais, em importação, exportação e transporte nacional.</p></article>
+  </div>
+</section>
+
+<!-- CONTATO -->
+
+<section id="contato">
+  <div class="contact-info reveal">
+    <div class="section-tag">Fale Conosco</div>
+    <h2 class="section-title">Vamos Trabalhar Juntos</h2>
+    <p>Entre em contato com nossa equipe técnica e descubra como a JMD3 pode apoiar suas operações de inspeção, perícia e comércio exterior.</p>
+
+
+<div class="contact-item">
+  <div class="contact-icon"><span class="svg-symbol icon-mail" aria-hidden="true"></span></div>
+  <div class="contact-item-text">
+    <span>E-mail</span>
+    <strong>tsaeconsultoria@gmail.com</strong>
+  </div>
+</div>
+<div class="contact-item">
+  <div class="contact-icon"><span class="svg-symbol icon-phone" aria-hidden="true"></span></div>
+  <div class="contact-item-text">
+    <span>Telefone</span>
+    <strong>(47) 99224-8189</strong>
+  </div>
+</div>
+<div class="contact-item">
+  <div class="contact-icon"><span class="svg-symbol icon-pin" aria-hidden="true"></span></div>
+  <div class="contact-item-text">
+    <span>Localização</span>
+    <strong>Blumenau &amp; Região – SC</strong>
+  </div>
+</div>
+
+
+  </div>
+
+  <div class="contact-form reveal">
+    <h2 class="contact-form-heading">Solicite uma avaliação técnica</h2>
+    <p class="contact-form-intro">Preencha o essencial. A mensagem será aberta diretamente no WhatsApp para agilizar seu atendimento.</p>
+    <form id="formHome" onsubmit="enviarFormularioHome(event)">
+      <div class="form-grid">
+        <div class="form-row">
+          <label for="nomeHome">Nome</label>
+          <input type="text" id="nomeHome" name="nome" placeholder="Seu nome" required />
+        </div>
+        <div class="form-row">
+          <label for="empresaHome">Empresa</label>
+          <input type="text" id="empresaHome" name="empresa" placeholder="Nome da empresa (opcional)" />
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="emailHome">E-mail</label>
+        <input type="email" id="emailHome" name="email" placeholder="seu@email.com.br" required />
+      </div>
+      <div class="form-row">
+        <label for="servicoHome">Serviço de Interesse</label>
+        <select id="servicoHome" name="servico" required>
+          <option value="">Selecione um serviço…</option>
+          <option>Inspeção Veterinária (Produtos de Origem Animal)</option>
+          <option>Alimentação Animal</option>
+          <option>Bebidas (MAPA)</option>
+          <option>Perícias Portuárias e Aduaneiras</option>
+          <option>Perícia de Avarias em Cargas e Contêineres</option>
+          <option>Assistência Técnica Aduaneira</option>
+          <option>Laudos e Pareceres Técnico-Científicos</option>
+          <option>Outro assunto</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="mensagemHome">Mensagem</label>
+        <textarea id="mensagemHome" name="mensagem" rows="4" placeholder="Descreva sua necessidade (opcional)"></textarea>
+      </div>
+      <div class="privacy-consent">
+        <label for="aceitePrivacidadeHome">
+          <input type="checkbox" id="aceitePrivacidadeHome" name="aceite" required />
+          <span>Li e aceito a <a href="privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a> e autorizo o contato da JMD3.</span>
+        </label>
+        <div id="privacyErrorHome"></div>
+      </div>
+      <button type="submit" class="btn-primary" style="width:100%; text-align:center; font-size:.8rem;">Solicitar Contato Técnico</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">JMD<span>3</span></div>
+  <p>© 2026 JMD3 – Tecnologia, Inovação e Soluções. Todos os direitos reservados.</p>
+  <div class="social-links" aria-label="Redes sociais da JMD3">
+  <a href="https://www.facebook.com/p/JMD3-Inspe%C3%A7%C3%A3o-Veterin%C3%A1ria-100088308552055/" target="_blank" rel="noopener" aria-label="Facebook da JMD3" title="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8.5h3V5h-3c-3.1 0-5 1.9-5 5v2H6v3.6h3V23h3.8v-7.4H16l.6-3.6h-3.8v-1.7c0-1 .4-1.8 1.2-1.8Z"/></svg></a>
+  <a href="https://www.instagram.com/jmd3insp/" target="_blank" rel="noopener" aria-label="Instagram da JMD3" title="Instagram"><svg viewBox="0 0 24 24"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9Zm4.5 3.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2A2.7 2.7 0 1 0 12 14.7 2.7 2.7 0 0 0 12 9.3Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg></a>
+  <a href="https://wa.me/5547992248189" target="_blank" rel="noopener" aria-label="WhatsApp da JMD3" title="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.02 3.2A12.73 12.73 0 0 0 5.1 22.48L3.6 28.8l6.45-1.43A12.72 12.72 0 1 0 16.02 3.2Zm0 2.34a10.38 10.38 0 0 1 8.8 15.9 10.39 10.39 0 0 1-13.76 3.6l-.45-.24-3.62.8.83-3.55-.27-.47A10.39 10.39 0 0 1 16.02 5.54Zm-4.4 4.73c-.25 0-.66.1-1 .47-.35.37-1.32 1.29-1.32 3.14 0 1.85 1.35 3.64 1.54 3.89.19.25 2.6 4.16 6.43 5.66 3.18 1.25 3.83.8 4.52.75.7-.06 2.24-.92 2.55-1.8.32-.88.32-1.64.22-1.8-.1-.16-.35-.25-.73-.44-.38-.19-2.24-1.1-2.58-1.23-.35-.13-.6-.19-.85.19-.25.38-.97 1.23-1.2 1.48-.22.25-.44.28-.82.1-.38-.2-1.6-.6-3.05-1.9-1.13-1-1.9-2.25-2.12-2.63-.22-.38-.02-.58.17-.77.17-.17.38-.44.57-.66.19-.22.25-.38.38-.63.13-.25.06-.47-.03-.66-.1-.19-.85-2.05-1.16-2.8-.31-.74-.62-.64-.85-.65h-.73Z"/></svg></a>
+  <a href="https://www.linkedin.com/in/airson-junior-a565262a3/?originalSubdomain=br" target="_blank" rel="noopener" aria-label="LinkedIn da JMD3" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5ZM3 10h4v12H3V10Zm7 0h3.8v1.6h.1c.5-1 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V22h-4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V22h-4V10Z"/></svg></a>
+</div>
+  <p style="color: var(--muted); font-size: .75rem;">Inspeção Veterinária, Perícias Portuárias e Laudos Técnicos</p>
+  <div class="footer-links"><a href="privacidade.html">Política de Privacidade</a></div>
+</footer>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp-btn" href="https://wa.me/5547992248189" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+  <img src="whatsapp-verde.png" alt="" aria-hidden="true">
+</a>
+
+<!-- SCRIPTS -->
+
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.toggle('open');
+  hamburger.classList.toggle('open');
+  hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
+}
+
+function closeMenu() {
+  const navLinks = document.getElementById('navLinks');
+  const hamburger = document.getElementById('hamburger');
+  navLinks.classList.remove('open');
+  hamburger.classList.remove('open');
+  hamburger.setAttribute('aria-expanded', 'false');
+}
+
+function toggleDropdown(event) {
+  event.preventDefault();
+  const item = event.target.closest('.nav-item');
+  const dropdown = item.querySelector('.dropdown');
+  const arrow = item.querySelector('.nav-arrow');
+  dropdown.classList.toggle('open');
+  arrow.classList.toggle('open');
+}
+
+document.addEventListener('click', function(event) {
+  if (!event.target.closest('.nav-item')) {
+    const dropdown = document.getElementById('servDropdown');
+    const arrow = document.getElementById('navArrow');
+    if (dropdown) dropdown.classList.remove('open');
+    if (arrow) arrow.classList.remove('open');
+  }
+});
+
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+const observer = new IntersectionObserver(function(entries) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+function enviarFormularioHome(event) {
+  event.preventDefault();
+  const checkbox = document.getElementById('aceitePrivacidadeHome');
+  const errorDiv = document.getElementById('privacyErrorHome');
+  const form = document.getElementById('formHome');
+  errorDiv.innerHTML = '';
+  checkbox.classList.remove('error');
+
+  if (!checkbox.checked) {
+    errorDiv.innerHTML = '<div class="privacy-error">Você deve aceitar a Política de Privacidade para enviar o formulário.</div>';
+    checkbox.classList.add('error');
+    checkbox.focus();
+    return false;
+  }
+
+  const mensagem = [
+    'Olá, equipe JMD3. Gostaria de solicitar atendimento.',
+    '',
+    'Nome: ' + document.getElementById('nomeHome').value,
+    'Empresa: ' + document.getElementById('empresaHome').value,
+    'E-mail: ' + document.getElementById('emailHome').value,
+    'Serviço: ' + document.getElementById('servicoHome').value,
+    'Mensagem: ' + document.getElementById('mensagemHome').value
+  ].join('\n');
+
+  errorDiv.innerHTML = '<div class="privacy-success">Abrindo WhatsApp com sua mensagem pronta...</div>';
+  window.open('https://wa.me/5547992248189?text=' + encodeURIComponent(mensagem), '_blank', 'noopener');
+  setTimeout(() => form.reset(), 500);
+  return false;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  const checkbox = document.getElementById('aceitePrivacidadeHome');
+  const errorDiv = document.getElementById('privacyErrorHome');
+  if (!checkbox) return;
+  checkbox.addEventListener('change', function() {
+    if (this.checked) {
+      this.classList.remove('error');
+      errorDiv.innerHTML = '';
+    }
+  });
+});
+</script>
+
+<script>
+(function(){document.querySelectorAll('[data-carousel]').forEach(function(w){var c=w.querySelector('.carousel'),p=w.querySelector('.car-prev'),n=w.querySelector('.car-next'),paused=false;
+function step(d){var card=c.querySelector('.seg-card');var s=card.offsetWidth+18;var end=c.scrollLeft+c.clientWidth>=c.scrollWidth-4;
+if(d>0&&end){c.scrollTo({left:0})}else if(d<0&&c.scrollLeft<=4){c.scrollTo({left:c.scrollWidth})}else{c.scrollBy({left:d*s})}}
+p.addEventListener('click',function(){step(-1)});n.addEventListener('click',function(){step(1)});
+['mouseenter','touchstart','focusin'].forEach(function(e){w.addEventListener(e,function(){paused=true},{passive:true})});
+['mouseleave','focusout'].forEach(function(e){w.addEventListener(e,function(){paused=false})});
+if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(function(){if(!paused&&!document.hidden)step(1)},5000)}
+c.addEventListener('keydown',function(e){if(e.key==='ArrowRight')step(1);if(e.key==='ArrowLeft')step(-1)});});})();
+</script>
+</body>
+</html>
